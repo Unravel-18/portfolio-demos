@@ -19,7 +19,7 @@ body.era-2010{background:#808080}
 .era-pill{border:none;background:transparent;color:#c9ced6;font-family:"JetBrains Mono",monospace;
   font-weight:700;font-size:14px;padding:6px 16px;border-radius:100px;cursor:pointer;transition:.2s}
 .era-pill:hover{color:#fff}
-.era-pill[aria-pressed="true"]{background:#FF4D12;color:#fff}
+.era-pill[aria-pressed="true"]{background:#C93E0F;color:#fff}
 .era-hint{color:#8b929b;font-size:12px;font-family:"JetBrains Mono",monospace;min-width:78px}
 body.era-2010 .era-hint::after{content:attr(data-hint-2010)}
 body.era-2026 .era-hint::after{content:attr(data-hint-2026)}
