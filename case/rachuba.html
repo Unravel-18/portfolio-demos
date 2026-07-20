@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pl" data-title-pl="Rachuba — case study" data-title-en="Rachuba — case study">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rachuba — case study</title>
+<meta name="description" content="Case study: Rachuba — panel finansowy dla polskich freelancerów. Kontekst, proces, rozwiązanie, wynik + działające demo i Lighthouse 90+." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="case.css" />
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-in">
+    <a class="back" href="../index.html"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg><span data-pl="Portfolio" data-en="Portfolio">Portfolio</span></a>
+    <div class="bar-sp"></div>
+    <div class="langtog"><span data-l="pl" class="on">PL</span><span data-l="en">EN</span></div>
+    <a class="btn btn-ghost" href="https://github.com/Unravel-18/portfolio-demos/tree/main/02-rachuba" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3-.3 6-1.5 6-6.5a5 5 0 0 0-1.4-3.5 4.6 4.6 0 0 0-.1-3.5s-1.1-.3-3.5 1.3a12 12 0 0 0-6 0C6.6.2 5.5.5 5.5.5A4.6 4.6 0 0 0 5.4 4 5 5 0 0 0 4 7.5c0 5 3 6.2 6 6.5a3.4 3.4 0 0 0-1 2.6V21"/></svg>Kod</a>
+    <a class="btn btn-primary" href="../02-rachuba/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span data-pl="Otwórz demo" data-en="Open demo">Otwórz demo</span></a>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="eyebrow" data-pl="02 — SaaS · projekt własny" data-en="02 — SaaS · self-initiated">02 — SaaS · projekt własny</span>
+    <h1>Rachuba</h1>
+    <p class="hero-sub" data-pl="Panel finansowy dla polskich freelancerów (JDG): faktury, koszty i terminy podatkowe ZUS / VAT / PIT w jednym miejscu — z kreatorem faktury liczącym VAT na żywo."
+       data-en="A finance panel for Polish sole traders: invoices, expenses and ZUS / VAT / PIT deadlines in one place — with an invoice builder that computes VAT live.">
+       Panel finansowy dla polskich freelancerów (JDG): faktury, koszty i terminy podatkowe ZUS / VAT / PIT w jednym miejscu — z kreatorem faktury liczącym VAT na żywo.</p>
+
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="../02-rachuba/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span data-pl="Otwórz działające demo" data-en="Open the live demo">Otwórz działające demo</span></a>
+      <a class="btn btn-ghost" href="https://github.com/Unravel-18/portfolio-demos/tree/main/02-rachuba" target="_blank" rel="noopener"><span data-pl="Zobacz kod" data-en="View the code">Zobacz kod</span></a>
+    </div>
+
+    <dl class="meta">
+      <div><dt data-pl="Rola" data-en="Role">Rola</dt><dd data-pl="Design + development" data-en="Design + development">Design + development</dd></div>
+      <div><dt data-pl="Zakres" data-en="Scope">Zakres</dt><dd data-pl="UX · UI · kod · deploy" data-en="UX · UI · code · deploy">UX · UI · kod · deploy</dd></div>
+      <div><dt data-pl="Stack" data-en="Stack">Stack</dt><dd>Vanilla JS · CSS</dd></div>
+      <div><dt data-pl="Rok" data-en="Year">Rok</dt><dd>2026</dd></div>
+    </dl>
+  </header>
+
+  <!-- LIGHTHOUSE -->
+  <section class="blk" style="border-top:none;padding-top:8px" data-rv>
+    <div class="lh">
+      <div class="lh-item"><div class="lh-ring" data-score="95"><svg viewBox="0 0 64 64"><circle class="bg" cx="32" cy="32" r="28"/><circle class="fg" cx="32" cy="32" r="28"/></svg><b>95</b></div><span>Performance</span></div>
+      <div class="lh-item"><div class="lh-ring" data-score="100"><svg viewBox="0 0 64 64"><circle class="bg" cx="32" cy="32" r="28"/><circle class="fg" cx="32" cy="32" r="28"/></svg><b>100</b></div><span>Accessibility</span></div>
+      <div class="lh-item"><div class="lh-ring" data-score="96"><svg viewBox="0 0 64 64"><circle class="bg" cx="32" cy="32" r="28"/><circle class="fg" cx="32" cy="32" r="28"/></svg><b>96</b></div><span>Best Practices</span></div>
+      <div class="lh-item"><div class="lh-ring" data-score="100"><svg viewBox="0 0 64 64"><circle class="bg" cx="32" cy="32" r="28"/><circle class="fg" cx="32" cy="32" r="28"/></svg><b>100</b></div><span>SEO</span></div>
+    </div>
+    <p class="lh-note" data-pl="Lighthouse (desktop) na żywym wdrożeniu · LCP 1,2 s · TBT 0 ms" data-en="Lighthouse (desktop) on the live deploy · LCP 1.2 s · TBT 0 ms">Lighthouse (desktop) na żywym wdrożeniu · LCP 1,2 s · TBT 0 ms</p>
+  </section>
+
+  <!-- KONTEKST -->
+  <section class="blk" data-rv>
+    <span class="knum">01</span>
+    <h2 data-pl="Kontekst i wyzwanie" data-en="Context & challenge">Kontekst i wyzwanie</h2>
+    <p class="lead" data-pl="Polscy freelancerzy na JDG toną w terminach: ZUS do 20., JPK_V7 do 25., zaliczka PIT. Większość narzędzi to albo pełna księgowość dla biur, albo zagraniczne apki bez polskich realiów."
+       data-en="Polish sole traders drown in deadlines: ZUS by the 20th, JPK_V7 by the 25th, PIT advances. Most tools are either full accounting suites for firms, or foreign apps blind to Polish rules.">
+       Polscy freelancerzy na JDG toną w terminach: ZUS do 20., JPK_V7 do 25., zaliczka PIT. Większość narzędzi to albo pełna księgowość dla biur, albo zagraniczne apki bez polskich realiów.</p>
+    <p data-pl="Cel: panel, który w 5 sekund odpowiada na trzy pytania freelancera — ile zarobiłem, kto mi zalega, co muszę zapłacić fiskusowi — i sam pilnuje terminów podatkowych."
+       data-en="Goal: a panel that answers three freelancer questions in 5 seconds — how much did I earn, who owes me, what do I owe the tax office — and tracks tax deadlines for you.">
+       Cel: panel, który w 5 sekund odpowiada na trzy pytania freelancera — ile zarobiłem, kto mi zalega, co muszę zapłacić fiskusowi — i sam pilnuje terminów podatkowych.</p>
+  </section>
+
+  <!-- PROCES -->
+  <section class="blk" data-rv>
+    <span class="knum">02</span>
+    <h2 data-pl="Proces" data-en="Process">Proces</h2>
+    <div class="steps">
+      <div class="step"><div class="step-ic"><svg viewBox="0 0 24 24"><path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm10 2-4.3-4.3"/></svg></div>
+        <div><h3 data-pl="Research i założenia" data-en="Research & framing">Research i założenia</h3>
+          <p data-pl="Zmapowałem polski kalendarz podatkowy JDG i realne bolączki: przeoczone terminy, ręczne liczenie VAT, brak przeglądu cashflow." data-en="Mapped the Polish JDG tax calendar and real pain points: missed deadlines, manual VAT math, no cashflow overview.">Zmapowałem polski kalendarz podatkowy JDG i realne bolączki: przeoczone terminy, ręczne liczenie VAT, brak przeglądu cashflow.</p></div></div>
+      <div class="step"><div class="step-ic"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h10"/></svg></div>
+        <div><h3 data-pl="UX — kluczowe przepływy" data-en="UX — key flows">UX — kluczowe przepływy</h3>
+          <p data-pl="Trzy główne flowy: pulpit-przegląd, kreator faktury z VAT liczonym na żywo, widok terminów z odliczaniem dni i przesunięciem weekendowym." data-en="Three main flows: dashboard overview, invoice builder with live VAT, and a deadlines view with day countdown and weekend shift.">Trzy główne flowy: pulpit-przegląd, kreator faktury z VAT liczonym na żywo, widok terminów z odliczaniem dni i przesunięciem weekendowym.</p></div></div>
+      <div class="step"><div class="step-ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 6 6.5.5-5 4.2 1.6 6.3L12 17l-5.6 3 1.6-6.3-5-4.2 6.5-.5z"/></svg></div>
+        <div><h3 data-pl="UI — system wizualny" data-en="UI — visual system">UI — system wizualny</h3>
+          <p data-pl="Ciemny control-room: skupienie na liczbach, jeden sygnałowy akcent, kwoty monospace z tabular-nums jak w księdze — realna decyzja UX, nie ozdoba." data-en="A dark control-room: focus on numbers, one signal accent, monospace tabular figures like a ledger — a real UX decision, not decoration.">Ciemny control-room: skupienie na liczbach, jeden sygnałowy akcent, kwoty monospace z tabular-nums jak w księdze — realna decyzja UX, nie ozdoba.</p></div></div>
+      <div class="step"><div class="step-ic"><svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m5 13H5a2 2 0 0 1-2-2v-3m13 5h3a2 2 0 0 0 2-2v-3M16 3h3a2 2 0 0 1 2 2v3"/></svg></div>
+        <div><h3 data-pl="Stack i architektura" data-en="Stack & architecture">Stack i architektura</h3>
+          <p data-pl="Czysty HTML/CSS/JS — zero zależności i frameworka. Pełne i18n PL/EN (z poprawną polską liczbą mnogą), routing i cała logika po stronie klienta." data-en="Plain HTML/CSS/JS — zero dependencies, no framework. Full PL/EN i18n (with correct Polish plurals), client-side routing and logic.">Czysty HTML/CSS/JS — zero zależności i frameworka. Pełne i18n PL/EN (z poprawną polską liczbą mnogą), routing i cała logika po stronie klienta.</p></div></div>
+      <div class="step"><div class="step-ic"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></div>
+        <div><h3 data-pl="Wdrożenie i audyt" data-en="Deploy & audit">Wdrożenie i audyt</h3>
+          <p data-pl="Deploy na GitHub Pages, audyt Lighthouse i optymalizacja dostępności do 100/100 (inert dla paneli, poprawki ról ARIA i kontrastu)." data-en="Deployed to GitHub Pages, audited with Lighthouse and pushed accessibility to 100/100 (inert panels, ARIA-role and contrast fixes).">Deploy na GitHub Pages, audyt Lighthouse i optymalizacja dostępności do 100/100 (inert dla paneli, poprawki ról ARIA i kontrastu).</p></div></div>
+    </div>
+
+    <div class="sys">
+      <div class="sys-card"><h4 data-pl="Paleta" data-en="Palette">Paleta</h4>
+        <div class="swatches">
+          <span class="sw" style="background:#ccff45" title="#ccff45"></span>
+          <span class="sw" style="background:#3ddc84" title="#3ddc84"></span>
+          <span class="sw" style="background:#ffb84d" title="#ffb84d"></span>
+          <span class="sw" style="background:#ff6a6a" title="#ff6a6a"></span>
+          <span class="sw" style="background:#191d24" title="#191d24"></span>
+          <span class="sw" style="background:#0c0e12" title="#0c0e12"></span>
+        </div>
+      </div>
+      <div class="sys-card"><h4 data-pl="Typografia" data-en="Typography">Typografia</h4>
+        <div class="typ">
+          <div><b class="t1">Bricolage</b> <span>display</span></div>
+          <div><b class="t2">Hanken Grotesk</b> <span>UI</span></div>
+          <div><b class="t3">IBM Plex Mono</b> <span>kwoty / figures</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROZWIĄZANIE -->
+  <section class="blk" data-rv>
+    <span class="knum">03</span>
+    <h2 data-pl="Rozwiązanie" data-en="Solution">Rozwiązanie</h2>
+    <div class="figs">
+      <figure><div class="shot"><img src="img/rachuba-pulpit.webp" alt="Rachuba — pulpit" loading="lazy" /></div>
+        <figcaption data-pl="Pulpit: KPI z animowanym licznikiem, przepływy pieniężne i terminy podatkowe w jednym widoku." data-en="Dashboard: animated KPIs, cash flow and tax deadlines in a single view.">Pulpit: KPI z animowanym licznikiem, przepływy pieniężne i terminy podatkowe w jednym widoku.</figcaption></figure>
+      <div class="figs-2">
+        <figure><div class="shot"><img src="img/rachuba-invoice.webp" alt="Rachuba — kreator faktury" loading="lazy" /></div>
+          <figcaption data-pl="Kreator faktury z kalkulacją VAT na żywo: netto → VAT → brutto." data-en="Invoice builder with live VAT: net → VAT → gross.">Kreator faktury z kalkulacją VAT na żywo: netto → VAT → brutto.</figcaption></figure>
+        <figure><div class="shot"><img src="img/rachuba-podatki.webp" alt="Rachuba — podatki" loading="lazy" /></div>
+          <figcaption data-pl="Podatki: ZUS, VAT (należny − naliczony) i zaliczka PIT z rozbiciem." data-en="Taxes: ZUS, VAT (output − input) and PIT advance with breakdown.">Podatki: ZUS, VAT (należny − naliczony) i zaliczka PIT z rozbiciem.</figcaption></figure>
+      </div>
+      <figure style="max-width:340px;margin:0 auto"><div class="shot"><img src="img/rachuba-mobile.webp" alt="Rachuba — mobile" loading="lazy" /></div>
+        <figcaption data-pl="Na mobile tabele zmieniają się w czytelne karty — bez bocznego gortania." data-en="On mobile, tables turn into readable cards — no sideways scrolling.">Na mobile tabele zmieniają się w czytelne karty — bez bocznego gortania.</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- REZULTAT -->
+  <section class="blk" data-rv>
+    <span class="knum">04</span>
+    <h2 data-pl="Rezultat" data-en="Result">Rezultat</h2>
+    <div class="results">
+      <div class="res"><b class="mono">95–100</b><span data-pl="Lighthouse · 4 kategorie" data-en="Lighthouse · 4 categories">Lighthouse · 4 kategorie</span></div>
+      <div class="res"><b class="mono">6</b><span data-pl="działających ekranów" data-en="working screens">działających ekranów</span></div>
+      <div class="res"><b class="mono">0</b><span data-pl="zależności / bibliotek" data-en="dependencies / libraries">zależności / bibliotek</span></div>
+    </div>
+    <div class="note" data-pl="Projekt koncepcyjny (self-initiated). Dane są fikcyjne i nie ma realnego klienta — ale kod, decyzje UX i wdrożenie są prawdziwe: produkt jest live i przechodzi audyt Lighthouse 90+."
+      data-en="Self-initiated concept. The data is fictional and there is no real client — but the code, UX decisions and deployment are real: the product is live and passes a Lighthouse 90+ audit.">
+      Projekt koncepcyjny (self-initiated). Dane są fikcyjne i nie ma realnego klienta — ale kod, decyzje UX i wdrożenie są prawdziwe: produkt jest live i przechodzi audyt Lighthouse 90+.</div>
+  </section>
+
+  <footer class="foot">
+    <div class="cta2">
+      <a class="btn btn-primary" href="../02-rachuba/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span data-pl="Otwórz demo" data-en="Open demo">Otwórz demo</span></a>
+      <a class="btn btn-ghost" href="../index.html"><span data-pl="Wszystkie projekty" data-en="All projects">Wszystkie projekty</span></a>
+    </div>
+    <p data-pl="Koncepcyjne case study · From idea to live product. One person, full cycle." data-en="Concept case study · From idea to live product. One person, full cycle.">Koncepcyjne case study · From idea to live product. One person, full cycle.</p>
+  </footer>
+</main>
+
+<script src="case.js"></script>
+</body>
+</html>
