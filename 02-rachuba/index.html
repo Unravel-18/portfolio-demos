@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rachuba — panel finansowy dla freelancerów</title>
+<meta name="description" content="Rachuba — faktury, koszty i podatki dla polskich freelancerów. Jedno miejsce na rozliczenia JDG: VAT, ZUS, PIT." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="concept-badge" data-i18n="concept">Concept · self-initiated</div>
+
+<!-- ============ SHELL ============ -->
+<div class="app" id="app">
+
+  <!-- ---------- SIDEBAR ---------- -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none">
+          <rect x="2" y="2" width="28" height="28" rx="8" fill="var(--accent)"/>
+          <path d="M9 22V10h6.2c2.6 0 4.3 1.5 4.3 3.9 0 1.8-1 3.1-2.7 3.6L20.5 22h-3.3l-2.4-4.2h-2.4V22H9Zm3.4-6.7h2.4c1 0 1.7-.6 1.7-1.5s-.7-1.5-1.7-1.5h-2.4v3Z" fill="var(--ink-900)"/>
+        </svg>
+      </div>
+      <div class="brand-name">Rachuba<span class="brand-dot">.</span></div>
+      <button class="side-collapse" id="sideCollapse" aria-label="Zwiń menu" title="Zwiń menu">
+        <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+    </div>
+
+    <nav class="nav" aria-label="Główna nawigacja">
+      <span class="nav-label" data-i18n="nav_main">Nawigacja</span>
+      <a class="nav-item is-active" href="#" data-view="pulpit">
+        <svg viewBox="0 0 24 24"><path d="M4 13h6V4H4v9Zm0 7h6v-5H4v5Zm10 0h6V11h-6v9Zm0-16v5h6V4h-6Z"/></svg>
+        <span data-i18n="nav_dashboard">Pulpit</span>
+      </a>
+      <a class="nav-item" href="#" data-view="faktury">
+        <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1.5V8h4.5"/><path d="M8 13h8M8 17h5"/></svg>
+        <span data-i18n="nav_invoices">Faktury</span>
+        <em class="nav-badge" id="navInvCount">7</em>
+      </a>
+      <a class="nav-item" href="#" data-view="klienci">
+        <svg viewBox="0 0 24 24"><path d="M16 11a4 4 0 1 0-8 0M4 21a8 8 0 0 1 16 0"/></svg>
+        <span data-i18n="nav_clients">Klienci</span>
+      </a>
+      <a class="nav-item" href="#" data-view="koszty">
+        <svg viewBox="0 0 24 24"><path d="M3 10h18M7 15h4M6 5h12a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3Z"/></svg>
+        <span data-i18n="nav_expenses">Koszty</span>
+      </a>
+      <a class="nav-item" href="#" data-view="podatki">
+        <svg viewBox="0 0 24 24"><path d="M12 3v18M7 7h7a3 3 0 0 1 0 6H8m9 5H10a3 3 0 0 1 0-6"/></svg>
+        <span data-i18n="nav_taxes">Podatki</span>
+      </a>
+
+      <span class="nav-label" data-i18n="nav_more">Więcej</span>
+      <a class="nav-item" href="#" data-view="raporty">
+        <svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        <span data-i18n="nav_reports">Raporty</span>
+      </a>
+      <a class="nav-item" href="#" data-view="ustawienia">
+        <svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 6.8 19.7l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.6 1.6 0 0 0 4.3 15a2 2 0 1 1 0-4l.1-.3a1.6 1.6 0 0 0-1.1-2.7l-.1-.1A2 2 0 1 1 6.7 5l.1.1A1.6 1.6 0 0 0 9 4.3 2 2 0 1 1 13 4.3l.3.1a1.6 1.6 0 0 0 2.7-1.1l.1-.1A2 2 0 1 1 19 6.7l-.1.1a1.6 1.6 0 0 0 1.1 2.7"/></svg>
+        <span data-i18n="nav_settings">Ustawienia</span>
+      </a>
+    </nav>
+
+    <div class="side-foot">
+      <button class="upgrade" id="upgradeBtn">
+        <div class="upgrade-top">
+          <span class="upgrade-plan" data-i18n="plan_free">Plan Start</span>
+          <span class="upgrade-pill">92%</span>
+        </div>
+        <div class="upgrade-bar"><i style="width:92%"></i></div>
+        <span class="upgrade-hint" data-i18n="plan_hint">18/20 faktur w tym miesiącu</span>
+      </button>
+      <div class="user-card" id="userCard">
+        <div class="avatar">MK</div>
+        <div class="user-meta">
+          <strong>Michał Kowalczyk</strong>
+          <span>JDG · Wrocław</span>
+        </div>
+        <svg class="user-caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ---------- MAIN ---------- -->
+  <div class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <button class="icon-btn burger" id="burger" aria-label="Menu">
+        <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <div class="crumb">
+        <span class="crumb-root" data-i18n="crumb_root">Rachuba</span>
+        <span class="crumb-sep">/</span>
+        <span class="crumb-here" id="crumbHere" data-i18n="nav_dashboard">Pulpit</span>
+      </div>
+
+      <button class="search" id="searchBtn">
+        <svg viewBox="0 0 24 24"><path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm10 2-4.3-4.3"/></svg>
+        <span data-i18n="search_ph">Szukaj faktur, klientów…</span>
+        <kbd>⌘K</kbd>
+      </button>
+
+      <div class="top-actions">
+        <button class="seg" id="langToggle" aria-label="Język">
+          <span class="seg-opt is-on" data-lang="pl">PL</span>
+          <span class="seg-opt" data-lang="en">EN</span>
+        </button>
+        <button class="icon-btn" id="themeToggle" aria-label="Motyw" title="Jasny / ciemny">
+          <svg class="ic-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="ic-sun" viewBox="0 0 24 24"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </button>
+        <button class="icon-btn bell" id="bellBtn" aria-label="Powiadomienia">
+          <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+          <i class="bell-dot"></i>
+        </button>
+        <button class="btn btn-primary" id="newInvoiceBtn">
+          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+          <span data-i18n="new_invoice">Nowa faktura</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- SCROLL AREA -->
+    <main class="canvas" id="canvas">
+
+      <section class="view" id="view-pulpit">
+      <!-- greeting -->
+      <div class="page-head reveal">
+        <div>
+          <h1 class="hello"><span data-i18n="hello">Dzień dobry</span>, Michał</h1>
+          <p class="page-sub" id="pageSub" data-i18n="page_sub">Poniedziałek, 20 lipca 2026 · masz 2 faktury po terminie</p>
+        </div>
+        <div class="period" id="period" role="tablist">
+          <button class="period-opt" data-p="week" data-i18n="p_week">Tydzień</button>
+          <button class="period-opt is-on" data-p="month" data-i18n="p_month">Miesiąc</button>
+          <button class="period-opt" data-p="quarter" data-i18n="p_quarter">Kwartał</button>
+          <button class="period-opt" data-p="year" data-i18n="p_year">Rok</button>
+        </div>
+      </div>
+
+      <!-- KPI ROW -->
+      <section class="kpis" aria-label="Wskaźniki">
+        <article class="kpi reveal" style="--d:1">
+          <div class="kpi-top">
+            <span class="kpi-label" data-i18n="kpi_income">Przychód</span>
+            <span class="kpi-delta up">▲ 12,4%</span>
+          </div>
+          <div class="kpi-val" data-count="48250" data-suffix=" zł">0 zł</div>
+          <div class="kpi-foot">
+            <svg class="spark" viewBox="0 0 120 34" preserveAspectRatio="none" data-spark="8,26 22,22 36,24 50,16 64,18 78,10 92,12 106,6 120,4"></svg>
+            <span class="kpi-note" data-i18n="kpi_income_note">vs 42 900 zł</span>
+          </div>
+        </article>
+
+        <article class="kpi reveal" style="--d:2">
+          <div class="kpi-top">
+            <span class="kpi-label" data-i18n="kpi_due">Do zapłaty</span>
+            <span class="kpi-delta warn" id="dueBadge">3 faktury</span>
+          </div>
+          <div class="kpi-val" data-count="14780" data-suffix=" zł">0 zł</div>
+          <div class="kpi-foot">
+            <span class="chip chip-red" data-i18n="kpi_overdue">2 po terminie · 6 200 zł</span>
+          </div>
+        </article>
+
+        <article class="kpi reveal" style="--d:3">
+          <div class="kpi-top">
+            <span class="kpi-label" data-i18n="kpi_costs">Koszty</span>
+            <span class="kpi-delta down">▼ 4,1%</span>
+          </div>
+          <div class="kpi-val" data-count="9340" data-suffix=" zł">0 zł</div>
+          <div class="kpi-foot">
+            <svg class="spark spark-mut" viewBox="0 0 120 34" preserveAspectRatio="none" data-spark="8,10 22,14 36,12 50,18 64,15 78,20 92,17 106,22 120,19"></svg>
+            <span class="kpi-note" data-i18n="kpi_costs_note">ZUS, software, biuro</span>
+          </div>
+        </article>
+
+        <article class="kpi kpi-accent reveal" style="--d:4">
+          <div class="kpi-top">
+            <span class="kpi-label" data-i18n="kpi_profit">Zysk netto</span>
+            <span class="kpi-delta up">▲ 16,8%</span>
+          </div>
+          <div class="kpi-val" data-count="38910" data-suffix=" zł">0 zł</div>
+          <div class="kpi-foot">
+            <span class="kpi-note" data-i18n="kpi_margin">Marża 80,6% · po odliczeniu kosztów</span>
+          </div>
+        </article>
+      </section>
+
+      <!-- GRID: chart + side widgets -->
+      <section class="grid-2">
+
+        <!-- CASHFLOW -->
+        <article class="card chart-card reveal" style="--d:5">
+          <header class="card-head">
+            <div>
+              <h2 class="card-title" data-i18n="cf_title">Przepływy pieniężne</h2>
+              <p class="card-sub" data-i18n="cf_sub">Przychody vs koszty · ostatnie 6 miesięcy</p>
+            </div>
+            <div class="legend">
+              <span class="lg lg-in"><i></i><span data-i18n="cf_in">Przychód</span></span>
+              <span class="lg lg-out"><i></i><span data-i18n="cf_out">Koszty</span></span>
+            </div>
+          </header>
+          <div class="chart" id="chart">
+            <div class="chart-tip" id="chartTip" hidden></div>
+          </div>
+        </article>
+
+        <!-- SIDE: tax deadlines + cost donut -->
+        <div class="side-col">
+          <article class="card tax-card reveal" style="--d:6">
+            <header class="card-head tight">
+              <h2 class="card-title" data-i18n="tax_title">Terminy podatkowe</h2>
+              <a class="link" href="#" data-view="podatki" data-i18n="tax_all">Wszystkie</a>
+            </header>
+            <ul class="tax-list" id="taxList"><!-- js --></ul>
+          </article>
+
+          <article class="card donut-card reveal" style="--d:7">
+            <header class="card-head tight">
+              <h2 class="card-title" data-i18n="cost_title">Struktura kosztów</h2>
+            </header>
+            <div class="donut-wrap">
+              <svg class="donut" viewBox="0 0 42 42" id="donut"></svg>
+              <div class="donut-legend" id="donutLegend"></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- INVOICES -->
+      <section class="card table-card reveal" style="--d:8">
+        <header class="card-head">
+          <div>
+            <h2 class="card-title" data-i18n="inv_title">Ostatnie faktury</h2>
+            <p class="card-sub" data-i18n="inv_sub">Kliknij wiersz, aby zobaczyć szczegóły</p>
+          </div>
+          <div class="filters" id="filters" role="tablist">
+            <button class="fpill is-on" data-f="all"><span data-i18n="f_all">Wszystkie</span><em>7</em></button>
+            <button class="fpill" data-f="paid"><span data-i18n="f_paid">Opłacone</span><em>3</em></button>
+            <button class="fpill" data-f="pending"><span data-i18n="f_pending">Oczekujące</span><em>2</em></button>
+            <button class="fpill" data-f="overdue"><span data-i18n="f_overdue">Po terminie</span><em>2</em></button>
+          </div>
+        </header>
+        <div class="table-scroll">
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th class="sortable" data-sort="no" data-i18n="th_no">Numer</th>
+                <th class="sortable" data-sort="client" data-i18n="th_client">Klient</th>
+                <th class="sortable num" data-sort="amount" data-i18n="th_amount">Kwota brutto</th>
+                <th class="sortable" data-sort="due" data-i18n="th_due">Termin</th>
+                <th data-i18n="th_status">Status</th>
+                <th class="th-act" aria-label="akcje"></th>
+              </tr>
+            </thead>
+            <tbody id="tbody"><!-- js --></tbody>
+          </table>
+        </div>
+        <div class="empty" id="tblEmpty" hidden>
+          <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/></svg>
+          <p data-i18n="empty">Brak faktur w tym filtrze</p>
+        </div>
+      </section>
+
+      </section>
+
+      <section class="view" id="view-faktury" hidden></section>
+      <section class="view" id="view-klienci" hidden></section>
+      <section class="view" id="view-koszty" hidden></section>
+      <section class="view" id="view-podatki" hidden></section>
+      <section class="view" id="view-raporty" hidden></section>
+      <section class="view" id="view-ustawienia" hidden></section>
+
+      <footer class="canvas-foot reveal">
+        <span data-i18n="foot">Rachuba · demo koncepcyjne · dane fikcyjne</span>
+        <span class="foot-sep">·</span>
+        <a href="#" class="link" id="aboutLink" data-i18n="foot_about">O projekcie</a>
+      </footer>
+    </main>
+  </div>
+</div>
+
+<!-- ============ SLIDE-OVER: NEW INVOICE ============ -->
+<div class="scrim" id="scrim" hidden></div>
+
+<aside class="drawer drawer-form" id="invoiceDrawer" aria-hidden="true">
+  <header class="drawer-head">
+    <div>
+      <h3 data-i18n="d_new_title">Nowa faktura</h3>
+      <p class="drawer-no" id="drawerNo">FV/2026/07/08</p>
+    </div>
+    <button class="icon-btn ghost" data-drawer-close aria-label="Zamknij">
+      <svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </header>
+
+  <div class="drawer-body">
+    <label class="field">
+      <span class="field-lbl" data-i18n="d_client">Klient</span>
+      <div class="select-wrap">
+        <select id="fClient"></select>
+        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+    </label>
+
+    <div class="field-row">
+      <label class="field">
+        <span class="field-lbl" data-i18n="d_issue">Data wystawienia</span>
+        <input type="text" id="fIssue" value="20.07.2026" readonly />
+      </label>
+      <label class="field">
+        <span class="field-lbl" data-i18n="d_term">Termin płatności</span>
+        <div class="select-wrap">
+          <select id="fTerm">
+            <option value="7">7 dni</option>
+            <option value="14" selected>14 dni</option>
+            <option value="21">21 dni</option>
+            <option value="30">30 dni</option>
+          </select>
+          <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </label>
+    </div>
+
+    <div class="items-head">
+      <span class="field-lbl" data-i18n="d_items">Pozycje</span>
+      <button class="mini-add" id="addItem">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        <span data-i18n="d_add_item">Dodaj</span>
+      </button>
+    </div>
+    <div class="items" id="items"></div>
+
+    <div class="vat-row">
+      <label class="field field-inline">
+        <span class="field-lbl" data-i18n="d_vat">Stawka VAT</span>
+        <div class="select-wrap sm">
+          <select id="fVat">
+            <option value="23" selected>23%</option>
+            <option value="8">8%</option>
+            <option value="5">5%</option>
+            <option value="0">0%</option>
+            <option value="zw">zw.</option>
+          </select>
+          <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </label>
+    </div>
+
+    <div class="totals">
+      <div class="tot-row"><span data-i18n="d_netto">Netto</span><b id="tNetto">0,00 zł</b></div>
+      <div class="tot-row"><span><span data-i18n="d_tax">VAT</span> (<em id="tVatRate">23</em>%)</span><b id="tVat">0,00 zł</b></div>
+      <div class="tot-row grand"><span data-i18n="d_brutto">Do zapłaty (brutto)</span><b id="tBrutto">0,00 zł</b></div>
+    </div>
+  </div>
+
+  <footer class="drawer-foot">
+    <button class="btn btn-soft" data-drawer-close data-i18n="d_cancel">Anuluj</button>
+    <button class="btn btn-primary" id="issueBtn">
+      <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+      <span data-i18n="d_issue_btn">Wystaw fakturę</span>
+    </button>
+  </footer>
+</aside>
+
+<!-- ============ SLIDE-OVER: INVOICE DETAIL ============ -->
+<aside class="drawer drawer-detail" id="detailDrawer" aria-hidden="true">
+  <header class="drawer-head">
+    <div>
+      <h3 id="dtlNo">FV/2026/07/07</h3>
+      <p class="drawer-no" id="dtlClient">—</p>
+    </div>
+    <button class="icon-btn ghost" data-drawer-close aria-label="Zamknij">
+      <svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </header>
+  <div class="drawer-body" id="dtlBody"></div>
+  <footer class="drawer-foot">
+    <button class="btn btn-soft" id="dtlPdf">
+      <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      <span data-i18n="dtl_pdf">Pobierz PDF</span>
+    </button>
+    <button class="btn btn-primary" id="dtlPay">
+      <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+      <span data-i18n="dtl_pay">Oznacz jako opłaconą</span>
+    </button>
+  </footer>
+</aside>
+
+<!-- ============ SLIDE-OVER: CLIENT ============ -->
+<aside class="drawer drawer-detail" id="clientDrawer" aria-hidden="true">
+  <header class="drawer-head">
+    <div>
+      <h3 id="clName">Klient</h3>
+      <p class="drawer-no" id="clSub">—</p>
+    </div>
+    <button class="icon-btn ghost" data-drawer-close aria-label="Zamknij">
+      <svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </header>
+  <div class="drawer-body" id="clBody"></div>
+  <footer class="drawer-foot">
+    <button class="btn btn-soft" data-drawer-close data-i18n="d_cancel">Zamknij</button>
+    <button class="btn btn-primary" id="clNew">
+      <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      <span data-i18n="new_invoice">Nowa faktura</span>
+    </button>
+  </footer>
+</aside>
+
+<!-- ============ COMMAND PALETTE ============ -->
+<div class="cmdk" id="cmdk" hidden>
+  <div class="cmdk-box">
+    <div class="cmdk-input">
+      <svg viewBox="0 0 24 24"><path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm10 2-4.3-4.3"/></svg>
+      <input type="text" id="cmdkInput" placeholder="Szukaj lub wpisz polecenie…" data-i18n-ph="cmdk_ph" />
+      <kbd>ESC</kbd>
+    </div>
+    <ul class="cmdk-list" id="cmdkList"></ul>
+  </div>
+</div>
+
+<!-- ============ TOASTS ============ -->
+<div class="toasts" id="toasts"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

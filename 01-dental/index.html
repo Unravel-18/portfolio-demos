@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Odra Dental — Nowoczesna stomatologia we Wrocławiu</title>
+  <meta name="description" content="Nowoczesna stomatologia rodzinna na Krzykach. Umów wizytę online w 2 minuty — także wieczorem i w weekend. Zespół mówiący po angielsku." />
+  <meta name="theme-color" content="#0E5C63" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Odra Dental — dentysta na Krzykach" />
+  <meta property="og:description" content="Umów wizytę online w 2 minuty. Nowoczesna stomatologia dla całej rodziny." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>" />
+</head>
+<body>
+  <!-- Concept badge -->
+  <a class="concept-badge" href="#" title="Self-initiated concept project for portfolio">
+    <span class="dot"></span>Concept project · UI/UX + dev
+  </a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="Odra Dental">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 3c-4 0-6 2.2-9 2.2C4.4 5.2 3 4.4 3 4.4 3 12 4.2 17 6.4 23.2 7.6 26.6 9 29 11 29c1.8 0 2.2-2.4 3.2-4.6.5-1 .9-1.6 1.8-1.6s1.3.6 1.8 1.6C20.8 26.6 21.2 29 23 29c2 0 3.4-2.4 4.6-5.8C29.8 17 31 12 31 4.4c0 0-1.4.8-4 .8-3 0-5-2.2-9-2.2z" />
+        </svg>
+        <span class="logo-text">Odra<em>Dental</em></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Główna nawigacja">
+        <a href="#services" data-i18n="nav_services">Usługi</a>
+        <a href="#doctors" data-i18n="nav_doctors">Lekarze</a>
+        <a href="#prices" data-i18n="nav_prices">Cennik</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="#contact" data-i18n="nav_contact">Kontakt</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:+48710000000" class="header-phone" aria-label="Zadzwoń">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+          <span>+48 71 000 00 00</span>
+        </a>
+        <button class="lang-toggle" id="langToggle" aria-label="Change language">
+          <span class="lang-pl">PL</span><span class="sep">/</span><span class="lang-en">EN</span>
+        </button>
+        <button class="btn btn-primary btn-book" data-book-open data-i18n="nav_book">Umów wizytę</button>
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow" data-i18n="hero_eyebrow">Stomatologia rodzinna · Wrocław, Krzyki</span>
+          <h1 class="hero-title" data-i18n="hero_title">Twój dentysta na Krzykach. Bez czekania, bez stresu.</h1>
+          <p class="hero-sub" data-i18n="hero_sub">Nowoczesna stomatologia dla całej rodziny. Umów wizytę online w 2 minuty — także wieczorem i w weekend.</p>
+          <div class="hero-cta">
+            <button class="btn btn-primary btn-lg" data-book-open data-i18n="hero_cta1">Umów wizytę online</button>
+            <a href="#prices" class="btn btn-ghost btn-lg" data-i18n="hero_cta2">Zobacz cennik</a>
+          </div>
+          <div class="hero-meta">
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <span data-i18n="hero_rating">4,9 / 5 — 320+ opinii w Google</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-photo" role="img" aria-label="Wnętrze kliniki Odra Dental">
+            <div class="photo-grain"></div>
+          </div>
+          <div class="float-card float-card--book">
+            <div class="fc-icon">🗓️</div>
+            <div>
+              <strong data-i18n="fc_book_t">Rezerwacja online 24/7</strong>
+              <span data-i18n="fc_book_s">Potwierdzenie e-mailem</span>
+            </div>
+          </div>
+          <div class="float-card float-card--lang">
+            <span class="fc-flag">🇬🇧</span>
+            <div>
+              <strong data-i18n="fc_lang_t">We speak English</strong>
+              <span data-i18n="fc_lang_s">Expat-friendly clinic</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRUST BAR ===== -->
+    <section class="trust">
+      <div class="container trust-grid">
+        <div class="trust-item"><strong>12</strong><span data-i18n="trust_years">lat doświadczenia</span></div>
+        <div class="trust-item"><strong>6</strong><span data-i18n="trust_docs">lekarzy specjalistów</span></div>
+        <div class="trust-item"><strong>EN</strong><span data-i18n="trust_lang">obsługa po angielsku</span></div>
+        <div class="trust-item"><strong>P</strong><span data-i18n="trust_park">parking przy klinice</span></div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="services_eyebrow">Nasze usługi</span>
+          <h2 class="section-title" data-i18n="services_title">Kompleksowa opieka pod jednym dachem</h2>
+        </div>
+        <div class="services-grid">
+          <article class="service-card" data-service="zachowawcza">
+            <div class="sc-icon">🦷</div>
+            <h3 data-i18n="svc1_t">Stomatologia zachowawcza</h3>
+            <p data-i18n="svc1_d">Leczenie próchnicy i kanałowe pod mikroskopem, bez bólu i w jednej wizycie, gdy to możliwe.</p>
+            <div class="sc-foot"><span class="price-from" data-i18n="from">od</span> <strong>200 zł</strong>
+              <button class="sc-book" data-book-open data-preselect="zachowawcza" data-i18n="book_short">Umów →</button>
+            </div>
+          </article>
+          <article class="service-card" data-service="higiena">
+            <div class="sc-icon">✨</div>
+            <h3 data-i18n="svc2_t">Higienizacja i wybielanie</h3>
+            <p data-i18n="svc2_d">Profesjonalne czyszczenie i bezpieczne wybielanie, dzięki którym uśmiech wygląda zdrowo i naturalnie.</p>
+            <div class="sc-foot"><span class="price-from" data-i18n="from">od</span> <strong>250 zł</strong>
+              <button class="sc-book" data-book-open data-preselect="higiena" data-i18n="book_short">Umów →</button>
+            </div>
+          </article>
+          <article class="service-card" data-service="ortodoncja">
+            <div class="sc-icon">😁</div>
+            <h3 data-i18n="svc3_t">Ortodoncja — nakładki</h3>
+            <p data-i18n="svc3_d">Prostowanie zębów bez metalowego aparatu, z planem leczenia widocznym od pierwszej wizyty.</p>
+            <div class="sc-foot"><span class="price-from" data-i18n="from">od</span> <strong>3 900 zł</strong>
+              <button class="sc-book" data-book-open data-preselect="ortodoncja" data-i18n="book_short">Umów →</button>
+            </div>
+          </article>
+          <article class="service-card" data-service="dziecieca">
+            <div class="sc-icon">🧸</div>
+            <h3 data-i18n="svc4_t">Stomatologia dziecięca</h3>
+            <p data-i18n="svc4_d">Pierwsze wizyty bez strachu: adaptacja, kolorowe wypełnienia i lekarze, którzy lubią dzieci.</p>
+            <div class="sc-foot"><span class="price-from" data-i18n="from">od</span> <strong>150 zł</strong>
+              <button class="sc-book" data-book-open data-preselect="dziecieca" data-i18n="book_short">Umów →</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DOCTORS ===== -->
+    <section class="section section--tint" id="doctors">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="doctors_eyebrow">Nasz zespół</span>
+          <h2 class="section-title" data-i18n="doctors_title">Lekarze, do których wracasz</h2>
+        </div>
+        <div class="doctors-grid">
+          <article class="doctor-card">
+            <div class="doc-photo" style="background-image:url('img/doc-anna.png')"></div>
+            <div class="doc-info">
+              <h3>dr Anna Kowalczyk</h3>
+              <p data-i18n="doc1_spec">Stomatologia zachowawcza, endodoncja</p>
+              <div class="doc-badges"><span class="badge badge-en">🇬🇧 English</span></div>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <div class="doc-photo" style="background-image:url('img/doc-marek.png')"></div>
+            <div class="doc-info">
+              <h3>dr Marek Wiśniewski</h3>
+              <p data-i18n="doc2_spec">Ortodoncja, nakładki przezroczyste</p>
+              <div class="doc-badges"><span class="badge badge-en">🇬🇧 English</span></div>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <div class="doc-photo" style="background-image:url('img/doc-julia.png')"></div>
+            <div class="doc-info">
+              <h3>dr Julia Zając</h3>
+              <p data-i18n="doc3_spec">Stomatologia dziecięca</p>
+              <div class="doc-badges"><span class="badge" data-i18n="doc_kids">👶 Przyjazna dzieciom</span></div>
+            </div>
+          </article>
+          <article class="doctor-card">
+            <div class="doc-photo" style="background-image:url('img/doc-piotr.png')"></div>
+            <div class="doc-info">
+              <h3>dr Piotr Nowak</h3>
+              <p data-i18n="doc4_spec">Higiena, wybielanie, protetyka</p>
+              <div class="doc-badges"><span class="badge badge-en">🇬🇧 English</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section about">
+      <div class="container about-grid">
+        <div class="about-visual"><div class="about-photo"><div class="photo-grain"></div></div></div>
+        <div class="about-copy">
+          <span class="eyebrow" data-i18n="about_eyebrow">O klinice</span>
+          <h2 class="section-title" data-i18n="about_title">Gabinet, do którego bez stresu przyprowadzisz dziecko</h2>
+          <p data-i18n="about_p1">Od 2013 roku leczymy rodziny z Krzyków i całego Wrocławia. Stawiamy na spokojne tempo, leczenie pod mikroskopem i jasne, uczciwe wyceny — zanim zaczniemy, wiesz dokładnie, ile i za co zapłacisz.</p>
+          <ul class="about-list">
+            <li data-i18n="about_l1">Znieczulenie komputerowe — zabieg bez bólu i stresu</li>
+            <li data-i18n="about_l2">Nowoczesny sprzęt i sterylizacja klasy medycznej</li>
+            <li data-i18n="about_l3">Zespół mówiący po polsku, angielsku i ukraińsku</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== REVIEWS ===== -->
+    <section class="section section--tint" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="reviews_eyebrow">Opinie pacjentów</span>
+          <h2 class="section-title" data-i18n="reviews_title">4,9 / 5 w Google — i wiemy dlaczego</h2>
+        </div>
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p data-i18n="rev1">„Zapisałam siebie i syna wieczorem przez telefon, w 2 minuty. Bez dzwonienia i czekania na infolinię. Pani doktor cudownie podeszła do dziecka.”</p>
+            <div class="review-author"><span class="ra-avatar">K</span><div><strong>Katarzyna M.</strong><span data-i18n="rev1_meta">Wrocław · 2 tyg. temu</span></div></div>
+          </article>
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p data-i18n="rev2">„As an expat I was worried about the language — no issues at all. Booked online in English, the dentist explained everything clearly.”</p>
+            <div class="review-author"><span class="ra-avatar">T</span><div><strong>Tom R.</strong><span data-i18n="rev2_meta">Wrocław · 1 mies. temu</span></div></div>
+          </article>
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p data-i18n="rev3">„Wreszcie gabinet, gdzie ceny są jasne od początku. Leczenie kanałowe pod mikroskopem, bez bólu. Polecam całą rodziną.”</p>
+            <div class="review-author"><span class="ra-avatar">P</span><div><strong>Paweł S.</strong><span data-i18n="rev3_meta">Wrocław · 3 tyg. temu</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICES TEASER ===== -->
+    <section class="section" id="prices">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="prices_eyebrow">Cennik</span>
+          <h2 class="section-title" data-i18n="prices_title">Przejrzyste ceny, bez ukrytych kosztów</h2>
+        </div>
+        <div class="prices-card">
+          <ul class="price-list">
+            <li><span data-i18n="p1">Konsultacja z przeglądem</span><b>150 zł</b></li>
+            <li><span data-i18n="p2">Wypełnienie (leczenie próchnicy)</span><b>od 200 zł</b></li>
+            <li><span data-i18n="p3">Leczenie kanałowe pod mikroskopem</span><b>od 600 zł</b></li>
+            <li><span data-i18n="p4">Higienizacja (skaling + piaskowanie)</span><b>250 zł</b></li>
+            <li><span data-i18n="p5">Wybielanie zębów</span><b>800 zł</b></li>
+            <li><span data-i18n="p6">Nakładki ortodontyczne (pełne leczenie)</span><b>od 3 900 zł</b></li>
+            <li><span data-i18n="p7">Wizyta adaptacyjna dziecka</span><b>150 zł</b></li>
+            <li><span data-i18n="p8">Przegląd kontrolny</span><b>100 zł</b></li>
+          </ul>
+          <p class="price-note" data-i18n="price_note">* Ostateczny koszt ustalamy po badaniu i przedstawiamy przed rozpoczęciem leczenia. Płatność gotówką, kartą lub BLIK.</p>
+          <button class="btn btn-primary" data-book-open data-i18n="prices_cta">Umów wizytę</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section section--tint" id="faq">
+      <div class="container container--narrow">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="faq_eyebrow">FAQ</span>
+          <h2 class="section-title" data-i18n="faq_title">Najczęstsze pytania</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary data-i18n="faq1_q">Czy mogę umówić wizytę bez dzwonienia?</summary>
+            <p data-i18n="faq1_a">Tak. Rezerwacja online działa 24/7 — wybierasz usługę, lekarza i termin, a potwierdzenie dostajesz e-mailem wraz z przypomnieniem na 24 godziny przed wizytą.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq2_q">Ile kosztuje pierwsza wizyta?</summary>
+            <p data-i18n="faq2_a">Konsultacja z przeglądem kosztuje 150 zł. Pełny cennik znajdziesz na stronie — bez ukrytych kosztów i niespodzianek.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq3_q">Boję się dentysty. Co możecie zrobić?</summary>
+            <p data-i18n="faq3_a">Dużo. Znieczulenie komputerowe, spokojne tempo i możliwość przerwania zabiegu w każdej chwili. Napisz o lęku w uwagach do rezerwacji — przygotujemy się.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq4_q">Czy przyjmujecie dzieci?</summary>
+            <p data-i18n="faq4_a">Tak, mamy osobny gabinet dziecięcy i lekarzy specjalizujących się w stomatologii dziecięcej. Pierwsza wizyta to spokojna adaptacja, bez leczenia na siłę.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <span class="eyebrow" data-i18n="contact_eyebrow">Kontakt</span>
+          <h2 class="section-title" data-i18n="contact_title">Odwiedź nas na Krzykach</h2>
+          <ul class="contact-list">
+            <li><span class="ci-label" data-i18n="ci_addr">Adres</span><span>ul. Powstańców Śląskich 95, 53-332 Wrocław</span></li>
+            <li><span class="ci-label" data-i18n="ci_hours">Godziny</span><span data-i18n="ci_hours_v">Pon–Pt 8:00–20:00 · Sob 9:00–14:00</span></li>
+            <li><span class="ci-label" data-i18n="ci_phone">Telefon</span><a href="tel:+48710000000">+48 71 000 00 00</a></li>
+            <li><span class="ci-label">E-mail</span><a href="mailto:recepcja@odradental.pl">recepcja@odradental.pl</a></li>
+          </ul>
+          <button class="btn btn-primary btn-lg" data-book-open data-i18n="contact_cta">Umów wizytę online</button>
+        </div>
+        <div class="contact-map" aria-label="Mapa lokalizacji kliniki">
+          <div class="map-grid"></div>
+          <div class="map-pin">📍</div>
+          <div class="map-label">Odra Dental · Krzyki</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="logo logo--footer">
+          <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c-4 0-6 2.2-9 2.2C4.4 5.2 3 4.4 3 4.4 3 12 4.2 17 6.4 23.2 7.6 26.6 9 29 11 29c1.8 0 2.2-2.4 3.2-4.6.5-1 .9-1.6 1.8-1.6s1.3.6 1.8 1.6C20.8 26.6 21.2 29 23 29c2 0 3.4-2.4 4.6-5.8C29.8 17 31 12 31 4.4c0 0-1.4.8-4 .8-3 0-5-2.2-9-2.2z"/></svg>
+          <span class="logo-text">Odra<em>Dental</em></span>
+        </a>
+        <p data-i18n="footer_tag">Nowoczesna stomatologia rodzinna we Wrocławiu.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_nav">Nawigacja</h4>
+        <a href="#services" data-i18n="nav_services">Usługi</a>
+        <a href="#doctors" data-i18n="nav_doctors">Lekarze</a>
+        <a href="#prices" data-i18n="nav_prices">Cennik</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_contact">Kontakt</h4>
+        <span>ul. Powstańców Śląskich 95</span>
+        <span>53-332 Wrocław</span>
+        <a href="tel:+48710000000">+48 71 000 00 00</a>
+        <a href="mailto:recepcja@odradental.pl">recepcja@odradental.pl</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_legal">Informacje</h4>
+        <a href="#" data-i18n="footer_privacy">Polityka prywatności</a>
+        <a href="#" data-i18n="footer_rodo">RODO</a>
+        <span>NIP: 899-000-00-00</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Odra Dental. <span data-i18n="footer_rights">Wszelkie prawa zastrzeżone.</span></span>
+      <span class="footer-credit" data-i18n="footer_credit">Concept & build — portfolio project</span>
+    </div>
+  </footer>
+
+  <!-- ===== BOOKING MODAL ===== -->
+  <div class="booking-overlay" id="booking" aria-hidden="true">
+    <div class="booking-modal" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+      <div class="booking-progress">
+        <div class="bp-track"><div class="bp-fill" id="bpFill"></div></div>
+        <div class="bp-steps">
+          <span class="bp-step is-active" data-step="1" data-i18n="step1">Usługa</span>
+          <span class="bp-step" data-step="2" data-i18n="step2">Lekarz</span>
+          <span class="bp-step" data-step="3" data-i18n="step3">Termin</span>
+          <span class="bp-step" data-step="4" data-i18n="step4">Dane</span>
+        </div>
+      </div>
+
+      <div class="booking-body">
+        <!-- STEP 1 -->
+        <div class="booking-step is-active" data-panel="1">
+          <h2 id="bookingTitle" class="booking-h" data-i18n="b_step1_h">Jaką usługę wybierasz?</h2>
+          <div class="choice-grid" id="serviceChoices">
+            <button class="choice" data-value="zachowawcza"><span class="ch-emoji">🦷</span><span data-i18n="svc1_t">Stomatologia zachowawcza</span></button>
+            <button class="choice" data-value="higiena"><span class="ch-emoji">✨</span><span data-i18n="svc2_t">Higienizacja i wybielanie</span></button>
+            <button class="choice" data-value="ortodoncja"><span class="ch-emoji">😁</span><span data-i18n="svc3_t">Ortodoncja — nakładki</span></button>
+            <button class="choice" data-value="dziecieca"><span class="ch-emoji">🧸</span><span data-i18n="svc4_t">Stomatologia dziecięca</span></button>
+            <button class="choice choice--wide" data-value="konsultacja"><span class="ch-emoji">💬</span><span data-i18n="b_dontknow">Nie wiem / konsultacja</span></button>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="booking-step" data-panel="2">
+          <h2 class="booking-h" data-i18n="b_step2_h">Wybierz lekarza</h2>
+          <div class="choice-grid choice-grid--docs" id="doctorChoices"></div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="booking-step" data-panel="3">
+          <h2 class="booking-h" data-i18n="b_step3_h">Wybierz termin</h2>
+          <div class="calendar" id="calendar"></div>
+          <div class="slots" id="slots">
+            <p class="slots-hint" data-i18n="b_pick_day">Wybierz dzień, aby zobaczyć wolne godziny.</p>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="booking-step" data-panel="4">
+          <h2 class="booking-h" data-i18n="b_step4_h">Twoje dane</h2>
+          <div class="booking-summary" id="bookingSummary"></div>
+          <form class="booking-form" id="bookingForm" novalidate>
+            <label class="field">
+              <span data-i18n="f_name">Imię i nazwisko *</span>
+              <input type="text" name="name" autocomplete="name" required />
+              <em class="field-err" data-i18n="e_name">Podaj imię i nazwisko.</em>
+            </label>
+            <label class="field">
+              <span data-i18n="f_phone">Telefon *</span>
+              <input type="tel" name="phone" placeholder="+48 600 000 000" autocomplete="tel" required />
+              <em class="field-err" data-i18n="e_phone">Podaj numer w formacie +48 600 000 000.</em>
+            </label>
+            <label class="field">
+              <span data-i18n="f_email">E-mail *</span>
+              <input type="email" name="email" placeholder="jan@przyklad.pl" autocomplete="email" required />
+              <em class="field-err" data-i18n="e_email">Podaj poprawny adres e-mail.</em>
+            </label>
+            <div class="field">
+              <span data-i18n="f_first">Czy to pierwsza wizyta? *</span>
+              <div class="toggle-group" id="firstVisit">
+                <button type="button" class="tg-opt is-active" data-value="yes" data-i18n="f_yes">Tak</button>
+                <button type="button" class="tg-opt" data-value="no" data-i18n="f_no">Nie</button>
+              </div>
+            </div>
+            <label class="field field--wide">
+              <span data-i18n="f_notes">Uwagi (np. ból, lęk przed dentystą)</span>
+              <textarea name="notes" rows="2"></textarea>
+            </label>
+            <label class="checkbox field--wide">
+              <input type="checkbox" name="rodo" required />
+              <span data-i18n="f_rodo">Wyrażam zgodę na przetwarzanie danych w celu realizacji rezerwacji. *</span>
+            </label>
+          </form>
+        </div>
+
+        <!-- SUCCESS -->
+        <div class="booking-step booking-success" data-panel="success">
+          <div class="success-check">✓</div>
+          <h2 class="booking-h" data-i18n="b_success_h">Rezerwacja potwierdzona!</h2>
+          <p class="success-sub" data-i18n="b_success_s">Do zobaczenia 🦷 Szczegóły wysłaliśmy na Twój e-mail.</p>
+          <div class="booking-summary" id="successSummary"></div>
+          <div class="success-actions">
+            <button class="btn btn-ghost" id="icsBtn" data-i18n="b_ics">Dodaj do kalendarza</button>
+            <button class="btn btn-primary" data-book-close data-i18n="b_close">Wróć na stronę</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-foot" id="bookingFoot">
+        <div class="foot-left">
+          <button class="btn btn-soft" data-book-close data-i18n="b_cancel">Zamknij</button>
+          <button class="btn btn-ghost" id="btnBack" data-i18n="b_back">Wstecz</button>
+        </div>
+        <button class="btn btn-primary" id="btnNext" disabled data-i18n="b_next">Dalej</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slot-taken modal -->
+  <div class="taken-overlay" id="takenModal" aria-hidden="true">
+    <div class="taken-box" role="alertdialog" aria-labelledby="takenTitle">
+      <h3 id="takenTitle" data-i18n="taken_h">Ten termin został właśnie zajęty.</h3>
+      <p data-i18n="taken_s">Wybierz jeden z najbliższych wolnych terminów:</p>
+      <div class="taken-slots" id="takenSlots"></div>
+    </div>
+  </div>
+
+  <button class="mobile-book-bar" data-book-open>
+    <span data-i18n="nav_book">Umów wizytę</span>
+    <span class="mbb-sub" data-i18n="mbb_sub">online · 24/7</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
