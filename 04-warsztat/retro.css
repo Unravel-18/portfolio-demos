@@ -1,0 +1,142 @@
+/* =========================================================
+   Auto-Naprawa Pawlak — WERSJA 2010 (archiwalna)
+   + neutralny przełącznik ER / toast (chrome ponad obiema wersjami)
+   ========================================================= */
+
+/* ---- era visibility (root class on <body>) ---- */
+body.era-2026 #site-2010{display:none}
+body.era-2010 #site-2026{display:none}
+body.era-2010{background:#808080}
+
+/* ---- neutral era switch ---- */
+.era-switch{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:1000;
+  display:flex;align-items:center;gap:12px;background:rgba(20,22,26,.92);
+  backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:100px;
+  padding:7px 8px 7px 16px;box-shadow:0 8px 30px rgba(0,0,0,.35);
+  font-family:"Inter Tight",system-ui,sans-serif}
+.era-label{color:#c9ced6;font-size:12px;font-weight:600;letter-spacing:.02em}
+.era-pills{display:flex;background:rgba(255,255,255,.08);border-radius:100px;padding:3px}
+.era-pill{border:none;background:transparent;color:#c9ced6;font-family:"JetBrains Mono",monospace;
+  font-weight:700;font-size:14px;padding:6px 16px;border-radius:100px;cursor:pointer;transition:.2s}
+.era-pill:hover{color:#fff}
+.era-pill[aria-pressed="true"]{background:#FF4D12;color:#fff}
+.era-hint{color:#8b929b;font-size:12px;font-family:"JetBrains Mono",monospace;min-width:78px}
+body.era-2010 .era-hint::after{content:attr(data-hint-2010)}
+body.era-2026 .era-hint::after{content:attr(data-hint-2026)}
+@media (max-width:560px){.era-label{display:none}.era-switch{gap:8px;padding:6px 6px 6px 12px}.era-hint{display:none}}
+
+/* ---- toast ---- */
+.era-toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);z-index:1000;
+  background:#171A1E;color:#fff;font-family:"Inter Tight",sans-serif;font-size:14px;font-weight:500;
+  padding:12px 20px;border-radius:12px;box-shadow:0 10px 34px rgba(0,0,0,.3);
+  opacity:0;pointer-events:none;transition:.32s cubic-bezier(.16,1,.3,1);max-width:88vw}
+.era-toast.show{opacity:1;transform:translate(-50%,0)}
+.era-toast b{color:#FF4D12}
+
+/* =========================================================
+   RETRO 2010 world — deliberately period-accurate (~2009-2011)
+   ========================================================= */
+#site-2010{font-family:"Times New Roman",Times,serif;font-size:15px;color:#000;padding:64px 0 40px}
+#site-2010 a{color:#0000cc;text-decoration:underline}
+#site-2010 a:visited{color:#551a8b}
+#site-2010 table{border-collapse:collapse}
+
+.r-frame{background:#ffffff;border:2px solid #333;margin-top:8px;
+  box-shadow:0 0 0 6px #6d6d6d}
+
+/* header — WordArt + carbon tile + flames */
+.r-head-cell{background:#111 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><rect width='8' height='8' fill='%23161616'/><rect width='4' height='4' fill='%231e1e1e'/><rect x='4' y='4' width='4' height='4' fill='%231e1e1e'/></svg>");
+  padding:16px 20px;text-align:center;border-bottom:3px ridge #ffcc00}
+.r-wordart{font-family:"Arial Black","Impact",sans-serif;font-weight:900;font-size:34px;
+  font-style:italic;letter-spacing:1px;
+  background:linear-gradient(#fff8a0,#ffd000 40%,#ff8a00 75%,#c85000);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-text-stroke:1.5px #3a1500;
+  filter:drop-shadow(2px 2px 0 rgba(0,0,0,.55));vertical-align:middle}
+.r-flame,.r-wrench{font-size:30px;vertical-align:middle}
+.r-flame{filter:hue-rotate(-10deg)}
+.r-subttl{color:#ffd34d;font-family:"Comic Sans MS",cursive;font-size:13px;margin-top:8px;font-style:normal}
+
+/* marquee */
+.r-marquee{background:#000;color:#ff2a2a;font-weight:bold;font-size:15px;padding:6px 0;
+  border-top:1px solid #ffcc00;border-bottom:1px solid #ffcc00;font-family:"Times New Roman",serif}
+
+/* body layout */
+.r-body{background:#f0f0f0}
+.r-menu{background:#dcdcdc;padding:12px 10px;border-right:2px solid #999;vertical-align:top}
+.r-menu-ttl{font-family:"Comic Sans MS",cursive;font-weight:bold;color:#003399;font-size:14px;
+  text-align:center;margin-bottom:10px}
+.r-btn{display:block;background:#c0c0c0;border:3px outset #eaeaea;color:#000 !important;
+  text-decoration:none !important;padding:6px 8px;margin:0 0 7px;font-size:13px;font-weight:bold;
+  text-align:center;font-family:Arial,sans-serif}
+.r-btn:hover{background:#d8d8d8}
+.r-btn:active{border-style:inset}
+.r-btn-inline{display:inline-block;margin-top:6px}
+
+/* music widget */
+.r-music{margin:14px 2px;padding:7px;background:#000;border:1px solid #555;color:#0f0;
+  font-family:"Courier New",monospace;font-size:12px;text-align:center}
+.r-music a{color:#0f0 !important}
+.r-note{color:#0f0;font-size:14px}
+
+/* visitor counter */
+.r-counter{margin:12px 2px;text-align:center}
+.r-counter-ttl{font-size:11px;color:#333;margin-bottom:3px}
+.r-counter-num{display:inline-block;background:#000;color:#39ff14;font-family:"Courier New",monospace;
+  font-weight:bold;font-size:16px;letter-spacing:1px;padding:3px 6px;border:2px inset #777}
+
+/* badges */
+.r-badges{margin-top:14px;display:flex;flex-direction:column;gap:8px;align-items:center}
+.r-badge{background:#000;color:#fff;font-size:9.5px;line-height:1.3;text-align:center;padding:5px 6px;
+  border:1px solid #4a6;font-family:Arial,sans-serif;width:130px}
+.r-badge b{color:#6cf}
+.r-badge2{background:#003399;border-color:#fc0}
+
+/* content */
+.r-content{background:#fff;padding:16px 20px;vertical-align:top}
+.r-h1{font-family:"Comic Sans MS",cursive;color:#003399;font-size:22px;font-weight:bold;
+  margin:0 0 12px;text-shadow:1px 1px 0 #ccc;border-bottom:2px dashed #ff8a00;padding-bottom:6px}
+#site-2010 p{margin:0 0 11px}
+.r-hr{color:#ff8a00;letter-spacing:-1px;overflow:hidden;white-space:nowrap}
+.r-list{margin:0 0 12px 6px;list-style:none}
+.r-list li{margin:5px 0;color:#003399}
+
+/* digicam photo */
+.r-photo{position:relative;display:inline-block;margin:8px 0}
+.r-photo-box{position:relative;width:280px;height:180px;background:linear-gradient(135deg,#8a95a0,#5a636d);
+  border:4px solid #fff;box-shadow:0 0 0 1px #888,3px 3px 6px rgba(0,0,0,.4)}
+.r-photo-inner{display:grid;place-items:center;height:100%;color:#e8edf2;font-family:Arial;font-size:14px;
+  text-shadow:0 1px 2px #000}
+.r-photo-stamp{position:absolute;right:6px;bottom:4px;color:#ffb300;font-family:"Courier New",monospace;
+  font-size:13px;font-weight:bold;text-shadow:1px 1px 2px #000;letter-spacing:1px}
+.r-nowosc{position:absolute;top:-10px;left:-14px;background:#e00;color:#ff0;font-family:"Arial Black",sans-serif;
+  font-weight:900;font-size:14px;padding:4px 8px;border:2px solid #ff0;transform:rotate(-14deg);
+  animation:rblink .8s steps(2,start) infinite}
+@keyframes rblink{50%{opacity:.25}}
+
+/* cennik table */
+.r-cennik{margin:6px 0 12px;border:2px solid #003399;width:auto}
+.r-cennik th{background:#003399;color:#ffcc00;padding:6px 14px;font-family:Arial;font-size:14px}
+.r-cennik td{background:#e8eeff;color:#cc0000;font-weight:bold;padding:5px 14px;border:1px solid #99a}
+.r-cennik td:first-child{color:#000;font-weight:normal}
+
+/* comic-sans aktualnosci */
+.r-comic{font-family:"Comic Sans MS",cursive;font-size:14px;background:#fffbe6;border-left:4px solid #ffcc00;
+  padding:6px 10px;margin:0 0 8px}
+
+/* gallery */
+.r-gal{display:flex;flex-wrap:wrap;gap:10px}
+.r-gal-i{width:130px;height:96px;background:linear-gradient(135deg,#9aa4ae,#616a74);border:3px solid #fff;
+  box-shadow:2px 2px 4px rgba(0,0,0,.35);display:grid;place-items:center;color:#eef;font-family:Arial;font-size:12px}
+
+/* footer */
+.r-foot{background:#003399;color:#cdd8ff;font-size:11px;text-align:center;padding:8px 12px;
+  font-family:Arial,sans-serif}
+.r-foot a{color:#ffcc00 !important}
+
+.r-disclaimer{text-align:center;color:#eee;font-family:"Inter Tight",sans-serif;font-size:12px;
+  margin:14px auto 0;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+
+/* retro is intentionally NOT responsive (period-accurate: no viewport handling).
+   On phones it stays 1000px wide and requires pinch-zoom — that's the point,
+   and it becomes a measured "before" metric in the case study. */

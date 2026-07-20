@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Auto-Serwis Pawlak — redesign 2010 → 2026</title>
+<meta name="description" content="Koncepcyjny redesign strony warsztatu samochodowego: porównanie wersji z 2010 i 2026 roku. Kalkulator wyceny, śledzenie naprawy, click-to-call." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Archivo+Expanded:wght@700;800;900&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="retro.css" />
+</head>
+<body class="era-2026">
+
+<!-- ============ ERA TOGGLE (neutral, above both) ============ -->
+<div class="era-switch" role="group" aria-label="Przełącznik wersji strony">
+  <span class="era-label">Wersja&nbsp;strony</span>
+  <div class="era-pills">
+    <button class="era-pill" data-era="2010" aria-pressed="false">2010</button>
+    <button class="era-pill" data-era="2026" aria-pressed="true">2026</button>
+  </div>
+  <span class="era-hint" data-hint-2010="⇦ tak było" data-hint-2026="odświeżone ⇨"></span>
+</div>
+
+<!-- ============================================================= -->
+<!-- ==================  WERSJA 2010 (ДО)  ======================== -->
+<!-- ============================================================= -->
+<div id="site-2010" aria-hidden="true">
+<table class="r-frame" width="1000" align="center" cellpadding="0" cellspacing="0" border="0">
+<tr><td>
+
+  <!-- header -->
+  <table class="r-head" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td class="r-head-cell">
+      <span class="r-flame">🔥</span>
+      <span class="r-wordart">AUTO-NAPRAWA PAWLAK s.c.</span>
+      <span class="r-wrench">🔧</span>
+      <div class="r-subttl">P.H.U. &middot; Gliwice &middot; od 1998 roku &middot; tel. w zakładce KONTAKT</div>
+    </td>
+  </tr></table>
+
+  <!-- marquee promo -->
+  <marquee class="r-marquee" scrollamount="6" behavior="scroll" direction="left">
+    ✸✸✸ PROMOCJA !!! KLIMATYZACJA + PRZEGLĄD GRATIS !!! ZAPRASZAMY !!! ✸✸✸ Nowy prostownik do diagnostyki !!! ✸✸✸
+  </marquee>
+
+  <!-- body: left menu + content -->
+  <table class="r-body" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+
+    <!-- left menu -->
+    <td class="r-menu" width="180" valign="top">
+      <div class="r-menu-ttl">::: MENU :::</div>
+      <a href="#" class="r-btn" data-r="home">Strona główna</a>
+      <a href="#" class="r-btn" data-r="oferta">Oferta</a>
+      <a href="#" class="r-btn" data-r="cennik">Cennik</a>
+      <a href="#" class="r-btn" data-r="galeria">Galeria</a>
+      <a href="#" class="r-btn" data-r="aktualnosci">Aktualności</a>
+      <a href="#" class="r-btn" data-r="kontakt">Kontakt</a>
+      <a href="#" class="r-btn" data-r="ksiega">Księga gości</a>
+
+      <div class="r-music" title="Odtwarzacz MIDI">
+        <span class="r-note">♪</span> muzyka:
+        <a href="#" class="r-music-link" data-music="on">wł</a> /
+        <a href="#" class="r-music-link" data-music="off">wył</a>
+      </div>
+
+      <div class="r-counter">
+        <div class="r-counter-ttl">Licznik odwiedzin:</div>
+        <div class="r-counter-num">0&nbsp;0&nbsp;4&nbsp;2&nbsp;1&nbsp;7</div>
+      </div>
+
+      <div class="r-badges">
+        <div class="r-badge">Best viewed in<br><b>Internet Explorer 6.0</b><br>rozdz. 1024×768</div>
+        <div class="r-badge r-badge2">✔ Strona optymalizowana<br>pod IE</div>
+      </div>
+    </td>
+
+    <!-- content -->
+    <td class="r-content" valign="top">
+
+      <div class="r-page" data-page="home">
+        <h1 class="r-h1">Witamy na naszej stronie internetowej!</h1>
+        <p>Firma <b>P.H.U. AUTO-NAPRAWA PAWLAK s.c.</b> to rodzinny warsztat samochodowy z
+        <b>Gliwic</b>, działający nieprzerwanie od <font color="#cc0000">1998 roku</font>. Zajmujemy
+        się kompleksową naprawą pojazdów wszystkich marek.</p>
+        <p>Wykonujemy przeglądy, naprawy silnika, zawieszenia, układu hamulcowego oraz nabijanie
+        klimatyzacji. <font color="#0000cc"><u>Zapraszamy!!!</u></font></p>
+
+        <div class="r-photo">
+          <div class="r-photo-box">
+            <div class="r-photo-inner">📷 warsztat_2010.jpg</div>
+            <span class="r-photo-stamp">14.06.2010</span>
+          </div>
+          <span class="r-nowosc">NOWOŚĆ!</span>
+        </div>
+
+        <p class="r-hr">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+        <p><b><font color="#cc0000">UWAGA:</font></b> ceny i dostępność usług prosimy potwierdzać
+        <u>telefonicznie</u>. Numer telefonu znajdą Państwo w zakładce <b>KONTAKT</b>.</p>
+      </div>
+
+      <div class="r-page" data-page="cennik" hidden>
+        <h1 class="r-h1">Cennik usług</h1>
+        <table class="r-cennik" cellpadding="4" cellspacing="0" border="2">
+          <tr><th>Usługa</th><th>Cena</th></tr>
+          <tr><td>Przegląd okresowy</td><td>od 150 zł</td></tr>
+          <tr><td>Wymiana oleju</td><td>od 90 zł</td></tr>
+          <tr><td>Nabicie klimatyzacji</td><td>zadzwoń i zapytaj</td></tr>
+          <tr><td>Naprawa hamulców</td><td>zadzwoń i zapytaj</td></tr>
+          <tr><td>Diagnostyka komputerowa</td><td>od 100 zł</td></tr>
+          <tr><td>Wymiana opon</td><td>zadzwoń i zapytaj</td></tr>
+        </table>
+        <p><font color="#cc0000"><b>Ceny mogą ulec zmianie. Prosimy o kontakt telefoniczny!</b></font></p>
+      </div>
+
+      <div class="r-page" data-page="aktualnosci" hidden>
+        <h1 class="r-h1">Aktualności</h1>
+        <p class="r-comic"><b>14.03.2011</b> — Zapraszamy na sezonową wymianę opon! Komplet w cenie
+        od 80 zł. 😊</p>
+        <p class="r-comic"><b>02.11.2010</b> — Posiadamy już nowy tester diagnostyczny do
+        samochodów francuskich!</p>
+        <p class="r-comic"><b>14.06.2010</b> — Nowe zdjęcia w Galerii!!!</p>
+      </div>
+
+      <div class="r-page" data-page="kontakt" hidden>
+        <h1 class="r-h1">Kontakt</h1>
+        <p>P.H.U. AUTO-NAPRAWA PAWLAK s.c.<br>
+        ul. Przykładowa 14, 44-100 Gliwice</p>
+        <p>Tel. kom.: <b>500&nbsp;600&nbsp;700</b><br>
+        e-mail: <a href="#">warsztat_pawlak@op.pl</a></p>
+        <p>Czynne: pon-pt 8:00-17:00, sob 8:00-13:00</p>
+      </div>
+
+      <div class="r-page" data-page="oferta" hidden>
+        <h1 class="r-h1">Oferta</h1>
+        <ul class="r-list">
+          <li>» Przeglądy okresowe i rejestracyjne</li>
+          <li>» Naprawy silników i skrzyń biegów</li>
+          <li>» Układ hamulcowy i zawieszenie</li>
+          <li>» Nabijanie i odgrzybianie klimatyzacji</li>
+          <li>» Diagnostyka komputerowa</li>
+          <li>» Wymiana i przechowywanie opon</li>
+        </ul>
+      </div>
+
+      <div class="r-page" data-page="galeria" hidden>
+        <h1 class="r-h1">Galeria</h1>
+        <div class="r-gal">
+          <div class="r-gal-i">📷 zdjecie1.jpg</div>
+          <div class="r-gal-i">📷 zdjecie2.jpg</div>
+          <div class="r-gal-i">📷 zdjecie3.jpg</div>
+          <div class="r-gal-i">📷 zdjecie4.jpg</div>
+        </div>
+      </div>
+
+      <div class="r-page" data-page="ksiega" hidden>
+        <h1 class="r-h1">Księga gości</h1>
+        <p class="r-comic"><b>Krzysiek G.</b>: Polecam, szybko i solidnie!!!</p>
+        <p class="r-comic"><b>anonim</b>: super serwis pozdrawiam</p>
+        <p><a href="#" class="r-btn r-btn-inline">Wpisz się do księgi</a></p>
+      </div>
+
+    </td>
+  </tr></table>
+
+  <!-- footer -->
+  <table class="r-foot" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td>
+    Ostatnia aktualizacja: 14.03.2011 &middot; Copyright © 2009-2011 Auto-Naprawa Pawlak &middot;
+    Wszelkie prawa zastrzeżone &middot; <a href="#">Księga gości</a>
+  </td></tr></table>
+
+</td></tr>
+</table>
+<div class="r-disclaimer">Fikcyjna firma — koncepcyjny redesign (wersja archiwalna).</div>
+</div><!-- /#site-2010 -->
+
+
+<!-- ============================================================= -->
+<!-- ==================  WERSJA 2026 (ПІСЛЯ)  ==================== -->
+<!-- ============================================================= -->
+<div id="site-2026">
+
+  <!-- sticky topbar -->
+  <header class="m-top">
+    <div class="m-top-in">
+      <a href="#hero" class="m-brand">
+        <span class="m-brand-mark">P</span>
+        <span class="m-brand-tx">Auto-Serwis <b>Pawlak</b></span>
+      </a>
+      <nav class="m-nav" aria-label="Główna nawigacja">
+        <a href="#uslugi">Usługi</a>
+        <a href="#wycena">Wycena</a>
+        <a href="#status">Śledź naprawę</a>
+        <a href="#opinie">Opinie</a>
+      </nav>
+      <div class="m-top-cta">
+        <a href="tel:+48500600700" class="m-tel" aria-label="Zadzwoń: 500 600 700">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11 11 0 003.4.55 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11 11 0 00.55 3.4 1 1 0 01-.24 1z"/></svg>
+          <span>500&nbsp;600&nbsp;700</span>
+        </a>
+        <a href="#kontakt" class="m-btn m-btn-primary">Umów wizytę</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+  <!-- HERO -->
+  <section class="m-hero" id="hero">
+    <div class="m-hero-in">
+      <div class="m-hero-tx">
+        <span class="m-eyebrow">Warsztat samochodowy · Gliwice</span>
+        <h1>Serwis, któremu&nbsp;ufasz <em>od 1998 roku.</em></h1>
+        <p class="m-lead">Przeglądy, klimatyzacja, hamulce i diagnostyka — z wyceną online i statusem
+          naprawy na Twoim telefonie. Bez niespodzianek na fakturze.</p>
+        <div class="m-hero-cta">
+          <a href="#wycena" class="m-btn m-btn-primary m-btn-lg">Wylicz cenę naprawy</a>
+          <a href="tel:+48500600700" class="m-btn m-btn-ghost m-btn-lg">Zadzwoń teraz</a>
+        </div>
+        <ul class="m-trust">
+          <li><b>26</b> lat doświadczenia</li>
+          <li><b>24</b> mies. gwarancji</li>
+          <li>Faktura <b>VAT</b></li>
+        </ul>
+      </div>
+      <div class="m-hero-art" aria-hidden="true">
+        <div class="m-hero-card">
+          <div class="m-hero-card-top">
+            <span class="m-dot"></span> Auto na podnośniku #3
+          </div>
+          <div class="m-gauge">
+            <svg viewBox="0 0 200 120">
+              <path class="g-track" d="M20 110 A80 80 0 0 1 180 110" />
+              <path class="g-fill" d="M20 110 A80 80 0 0 1 180 110" />
+            </svg>
+            <div class="m-gauge-tx"><b>OK</b><span>diagnostyka</span></div>
+          </div>
+          <div class="m-hero-rows">
+            <div class="m-hr-row"><span>Hamulce</span><i class="ok">✓ sprawne</i></div>
+            <div class="m-hr-row"><span>Klimatyzacja</span><i class="warn">nabić czynnik</i></div>
+            <div class="m-hr-row"><span>Zawieszenie</span><i class="ok">✓ sprawne</i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USŁUGI -->
+  <section class="m-sec" id="uslugi">
+    <div class="m-sec-in">
+      <header class="m-sec-head">
+        <span class="m-kicker">01 — Usługi</span>
+        <h2>Co robimy — i ile to kosztuje</h2>
+        <p>Ceny orientacyjne „od". Dokładną wycenę policzysz w kalkulatorze poniżej.</p>
+      </header>
+      <div class="m-serv-grid">
+        <article class="m-serv"><div class="m-serv-ic">🔧</div><h3>Przeglądy</h3><p>Okresowe i rejestracyjne, protokół usterek.</p><span class="m-price">od 150 zł</span></article>
+        <article class="m-serv"><div class="m-serv-ic">❄️</div><h3>Klimatyzacja</h3><p>Nabicie, odgrzybianie, kontrola szczelności.</p><span class="m-price">od 180 zł</span></article>
+        <article class="m-serv"><div class="m-serv-ic">🛑</div><h3>Hamulce</h3><p>Klocki, tarcze, płyn, diagnostyka ABS.</p><span class="m-price">od 260 zł</span></article>
+        <article class="m-serv"><div class="m-serv-ic">🔩</div><h3>Zawieszenie</h3><p>Amortyzatory, wahacze, geometria kół.</p><span class="m-price">od 300 zł</span></article>
+        <article class="m-serv"><div class="m-serv-ic">💻</div><h3>Diagnostyka</h3><p>Odczyt błędów, analiza, jasny raport.</p><span class="m-price">od 120 zł</span></article>
+        <article class="m-serv"><div class="m-serv-ic">🛞</div><h3>Opony</h3><p>Wymiana, wyważanie, sezonowe przechowanie.</p><span class="m-price">od 80 zł</span></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- KALKULATOR WYCENY -->
+  <section class="m-sec m-sec-dark" id="wycena">
+    <div class="m-sec-in">
+      <header class="m-sec-head">
+        <span class="m-kicker">02 — Kalkulator</span>
+        <h2>Policz cenę w 30 sekund</h2>
+        <p>Trzy kroki — orientacyjny widełki i czas. Bez dzwonienia i czekania na oddzwonienie.</p>
+      </header>
+
+      <div class="m-calc">
+        <div class="m-calc-form">
+          <!-- step 1: klasa -->
+          <div class="m-field">
+            <label class="m-field-lbl"><span class="m-step">1</span> Klasa pojazdu</label>
+            <div class="m-choices" data-group="klasa">
+              <button class="m-choice is-on" data-val="miejskie">Miejskie<small>np. Corsa, Panda</small></button>
+              <button class="m-choice" data-val="kompakt">Kompakt<small>np. Golf, Focus</small></button>
+              <button class="m-choice" data-val="suv">SUV / VAN<small>np. Kuga, Transit</small></button>
+              <button class="m-choice" data-val="premium">Premium<small>np. BMW, Audi</small></button>
+            </div>
+          </div>
+          <!-- step 2: usługa -->
+          <div class="m-field">
+            <label class="m-field-lbl"><span class="m-step">2</span> Usługa</label>
+            <div class="m-choices m-choices-2" data-group="usluga">
+              <button class="m-choice is-on" data-val="przeglad">Przegląd</button>
+              <button class="m-choice" data-val="klima">Klimatyzacja</button>
+              <button class="m-choice" data-val="hamulce">Hamulce</button>
+              <button class="m-choice" data-val="zawieszenie">Zawieszenie</button>
+              <button class="m-choice" data-val="diagnostyka">Diagnostyka</button>
+              <button class="m-choice" data-val="opony">Opony</button>
+            </div>
+          </div>
+          <!-- step 3: opcje -->
+          <div class="m-field" id="calc-opts">
+            <label class="m-field-lbl"><span class="m-step">3</span> Opcje dodatkowe</label>
+            <div class="m-opts" data-group="opcje"><!-- filled by JS --></div>
+          </div>
+        </div>
+
+        <!-- result -->
+        <aside class="m-calc-out" aria-live="polite">
+          <div class="m-out-lbl">Szacowany koszt</div>
+          <div class="m-out-price"><span id="calc-lo">150</span>–<span id="calc-hi">200</span><small>zł</small></div>
+          <div class="m-out-row"><span>Czas w warsztacie</span><b id="calc-time">~1 godz.</b></div>
+          <div class="m-out-row"><span>Wybrany pojazd</span><b id="calc-veh">Miejskie</b></div>
+          <div class="m-out-note">Widełki orientacyjne. Ostateczną cenę potwierdzamy po oględzinach — zawsze przed rozpoczęciem pracy.</div>
+          <a href="#kontakt" class="m-btn m-btn-primary m-btn-block" id="calc-book">Umów z tą wyceną →</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ŚLEDZENIE NAPRAWY -->
+  <section class="m-sec" id="status">
+    <div class="m-sec-in">
+      <header class="m-sec-head">
+        <span class="m-kicker">03 — Śledzenie naprawy</span>
+        <h2>Sprawdź, co dzieje się z Twoim autem</h2>
+        <p>Podaj numer zlecenia z karty przyjęcia. Koniec z dzwonieniem „czy już gotowe?".</p>
+      </header>
+
+      <div class="m-track">
+        <form class="m-track-form" id="track-form">
+          <label for="track-in" class="sr-only">Numer zlecenia</label>
+          <input id="track-in" class="m-track-in" type="text" placeholder="np. GLW-2481" autocomplete="off" />
+          <button type="submit" class="m-btn m-btn-primary">Sprawdź</button>
+        </form>
+        <div class="m-track-demo">Dema: <button class="m-chip" data-order="GLW-2481">GLW-2481</button>
+          <button class="m-chip" data-order="GLW-2490">GLW-2490</button>
+          <button class="m-chip" data-order="GLW-2503">GLW-2503</button></div>
+
+        <div class="m-track-result" id="track-result" hidden><!-- filled by JS --></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JAK PRACUJEMY -->
+  <section class="m-sec m-sec-soft" id="proces">
+    <div class="m-sec-in">
+      <header class="m-sec-head">
+        <span class="m-kicker">04 — Jak pracujemy</span>
+        <h2>Cztery kroki, zero niespodzianek</h2>
+      </header>
+      <ol class="m-steps">
+        <li><span class="m-step-n">1</span><h3>Zgłoszenie</h3><p>Umawiasz wizytę online lub telefonicznie. Wybierasz termin.</p></li>
+        <li><span class="m-step-n">2</span><h3>Wycena</h3><p>Oglądamy auto i podajemy cenę — zawsze przed naprawą.</p></li>
+        <li><span class="m-step-n">3</span><h3>Naprawa</h3><p>Pracujemy, a Ty śledzisz status online. Dzwonimy przy zmianach.</p></li>
+        <li><span class="m-step-n">4</span><h3>Odbiór</h3><p>Faktura VAT, 24 mies. gwarancji, komplet wymienionych części.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- OPINIE -->
+  <section class="m-sec" id="opinie">
+    <div class="m-sec-in">
+      <header class="m-sec-head">
+        <span class="m-kicker">05 — Opinie</span>
+        <h2>Co mówią kierowcy z Gliwic</h2>
+        <div class="m-rating"><span class="m-stars">★★★★★</span> <b>4,9</b> / 5 · 218 opinii Google</div>
+      </header>
+      <div class="m-reviews">
+        <figure class="m-review"><div class="m-stars">★★★★★</div><blockquote>Wycena online zgadzała się co do złotówki. Klimę nabili w godzinę, dostałem SMS że gotowe.</blockquote><figcaption><span class="m-rev-av">MK</span> Michał Kowalczyk</figcaption></figure>
+        <figure class="m-review"><div class="m-stars">★★★★★</div><blockquote>Wreszcie warsztat, gdzie widać status naprawy i nie trzeba dzwonić dziesięć razy. Polecam.</blockquote><figcaption><span class="m-rev-av">AN</span> Anna Nowak</figcaption></figure>
+        <figure class="m-review"><div class="m-stars">★★★★★</div><blockquote>Uczciwie, konkretnie, z fakturą. Naprawili hamulce w moim Transicie tego samego dnia.</blockquote><figcaption><span class="m-rev-av">PW</span> Piotr Wiśniewski</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT / FORM -->
+  <section class="m-sec m-sec-dark" id="kontakt">
+    <div class="m-sec-in m-contact">
+      <div class="m-contact-tx">
+        <span class="m-kicker">06 — Kontakt</span>
+        <h2>Umów wizytę</h2>
+        <p>Zostaw namiary — oddzwonimy w tym samym dniu roboczym i potwierdzimy termin.</p>
+        <ul class="m-contact-list">
+          <li><b>Adres</b> ul. Przykładowa 14, 44-100 Gliwice</li>
+          <li><b>Telefon</b> <a href="tel:+48500600700">500 600 700</a></li>
+          <li><b>Godziny</b> pon-pt 8:00–17:00 · sob 8:00–13:00</li>
+        </ul>
+      </div>
+      <form class="m-form" id="book-form" novalidate>
+        <div class="m-form-row">
+          <label>Imię i nazwisko<input name="name" type="text" required /></label>
+          <label>Telefon<input name="phone" type="tel" required placeholder="500 600 700" /></label>
+        </div>
+        <label>Samochód (marka, model, rok)<input name="car" type="text" placeholder="np. VW Golf 2016" /></label>
+        <label>Czego dotyczy wizyta?<textarea name="msg" rows="3" placeholder="Opisz problem lub wybraną usługę…"></textarea></label>
+        <div class="m-form-foot">
+          <span class="m-form-note">Fikcyjny formularz — dane nie są wysyłane.</span>
+          <button type="submit" class="m-btn m-btn-primary">Wyślij zgłoszenie</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  </main>
+
+  <footer class="m-foot">
+    <div class="m-foot-in">
+      <span>Auto-Serwis Pawlak · Gliwice</span>
+      <span class="m-foot-dis">Koncepcyjny redesign · fikcyjna firma, dane przykładowe</span>
+    </div>
+  </footer>
+
+</div><!-- /#site-2026 -->
+
+<div class="era-toast" id="era-toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
