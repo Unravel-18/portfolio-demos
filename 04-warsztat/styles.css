@@ -7,6 +7,7 @@
   --ink:#171A1E;         /* graphite text + dark sections */
   --steel:#5A6572;       /* secondary text / lines */
   --acc:#C93E0F;         /* burnt safety-orange — CTA, price, toggle (AA on light + white) */
+  --acc-2:#FF6A3D;       /* lighter safety-orange — accent text ON dark sections (AA on #171A1E) */
   --acc-ink:#ffffff;
   --card:#D8DBD6;        /* cool light grey */
   --ok:#0E7A4E;          /* status ok (semantic only) */
@@ -36,6 +37,10 @@
 .m-btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,77,18,.32)}
 .m-btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
 .m-btn-ghost:hover{background:var(--ink);color:#fff}
+/* anchor buttons must beat "#site-2026 a{color:inherit}" (ID specificity) */
+#site-2026 a.m-btn-primary{color:var(--acc-ink)}
+#site-2026 a.m-btn-ghost{color:var(--ink)}
+#site-2026 a.m-btn-ghost:hover{color:#fff}
 .m-btn-lg{padding:15px 26px;font-size:16px}
 .m-btn-block{width:100%}
 
@@ -97,6 +102,7 @@
 .m-sec-in{max-width:1180px;margin:0 auto}
 .m-sec-dark{background:var(--ink);color:#e9eaec}
 .m-sec-dark h2,.m-sec-dark h3{color:#fff}
+.m-sec-dark .m-kicker{color:var(--acc-2)}
 .m-sec-soft{background:var(--surf)}
 .m-sec-head{max-width:640px;margin-bottom:40px}
 .m-kicker{font-family:var(--ff-m);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:500}
@@ -208,7 +214,7 @@
 .m-contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:start}
 .m-contact-list{list-style:none;margin-top:24px;display:grid;gap:14px}
 .m-contact-list li{font-size:15px;color:#c3c8ce}
-.m-contact-list b{display:block;font-family:var(--ff-m);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin-bottom:2px}
+.m-contact-list b{display:block;font-family:var(--ff-m);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc-2);margin-bottom:2px}
 .m-contact-list a:hover{color:#fff}
 .m-form{background:var(--surf);border-radius:18px;padding:26px;color:var(--ink)}
 .m-form label{display:block;font-weight:600;font-size:14px;margin-bottom:16px}
