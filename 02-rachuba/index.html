@@ -107,7 +107,7 @@
       </button>
 
       <div class="top-actions">
-        <button class="seg" id="langToggle" aria-label="Język">
+        <button class="seg" id="langToggle" title="Język / Language">
           <span class="seg-opt is-on" data-lang="pl">PL</span>
           <span class="seg-opt" data-lang="en">EN</span>
         </button>
@@ -136,7 +136,7 @@
           <h1 class="hello"><span data-i18n="hello">Dzień dobry</span>, Michał</h1>
           <p class="page-sub" id="pageSub" data-i18n="page_sub">Poniedziałek, 20 lipca 2026 · masz 2 faktury po terminie</p>
         </div>
-        <div class="period" id="period" role="tablist">
+        <div class="period" id="period" role="group" aria-label="Okres">
           <button class="period-opt" data-p="week" data-i18n="p_week">Tydzień</button>
           <button class="period-opt is-on" data-p="month" data-i18n="p_month">Miesiąc</button>
           <button class="period-opt" data-p="quarter" data-i18n="p_quarter">Kwartał</button>
@@ -242,7 +242,7 @@
             <h2 class="card-title" data-i18n="inv_title">Ostatnie faktury</h2>
             <p class="card-sub" data-i18n="inv_sub">Kliknij wiersz, aby zobaczyć szczegóły</p>
           </div>
-          <div class="filters" id="filters" role="tablist">
+          <div class="filters" id="filters" role="group" aria-label="Filtr statusu">
             <button class="fpill is-on" data-f="all"><span data-i18n="f_all">Wszystkie</span><em>7</em></button>
             <button class="fpill" data-f="paid"><span data-i18n="f_paid">Opłacone</span><em>3</em></button>
             <button class="fpill" data-f="pending"><span data-i18n="f_pending">Oczekujące</span><em>2</em></button>
@@ -291,7 +291,7 @@
 <!-- ============ SLIDE-OVER: NEW INVOICE ============ -->
 <div class="scrim" id="scrim" hidden></div>
 
-<aside class="drawer drawer-form" id="invoiceDrawer" aria-hidden="true">
+<aside class="drawer drawer-form" id="invoiceDrawer" aria-hidden="true" inert>
   <header class="drawer-head">
     <div>
       <h3 data-i18n="d_new_title">Nowa faktura</h3>
@@ -372,7 +372,7 @@
 </aside>
 
 <!-- ============ SLIDE-OVER: INVOICE DETAIL ============ -->
-<aside class="drawer drawer-detail" id="detailDrawer" aria-hidden="true">
+<aside class="drawer drawer-detail" id="detailDrawer" aria-hidden="true" inert>
   <header class="drawer-head">
     <div>
       <h3 id="dtlNo">FV/2026/07/07</h3>
@@ -396,7 +396,7 @@
 </aside>
 
 <!-- ============ SLIDE-OVER: CLIENT ============ -->
-<aside class="drawer drawer-detail" id="clientDrawer" aria-hidden="true">
+<aside class="drawer drawer-detail" id="clientDrawer" aria-hidden="true" inert>
   <header class="drawer-head">
     <div>
       <h3 id="clName">Klient</h3>

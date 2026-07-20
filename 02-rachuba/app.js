@@ -510,9 +510,9 @@
   }
 
   /* ---------------- drawers plumbing ---------------- */
-  function openDrawer(d) { $("#scrim").hidden = false; d.classList.add("is-open"); d.setAttribute("aria-hidden","false"); }
+  function openDrawer(d) { $("#scrim").hidden = false; d.classList.add("is-open"); d.removeAttribute("inert"); d.setAttribute("aria-hidden","false"); }
   function closeDrawers() {
-    $$(".drawer").forEach((d) => { d.classList.remove("is-open"); d.setAttribute("aria-hidden","true"); });
+    $$(".drawer").forEach((d) => { d.classList.remove("is-open"); d.setAttribute("inert",""); d.setAttribute("aria-hidden","true"); });
     $("#scrim").hidden = true;
   }
 
