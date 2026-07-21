@@ -1,4 +1,4 @@
-/* Brevary — main.js (vanilla, 0 dependencies) */
+/* Klarmint — main.js (vanilla, 0 dependencies) */
 (function () {
   "use strict";
 
@@ -21,7 +21,7 @@
   /* ---- contacts (assembled in JS so the address isn't in raw HTML) ---- */
   // TODO: uzupełnić realne uchwyty (Telegram / WhatsApp / LinkedIn)
   var CONTACT = {
-    mail: "mailto:" + MAIL + "?subject=" + encodeURIComponent("Zapytanie ze strony Brevary"),
+    mail: "mailto:" + MAIL + "?subject=" + encodeURIComponent("Zapytanie ze strony Klarmint"),
     tg: null,   // np. "https://t.me/nick"
     wa: null,   // np. "https://wa.me/48XXXXXXXXX"
     in: null    // np. "https://www.linkedin.com/in/..."
@@ -49,7 +49,7 @@
 
       var status = document.getElementById("cStatus"), btn = document.getElementById("cSend");
       function v(id) { var el = document.getElementById(id); return el ? el.value.trim() : ""; }
-      var body = "Nowe zapytanie ze strony Brevary\n\n" +
+      var body = "Nowe zapytanie ze strony Klarmint\n\n" +
         "Imię: " + (v("cName") || "-") + "\nE-mail: " + email.value.trim() +
         "\nRodzaj: " + (v("cType") || "-") + "\nBudżet: " + (v("cBudget") || "-") +
         "\n\nWiadomość:\n" + (v("cMsg") || "-");
@@ -61,10 +61,10 @@
         btn.disabled = true; btn.textContent = "Wysyłam…";
         fetch("https://api.web3forms.com/submit", {
           method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({ access_key: WEB3_KEY, subject: "Zapytanie ze strony Brevary", from_name: v("cName") || "Brevary kontakt", email: email.value.trim(), message: body, _template: "table" })
+          body: JSON.stringify({ access_key: WEB3_KEY, subject: "Zapytanie ze strony Klarmint", from_name: v("cName") || "Klarmint kontakt", email: email.value.trim(), message: body, _template: "table" })
         }).then(function (r) { return r.json(); }).then(function (j) { if (j.success) done(); else fail(); }).catch(fail);
       } else {
-        window.location.href = "mailto:" + MAIL + "?subject=" + encodeURIComponent("Zapytanie ze strony Brevary") + "&body=" + encodeURIComponent(body);
+        window.location.href = "mailto:" + MAIL + "?subject=" + encodeURIComponent("Zapytanie ze strony Klarmint") + "&body=" + encodeURIComponent(body);
         status.className = "form-status ok"; status.textContent = "Otwieram Twój program pocztowy z gotową wiadomością…";
       }
     });
