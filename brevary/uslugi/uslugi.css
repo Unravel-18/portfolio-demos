@@ -1,0 +1,36 @@
+/* Brevary — service pages (shared) */
+.u-hero-in{position:relative;padding-block:clamp(56px,8vw,88px) clamp(28px,4vw,40px);max-width:860px}
+.u-hero .eyebrow{margin-bottom:18px}
+.u-hero h1{font-size:clamp(38px,6.2vw,76px);line-height:1.02;letter-spacing:-.035em}
+.u-hero .lead{font-size:clamp(17px,1.9vw,21px);color:var(--muted);max-width:52ch;margin-top:22px}
+.u-hero .lead b{color:var(--ink);font-weight:600}
+.u-cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:28px}
+.u-price{margin-top:24px;font-size:15px;color:var(--muted)}
+.u-price b{color:var(--ink);font-weight:700}
+
+.u-two{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start}
+.inc-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px 24px;margin-top:6px;list-style:none}
+.inc-grid li{padding-left:26px;position:relative;font-size:15px;color:var(--ink-2)}
+.inc-grid li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700;font-size:16px}
+.u-box{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px;box-shadow:var(--shadow-lg)}
+.u-box-label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-tx);font-weight:600}
+.u-box p{color:var(--muted);font-size:14.5px;margin:10px 0 16px}
+.u-box-row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.u-box-row b{color:var(--ink);font-size:16px;font-weight:700}
+
+.u-case{display:grid;grid-template-columns:1fr 1.1fr;gap:0;overflow:hidden;padding:0;text-decoration:none;color:inherit}
+.u-case:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent}
+.u-case-cover{overflow:hidden;background:var(--grad)}
+.u-case-cover img{width:100%;height:100%;object-fit:cover;min-height:220px}
+.u-case-body{padding:28px}
+.u-case-body h3{font-size:22px;margin:12px 0 8px}
+.u-case-body p{color:var(--muted);font-size:14.5px;margin-bottom:14px}
+
+.u-faq{max-width:760px;margin-inline:auto}
+
+@media(max-width:860px){
+  .u-two{grid-template-columns:1fr;gap:28px}
+  .u-case{grid-template-columns:1fr}
+  .u-case-cover img{min-height:180px}
+}
+@media(max-width:520px){.inc-grid{grid-template-columns:1fr}}
