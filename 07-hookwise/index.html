@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hookwise — Every webhook, delivered.</title>
+<meta name="description" content="Hookwise is a concept product: drop-in webhook delivery infrastructure — retries, HMAC signing, replay and monitoring behind one API. Designed & built as a portfolio case study, not a real service." />
+<meta name="color-scheme" content="light" />
+<meta property="og:title" content="Hookwise — Every webhook, delivered." />
+<meta property="og:description" content="Drop-in webhook delivery infrastructure: retries, signing, replay and monitoring behind one API. (Concept project.)" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" /></noscript>
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232447E0'/%3E%3Cpath d='M9 20c3-8 6-8 7-4s4 4 7-4' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<!-- ============ TOPBAR ============ -->
+<header class="topbar" id="top">
+  <div class="wrap topbar-in">
+    <a class="logo" href="#top" aria-label="Hookwise home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="26" height="26"><rect width="32" height="32" rx="7" fill="var(--cobalt)"/><path d="M9 20c3-8 6-8 7-4s4 4 7-4" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </span>
+      <span class="logo-word">Hookwise</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#simulator">Simulator</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="topbar-cta">
+      <a href="#" class="btn btn-ghost btn-sm">Read the docs</a>
+      <a href="#pricing" class="btn btn-primary btn-sm">Start free</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <span class="eyebrow">01 / RELIABILITY&nbsp;&nbsp;·&nbsp;&nbsp;webhook infrastructure</span>
+      <h1>Every webhook,<br><span class="accent">delivered.</span></h1>
+      <p class="lead">Your customer's endpoint just went down at 3&nbsp;a.m. Hookwise queues the event,
+        retries with exponential backoff, and delivers when it's back — you sleep.</p>
+      <div class="hero-cta">
+        <a href="#pricing" class="btn btn-primary">Start free — 50k events/mo</a>
+        <a href="#" class="btn btn-ghost">Read the docs →</a>
+      </div>
+      <ul class="hero-facts" aria-label="Highlights">
+        <li><b>5</b> retries · 6h window</li>
+        <li><b>&lt;30 min</b> to integrate</li>
+        <li><b>0</b> events lost</li>
+      </ul>
+    </div>
+
+    <aside class="hero-panel" aria-label="Live delivery feed (illustrative)">
+      <div class="panel-head">
+        <span class="dot-row" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="panel-title">delivery feed</span>
+        <span class="panel-live"><i aria-hidden="true"></i>live</span>
+      </div>
+      <ul class="ticker" id="ticker" aria-hidden="true"></ul>
+      <div class="panel-annot" aria-hidden="true">
+        <span class="dim-line"></span>
+        <span class="dim-label">signed · retried · logged</span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ WORKS WITH YOUR STACK ============ -->
+<section class="stack">
+  <div class="wrap stack-in">
+    <span class="stack-label">Works with your stack</span>
+    <ul class="stack-list">
+      <li>Node</li><li>Python</li><li>Go</li><li>Ruby&nbsp;on&nbsp;Rails</li><li>PHP</li><li>Elixir</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PAIN STRIP ============ -->
+<section class="pain">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">02 / THE PROBLEM</span>
+      <h2>Delivering webhooks reliably is a distributed-systems problem.</h2>
+    </div>
+    <div class="pain-grid">
+      <article class="pain-card">
+        <span class="pain-num" aria-hidden="true">×</span>
+        <h3>Endpoint down = data gone</h3>
+        <p>A customer's server hiccups for 40 seconds and the event vanishes. No queue, no retry, no trace.</p>
+      </article>
+      <article class="pain-card">
+        <span class="pain-num" aria-hidden="true">×</span>
+        <h3>DIY retries = two sprints</h3>
+        <p>Backoff, dedupe, dead-letter, a dashboard, alerting. Weeks of plumbing that isn't your product.</p>
+      </article>
+      <article class="pain-card">
+        <span class="pain-num" aria-hidden="true">×</span>
+        <h3>"Did you get our webhook?"</h3>
+        <p>Support tickets you can't answer because there's no delivery log to point at.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">03 / HOW IT WORKS</span>
+      <h2>One POST in. Guaranteed delivery out.</h2>
+      <p class="section-sub">Send us the event. We own the hard part — the queue, the signature, and every retry.</p>
+    </div>
+    <ol class="pipeline">
+      <li class="pipe-node">
+        <span class="pipe-tick" aria-hidden="true">01</span>
+        <h3>Receive</h3>
+        <p>You <code>POST</code> the event to one Hookwise endpoint. Returns <code>202</code> in ~40ms.</p>
+      </li>
+      <li class="pipe-arrow" aria-hidden="true"></li>
+      <li class="pipe-node">
+        <span class="pipe-tick" aria-hidden="true">02</span>
+        <h3>Queue&nbsp;+ Sign</h3>
+        <p>Event is persisted, deduplicated and signed with an <code>HMAC-SHA256</code> header.</p>
+      </li>
+      <li class="pipe-arrow" aria-hidden="true"></li>
+      <li class="pipe-node">
+        <span class="pipe-tick" aria-hidden="true">03</span>
+        <h3>Deliver&nbsp;/ Retry</h3>
+        <p>We deliver to the destination. On failure: exponential backoff, up to 5 attempts over 6h.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ SIMULATOR (WOW #1) ============ -->
+<section class="sim" id="simulator">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">04 / LIVE DEMO</span>
+      <h2>Break things on purpose.</h2>
+      <p class="section-sub">Pick a way for the destination to fail, then send a test event. Watch Hookwise refuse to lose it. <span class="muted">Time is compressed ~10× — no backend, it all runs in your browser.</span></p>
+    </div>
+
+    <div class="sim-shell">
+      <!-- controls -->
+      <div class="sim-controls">
+        <fieldset class="scenario">
+          <legend>Failure scenario</legend>
+          <label class="chip"><input type="radio" name="scenario" value="down" checked /><span>Endpoint down 30s</span></label>
+          <label class="chip"><input type="radio" name="scenario" value="timeout" /><span>Timeout</span></label>
+          <label class="chip"><input type="radio" name="scenario" value="burst" /><span>500 burst</span></label>
+          <label class="chip"><input type="radio" name="scenario" value="ok" /><span>All good</span></label>
+        </fieldset>
+        <button class="btn btn-primary sim-send" id="simSend" type="button">Send test event</button>
+        <button class="btn btn-ghost btn-sm sim-reset" id="simReset" type="button" hidden>Reset</button>
+      </div>
+
+      <div class="sim-stage">
+        <!-- left: pipeline -->
+        <div class="sim-pipe" aria-hidden="true">
+          <div class="sim-track">
+            <div class="sim-station" data-station="source"><span class="st-dot"></span><span class="st-label">Your app</span></div>
+            <div class="sim-wire"></div>
+            <div class="sim-station" data-station="queue"><span class="st-dot"></span><span class="st-label">Hookwise queue</span></div>
+            <div class="sim-wire"></div>
+            <div class="sim-station" data-station="dest"><span class="st-dot"></span><span class="st-label">Destination</span></div>
+            <div class="sim-packet" id="simPacket"></div>
+          </div>
+          <div class="sim-status-badges">
+            <span class="sim-badge" id="simRetry" hidden>retry <b id="simRetryN">0/5</b> · next in <b id="simRetryT">0s</b></span>
+            <span class="sim-badge sim-badge-ok" id="simDone" hidden>delivered · 200</span>
+          </div>
+        </div>
+
+        <!-- right: log -->
+        <div class="sim-log-wrap">
+          <div class="sim-log-head">
+            <span class="log-title">delivery log</span>
+            <span class="log-meta" id="simMeta">idle</span>
+          </div>
+          <div class="sim-log" id="simLog" role="log" aria-live="polite" aria-label="Delivery log"></div>
+          <div class="sim-outcome" id="simOutcome" hidden>
+            <span class="outcome-check" aria-hidden="true">✓</span>
+            <div>
+              <strong id="outcomeTitle">Delivered</strong>
+              <span id="outcomeSub">0 events lost · 1 attempt</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="features">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">05 / EVERYTHING INCLUDED</span>
+      <h2>The plumbing you'd otherwise build twice.</h2>
+    </div>
+    <div class="feat-grid">
+      <article class="feat-card">
+        <span class="feat-ic" aria-hidden="true">↺</span>
+        <h3>Automatic retries</h3>
+        <p>Exponential backoff with jitter, up to 5 attempts across a 6-hour window. Dead-letter after.</p>
+      </article>
+      <article class="feat-card">
+        <span class="feat-ic" aria-hidden="true">⚿</span>
+        <h3>HMAC signing</h3>
+        <p>Every payload signed <code>SHA-256</code> with a rotating secret so destinations can verify authenticity.</p>
+      </article>
+      <article class="feat-card">
+        <span class="feat-ic" aria-hidden="true">⤾</span>
+        <h3>Replay any event</h3>
+        <p>Re-send a single event or a whole time range from the dashboard or the API. Idempotency-keyed.</p>
+      </article>
+      <article class="feat-card">
+        <span class="feat-ic" aria-hidden="true">▤</span>
+        <h3>Delivery logs</h3>
+        <p>Full request/response history per event — status, latency, attempts. Answer the ticket in one click.</p>
+      </article>
+      <article class="feat-card">
+        <span class="feat-ic" aria-hidden="true">◈</span>
+        <h3>Alerting</h3>
+        <p>Get paged when a destination's failure rate crosses a threshold, before your customer notices.</p>
+      </article>
+      <article class="feat-card">
+        <span class="feat-ic" aria-hidden="true">ƒ</span>
+        <h3>Transformations</h3>
+        <p>Reshape or filter payloads per destination without redeploying your own service.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEVELOPER EXPERIENCE ============ -->
+<section class="dx">
+  <div class="wrap dx-in">
+    <div class="dx-copy">
+      <span class="eyebrow">06 / DEVELOPER EXPERIENCE</span>
+      <h2>Integrate in one call.</h2>
+      <p>Point your existing event at Hookwise instead of the destination. Keep your payload — we add the delivery guarantees.</p>
+      <ul class="dx-list">
+        <li><span aria-hidden="true">✓</span> No SDK required — it's an HTTP call.</li>
+        <li><span aria-hidden="true">✓</span> Idempotency keys prevent double delivery.</li>
+        <li><span aria-hidden="true">✓</span> Same endpoint in every language.</li>
+      </ul>
+    </div>
+    <div class="dx-code">
+      <div class="code-tabs" role="group" aria-label="Code examples">
+        <button class="code-tab is-active" aria-pressed="true" data-lang="curl">curl</button>
+        <button class="code-tab" aria-pressed="false" data-lang="node">Node</button>
+        <button class="code-tab" aria-pressed="false" data-lang="python">Python</button>
+        <button class="code-copy" type="button" id="codeCopy" aria-label="Copy code">Copy</button>
+      </div>
+      <pre class="code-pre" id="codeBlock"><code></code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING + CALCULATOR (WOW #2) ============ -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">07 / PRICING</span>
+      <h2>Cheaper than building it. Much cheaper than losing events.</h2>
+      <p class="section-sub"><span class="illus">Illustrative pricing — this is a concept project.</span></p>
+    </div>
+
+    <div class="pricing-grid">
+      <article class="price-card">
+        <h3>Free</h3>
+        <p class="price"><span class="price-num">$0</span><span class="price-per">/mo</span></p>
+        <p class="price-cap">50,000 events / month</p>
+        <ul>
+          <li>All retries &amp; signing</li>
+          <li>7-day delivery logs</li>
+          <li>1 destination</li>
+        </ul>
+        <a href="#" class="btn btn-ghost btn-block">Start free</a>
+      </article>
+      <article class="price-card price-card-feat">
+        <span class="price-flag">Most popular</span>
+        <h3>Growth</h3>
+        <p class="price"><span class="price-num">$49</span><span class="price-per">/mo</span></p>
+        <p class="price-cap">1,000,000 events / month</p>
+        <ul>
+          <li>Everything in Free</li>
+          <li>90-day logs &amp; replay</li>
+          <li>Unlimited destinations</li>
+          <li>Alerting + transformations</li>
+        </ul>
+        <a href="#" class="btn btn-primary btn-block">Start Growth</a>
+      </article>
+      <article class="price-card">
+        <h3>Scale</h3>
+        <p class="price"><span class="price-num">Custom</span></p>
+        <p class="price-cap">5M+ events / month</p>
+        <ul>
+          <li>Everything in Growth</li>
+          <li>Dedicated queues &amp; SLA</li>
+          <li>SSO + audit log</li>
+        </ul>
+        <a href="#" class="btn btn-ghost btn-block">Talk to us</a>
+      </article>
+    </div>
+
+    <!-- calculator -->
+    <div class="calc">
+      <div class="calc-head">
+        <span class="eyebrow">Build vs. buy</span>
+        <h3>What does rolling your own actually cost?</h3>
+      </div>
+      <div class="calc-body">
+        <div class="calc-inputs">
+          <div class="calc-field">
+            <label for="calcEvents">Events / month <output id="calcEventsOut" class="calc-out-inline">250,000</output></label>
+            <input type="range" id="calcEvents" min="0" max="100" value="42" step="1"
+              aria-describedby="calcEventsOut" />
+          </div>
+          <div class="calc-field">
+            <label for="calcRate">Engineer rate <output id="calcRateOut" class="calc-out-inline">$90/h</output></label>
+            <input type="range" id="calcRate" min="40" max="150" value="90" step="5"
+              aria-describedby="calcRateOut" />
+          </div>
+        </div>
+        <div class="calc-result" aria-live="polite">
+          <div class="calc-col">
+            <span class="calc-col-label">Build &amp; run yourself</span>
+            <span class="calc-col-val" id="calcDiy">$—</span>
+            <span class="calc-col-note">≈120h to build (amortized 12mo) + 6h/mo upkeep</span>
+          </div>
+          <div class="calc-vs" aria-hidden="true">vs</div>
+          <div class="calc-col calc-col-us">
+            <span class="calc-col-label">Hookwise</span>
+            <span class="calc-col-val" id="calcUs">$—</span>
+            <span class="calc-col-note" id="calcTier">Free tier</span>
+          </div>
+        </div>
+        <p class="calc-save" id="calcSave">—</p>
+        <p class="calc-fine">Assumptions are illustrative: build cost amortized over 12 months, blended on-call not included. Your mileage will vary.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap faq-in">
+    <div class="section-head">
+      <span class="eyebrow">08 / FAQ</span>
+      <h2>Questions engineers actually ask.</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>Is this a real product?</summary>
+        <p>No — Hookwise is a self-initiated concept built as a portfolio case study. The landing page, the delivery simulator and the calculator are fully functional; there is no backend service behind it. Everything runs client-side.</p>
+      </details>
+      <details>
+        <summary>How do retries work?</summary>
+        <p>On a failed delivery we retry with exponential backoff and jitter — roughly 30s, 2m, 10m, 1h, 6h — up to 5 attempts. After the last attempt the event is moved to a dead-letter queue you can replay from.</p>
+      </details>
+      <details>
+        <summary>How do you prevent duplicate deliveries?</summary>
+        <p>Each event carries an idempotency key. If a destination receives an event but its <code>200</code> is lost on the way back, the retry is de-duplicated by that key so your customer never processes it twice.</p>
+      </details>
+      <details>
+        <summary>Do I need to install an SDK?</summary>
+        <p>No. Integration is a single HTTP <code>POST</code> to one endpoint — the same in curl, Node, Python or anything that speaks HTTP. See the code sample above.</p>
+      </details>
+      <details>
+        <summary>What happens to events during an outage on your side?</summary>
+        <p>Events are persisted on receipt before we return <code>202</code>. In a concept like this that's the design intent; a production build would run the queue on durable, replicated storage.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="cta-band">
+  <div class="wrap cta-in">
+    <div class="cta-annot" aria-hidden="true"><span class="dim-line"></span><span class="dim-label">get started</span></div>
+    <h2>Stop losing webhooks tonight.</h2>
+    <p>50,000 events a month, free. No card, no SDK, one endpoint.</p>
+    <a href="#" class="btn btn-primary btn-lg">Start free — 50k events/mo</a>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div class="footer-brand">
+      <a class="logo" href="#top" aria-label="Hookwise home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="24" height="24"><rect width="32" height="32" rx="7" fill="var(--cobalt)"/><path d="M9 20c3-8 6-8 7-4s4 4 7-4" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </span>
+        <span class="logo-word">Hookwise</span>
+      </a>
+      <p class="footer-tag">Every webhook, delivered.</p>
+      <span class="concept-badge">Concept project — not a real service</span>
+    </div>
+    <nav class="footer-cols" aria-label="Footer">
+      <div class="footer-col">
+        <h3>Product</h3>
+        <a href="#how">How it works</a>
+        <a href="#simulator">Simulator</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h3>Developers</h3>
+        <a href="#">Docs</a>
+        <a href="#">API reference</a>
+        <a href="#">Status</a>
+      </div>
+      <div class="footer-col">
+        <h3>Measured</h3>
+        <span class="lh-badge">Lighthouse 90+</span>
+        <span class="lh-badge">0 dependencies</span>
+        <span class="lh-badge">Vanilla JS</span>
+      </div>
+    </nav>
+  </div>
+  <div class="wrap footer-legal">
+    <span>Fictional product · illustrative data · self-initiated concept.</span>
+    <span>Designed &amp; built end-to-end by one person — from idea to live demo.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
