@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Illume — «Kinetic»</title>
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#ECEAE1; --ink:#0C0C0C; --muted:#4A4A44; --line:#D3D0C4;
+    --blue:#1D1DE6; --lime:#D6FB4F;
+    --ff-d:"Clash Display",system-ui,sans-serif; --ff:"Satoshi",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--ff);background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+  a{color:inherit;text-decoration:none}
+
+  .top{display:flex;align-items:center;gap:28px;height:78px}
+  .brand{display:flex;align-items:center;gap:9px;font-family:var(--ff-d);font-weight:700;font-size:24px;letter-spacing:-.03em}
+  .brand .g{width:14px;height:14px;border-radius:50%;background:var(--blue)}
+  .nav{display:flex;gap:24px;margin-left:14px}
+  .nav a{font-weight:600;font-size:15px}.nav a:hover{color:var(--blue)}
+  .tr{margin-left:auto;display:flex;align-items:center;gap:18px}
+  .lang{font-size:13px;font-weight:600}.lang b{color:var(--blue)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;padding:12px 22px;border-radius:100px;
+    background:var(--ink);color:var(--bg);border:2px solid var(--ink);transition:.15s}
+  .btn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+  .btn-ghost{background:transparent;color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--bg)}
+
+  .hero{padding:44px 0 20px}
+  .eyebrow{font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+  h1{font-family:var(--ff-d);font-weight:700;font-size:clamp(62px,13vw,180px);line-height:.86;letter-spacing:-.05em;
+    text-transform:uppercase;margin:14px 0 0}
+  h1 .blue{color:var(--blue)}
+  h1 .out{color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .herometa{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-end;margin-top:30px}
+  .lead{font-size:clamp(16px,1.7vw,20px);color:var(--ink);max-width:44ch;font-weight:500}
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+
+  /* marquee */
+  .marq{margin-top:34px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);background:var(--lime);overflow:hidden;white-space:nowrap}
+  .marq .track{display:inline-block;padding:12px 0;animation:scroll 22s linear infinite}
+  .marq span{font-family:var(--ff-d);font-weight:600;font-size:20px;text-transform:uppercase;letter-spacing:-.01em;padding:0 22px}
+  .marq span::after{content:"✳";color:var(--blue);margin-left:44px}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  .sec{padding:52px 0 96px}
+  .sec-title{font-family:var(--ff-d);font-weight:700;font-size:clamp(26px,3.4vw,40px);text-transform:uppercase;letter-spacing:-.03em;margin-bottom:26px}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .card{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:24px;transition:.16s}
+  .card:hover{background:var(--blue);color:#fff;transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink)}
+  .card .n{font-family:var(--ff-d);font-weight:700;font-size:34px}
+  .card h3{font-family:var(--ff-d);font-weight:600;font-size:18px;margin:8px 0 8px;text-transform:uppercase;letter-spacing:-.02em;line-height:1.05}
+  .card p{font-size:13.5px;color:var(--muted)}
+  .card:hover p{color:#dcdcff}
+  .card .price{font-weight:700;font-size:13px;margin-top:14px}
+  .flag{position:fixed;left:0;bottom:0;right:0;background:var(--ink);color:var(--lime);font-size:12px;text-align:center;padding:8px;z-index:50}
+  @media(max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.nav,.lang{display:none}.cards{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.marq .track{animation:none;padding-left:22px}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#"><span class="g"></span>Illume</a>
+    <nav class="nav"><a href="#">Usługi</a><a href="#">Prace</a><a href="#">Proces</a><a href="#">O mnie</a></nav>
+    <div class="tr"><span class="lang"><b>PL</b> / EN</span><a href="#" class="btn">Wycena</a></div>
+  </header>
+  <section class="hero">
+    <span class="eyebrow">Studio full-cycle web · jedna osoba, pełny cykl</span>
+    <h1>Od pomysłu<br>do <span class="blue">żywego</span><br><span class="out">produktu.</span></h1>
+    <div class="herometa">
+      <p class="lead">Projektuję, koduję i wdrażam strony, aplikacje oraz integracje — od briefu po działający produkt.</p>
+      <div class="cta">
+        <a href="#" class="btn">Bezpłatna wycena →</a>
+        <a href="#" class="btn btn-ghost">Zobacz prace</a>
+      </div>
+    </div>
+  </section>
+  <div class="marq"><div class="track"><span>Strony pod klucz</span><span>Złożone serwisy</span><span>MVP i aplikacje</span><span>Integracje</span><span>Opieka i rozwój</span><span>Strony pod klucz</span><span>Złożone serwisy</span><span>MVP i aplikacje</span><span>Integracje</span><span>Opieka i rozwój</span></div></div>
+  <div class="wrap"><section class="sec">
+    <h2 class="sec-title">Co robię</h2>
+    <div class="cards">
+      <div class="card"><span class="n">01</span><h3>Strony pod klucz</h3><p>Projekt + kod + wdrożenie. Landing lub strona firmowa.</p><span class="price">od 3 500 zł</span></div>
+      <div class="card"><span class="n">02</span><h3>Złożone serwisy</h3><p>Strony z płatnościami, CMS i integracjami API.</p><span class="price">od 8 000 zł</span></div>
+      <div class="card"><span class="n">03</span><h3>MVP i aplikacje</h3><p>Produkt webowy od zera — dashboard, SaaS, panel.</p><span class="price">indywidualnie</span></div>
+      <div class="card"><span class="n">04</span><h3>Opieka i rozwój</h3><p>Utrzymanie, hosting, poprawki, nowe funkcje.</p><span class="price">od 400 zł/mies.</span></div>
+    </div>
+  </section></div>
+</div>
+<div class="flag">STYL «Kinetic» — śmiały, wielka typografia + ruch (jak Awwwards) · Clash Display</div>
+</body>
+</html>
