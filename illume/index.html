@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Illume — projekt, kod i wdrożenie w jednych rękach</title>
+<meta name="description" content="Illume — studio full-cycle web. Projektuję, koduję i wdrażam strony, aplikacje oraz integracje. Jedna osoba, pełny cykl: od pomysłu do działającego produktu. Bezpłatna wycena w 2 minuty." />
+<meta name="color-scheme" content="light" />
+<meta property="og:title" content="Illume — od pomysłu do żywego produktu" />
+<meta property="og:description" content="Studio full-cycle web: projekt, kod i wdrożenie w jednych rękach. Strony, aplikacje i integracje z metrykami." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+<link rel="preload" as="style" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" />
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" /></noscript>
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366F1'/%3E%3Cstop offset='1' stop-color='%23A855F7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="wrap header-in">
+    <a class="brand" href="#top" aria-label="Illume — strona główna"><span class="g" aria-hidden="true"></span>Illume</a>
+    <nav class="nav" id="nav" aria-label="Główna">
+      <a href="#uslugi">Usługi</a>
+      <a href="#prace">Prace</a>
+      <a href="#proces">Proces</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="header-cta">
+      <span class="lang"><b>PL</b> / EN</span>
+      <a href="#wycena" class="btn btn-primary">Bezpłatna wycena</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="aurora" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
+  <div class="wrap hero-in">
+    <span class="eyebrow"><i></i>Studio full-cycle web — jedna osoba, pełny cykl</span>
+    <h1>Od pomysłu do <span class="gt">żywego produktu.</span></h1>
+    <p class="lead">Projektuję, koduję i wdrażam strony, aplikacje oraz integracje.
+      <b>Jeden człowiek odpowiedzialny za cały efekt</b> — od briefu po działający produkt, mierzony liczbami, nie obietnicami.</p>
+    <div class="hero-cta">
+      <a href="#wycena" class="btn btn-primary btn-lg">Bezpłatna wycena w 2 minuty →</a>
+      <a href="#prace" class="btn btn-ghost btn-lg">Zobacz prace</a>
+    </div>
+    <div class="hero-metrics">
+      <div class="m"><b>96</b><span>średni Lighthouse</span></div>
+      <div class="m"><b>4</b><span>buildy na żywo</span></div>
+      <div class="m"><b>&lt;24h</b><span>czas odpowiedzi</span></div>
+      <div class="m"><b>0</b><span>zależności w kodzie</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FACTS STRIP ===== -->
+<section class="facts">
+  <div class="wrap facts-in">
+    <span class="f"><i></i><b>4</b> concept buildy — każdy z żywym demo</span>
+    <span class="f"><i></i>średni <b>Lighthouse 96</b> na wdrożeniu</span>
+    <span class="f"><i></i><b>0</b> zależności — czysty, szybki kod</span>
+    <span class="f"><i></i>odpowiadam w <b>&lt;24h</b></span>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="sec" id="uslugi">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Usługi</span>
+      <h2>Cztery sposoby, żeby ruszyć z miejsca.</h2>
+      <p class="sec-sub">Od prostej strony po złożoną aplikację z integracjami — projekt, kod i wdrożenie w jednych rękach.</p>
+    </div>
+    <div class="svc-grid">
+      <a class="card svc" href="#wycena"><span class="n gt">01</span><h3>Strony pod klucz</h3><p>Projekt + kod + wdrożenie. Landing lub strona firmowa, która realnie sprzedaje, a nie tylko wygląda.</p><span class="meta"><b>od 3 500 zł</b> <span>· od 2 tyg.</span></span></a>
+      <a class="card svc" href="#wycena"><span class="n gt">02</span><h3>Złożone serwisy</h3><p>Wielofunkcyjne strony z płatnościami, CMS, panelem i integracjami API — spięte i działające.</p><span class="meta"><b>od 8 000 zł</b> <span>· od 4 tyg.</span></span></a>
+      <a class="card svc" href="#wycena"><span class="n gt">03</span><h3>MVP i aplikacje</h3><p>Produkt webowy od zera — dashboard, SaaS, panel klienta. Od pomysłu do pierwszych użytkowników.</p><span class="meta"><b>wycena indywidualna</b></span></a>
+      <a class="card svc" href="#wycena"><span class="n gt">04</span><h3>Opieka i rozwój</h3><p>Miesięczne utrzymanie, hosting, poprawki i nowe funkcje. Twój produkt zostaje pod opieką.</p><span class="meta"><b>od 400 zł</b> <span>/ mies.</span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SELECTED WORK ===== -->
+<section class="sec" id="prace" style="background:var(--bg-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Prace</span>
+      <h2>Cztery produkty zbudowane od zera — <span class="gt">nie szablony.</span></h2>
+      <p class="sec-sub">To <b>concept buildy</b>: projekty własne, przeprowadzone jak realne — z briefem, dizajnem, kodem i metrykami. Bez wymyślonych klientów. Wszystko można otworzyć i poklikać na żywo.</p>
+    </div>
+    <div class="work-grid">
+      <article class="card work">
+        <div class="work-cover"><img src="assets/img/dental-home.webp" alt="Strona kliniki stomatologicznej Odra Dental" loading="lazy" width="800" height="500" /></div>
+        <div class="work-body">
+          <div class="work-head"><h3>Odra Dental</h3><span class="chip tip" tabindex="0">Concept build<span class="tt">Projekt własny: pełny cykl od briefu do wdrożenia, bez klienta — za to z pełną odpowiedzialnością za każdą decyzję.</span></span></div>
+          <p>Strona kliniki z rezerwacją wizyty online — wybór usługi i lekarza, kalendarz, walidacja, eksport .ics.</p>
+          <div class="work-metrics"><span>Lighthouse <b>94+</b></span><span>PL / EN</span><span>Landing + booking</span></div>
+          <a class="work-link" href="https://unravel-18.github.io/portfolio-demos/case/dental.html" target="_blank" rel="noopener">Zobacz case study →</a>
+        </div>
+      </article>
+      <article class="card work">
+        <div class="work-cover"><img src="assets/img/rachuba-pulpit.webp" alt="Panel finansowy Rachuba dla freelancerów" loading="lazy" width="800" height="500" /></div>
+        <div class="work-body">
+          <div class="work-head"><h3>Rachuba</h3><span class="chip tip" tabindex="0">Concept build<span class="tt">Projekt własny: pełny cykl od briefu do wdrożenia, bez klienta — za to z pełną odpowiedzialnością za każdą decyzję.</span></span></div>
+          <p>Panel finansowy dla polskich freelancerów: faktury, koszty, terminy ZUS/VAT/PIT, kreator faktury z VAT.</p>
+          <div class="work-metrics"><span>Lighthouse <b>95+</b></span><span>6 ekranów</span><span>SaaS</span></div>
+          <a class="work-link" href="https://unravel-18.github.io/portfolio-demos/case/rachuba.html" target="_blank" rel="noopener">Zobacz case study →</a>
+        </div>
+      </article>
+      <article class="card work">
+        <div class="work-cover"><span class="ph">Hookwise<br><span style="font-weight:500;font-size:14px;opacity:.9">webhook delivery · EN</span></span></div>
+        <div class="work-body">
+          <div class="work-head"><h3>Hookwise</h3><span class="chip tip" tabindex="0">Concept build<span class="tt">Projekt własny: pełny cykl od briefu do wdrożenia, bez klienta — za to z pełną odpowiedzialnością za każdą decyzję.</span></span></div>
+          <p>Lending B2B (EN) dla dev-toola z interaktywnym symulatorem dostarczania webhooków „Break things on purpose”.</p>
+          <div class="work-metrics"><span>Lighthouse <b>96</b></span><span>EN</span><span>B2B landing</span></div>
+          <a class="work-link" href="https://unravel-18.github.io/portfolio-demos/07-hookwise/" target="_blank" rel="noopener">Zobacz demo na żywo →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="sec" id="proces">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Proces</span>
+      <h2>Przewidywalnie, w pięciu krokach.</h2>
+      <p class="sec-sub">Wiesz, co i kiedy dostajesz. Płacisz za etap dopiero, gdy poprzedni jest zatwierdzony.</p>
+    </div>
+    <div class="proc">
+      <div class="step"><span class="k">01</span><h3>Brief</h3><p>Rozmowa + krótki formularz. Ustalamy cel, zakres, budżet i termin.</p></div>
+      <div class="step"><span class="k">02</span><h3>Prototyp</h3><p>Projekt kluczowych ekranów do akceptacji — zanim powstanie kod.</p></div>
+      <div class="step"><span class="k">03</span><h3>Build</h3><p>Koduję i spinam integracje. Podgląd na żywo na każdym etapie.</p></div>
+      <div class="step"><span class="k">04</span><h3>Launch</h3><p>Wdrożenie, domena, Lighthouse 90+, przekazanie kodu.</p></div>
+      <div class="step"><span class="k">05</span><h3>Opieka</h3><p>Utrzymanie, poprawki i rozwój — opcjonalnie, miesięcznie.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY ME ===== -->
+<section class="sec" id="dlaczego" style="background:var(--bg-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Dlaczego ja</span>
+      <h2>Jedna osoba, pełny cykl — <span class="gt">bez agencyjnego narzutu.</span></h2>
+    </div>
+    <div class="why-grid">
+      <div class="card why"><div class="ic" aria-hidden="true">◎</div><h3>Zero głuchego telefonu</h3><p>Projektant i programista to ta sama osoba. Nic nie ginie między działami — bo działów nie ma.</p></div>
+      <div class="card why"><div class="ic" aria-hidden="true">✳</div><h3>Design + kod z jednych rąk</h3><p>Spójny efekt: to, co zaprojektowane, jest dokładnie tym, co wdrożone.</p></div>
+      <div class="card why"><div class="ic" aria-hidden="true">◆</div><h3>Stała cena po briefie</h3><p>Po ustaleniu zakresu znasz cenę i termin. Bez „wyszło drożej”.</p></div>
+      <div class="card why"><div class="ic" aria-hidden="true">➜</div><h3>Szybkość</h3><p>Bez agencyjnych kolejek. Prosty landing potrafi ruszyć w 2 tygodnie.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HONEST BLOCK ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="honest">
+      <div class="in">
+        <span class="eyebrow" style="background:rgba(255,255,255,.1);color:#fff">Bez ściemy</span>
+        <h2 style="margin-top:14px">Jestem nowy na rynku — i dlatego wszystko możesz sprawdzić.</h2>
+        <p>Zamiast kradzionych szablonów i wymyślonych logotypów klientów pokazuję cztery produkty zbudowane od zera. Bez NDA-mgły: każdy z nich otworzysz i poklikasz na żywo, a liczby (Lighthouse, czas, rozmiar strony) są prawdziwe i weryfikowalne.</p>
+        <div class="row">
+          <a class="btn btn-ghost" href="https://unravel-18.github.io/portfolio-demos/" target="_blank" rel="noopener">Otwórz wszystkie demo →</a>
+          <a class="btn btn-ghost" href="#wycena">Zamów wycenę</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="sec" id="faq">
+  <div class="wrap faq-wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">FAQ</span>
+      <h2>Pytania, które zadają klienci.</h2>
+    </div>
+    <div class="faq-list">
+      <details><summary>Ile kosztuje strona?</summary><p>Prosty landing zwykle od 3 500 zł, strona firmowa z kilkoma podstronami od 5 000–8 000 zł, złożone serwisy i aplikacje wyceniam indywidualnie po briefie. Dokładną widełkę dostajesz od razu w kalkulatorze „Bezpłatna wycena”.</p></details>
+      <details><summary>Jak długo to trwa?</summary><p>Landing — od 2 tygodni, strona firmowa — 3–4 tygodnie, aplikacja/MVP — zależnie od zakresu. Termin ustalamy na etapie briefu i jest częścią umowy.</p></details>
+      <details><summary>Czyj jest kod po zakończeniu?</summary><p>Twój. Po opłaceniu ostatniego etapu przekazuję pełny kod źródłowy i dostępy. Bez uzależniania od siebie.</p></details>
+      <details><summary>Co, jeśli projekt mi się nie spodoba?</summary><p>Pracujemy etapami. Najpierw zatwierdzasz prototyp — dopiero potem powstaje kod. W cenie są 2 rundy poprawek na etapie projektu, a za kolejny etap płacisz dopiero, gdy poprzedni jest zaakceptowany.</p></details>
+      <details><summary>Zajmujesz się hostingiem?</summary><p>Tak. Mogę wdrożyć na szybkim, tanim hostingu i objąć stronę opieką (utrzymanie, kopie, aktualizacje, drobne zmiany) w abonamencie od 400 zł/mies.</p></details>
+      <details><summary>Jak się rozliczamy?</summary><p>Umowa o dzieło lub faktura przez platformę rozliczeniową (VAT). Zwykle 30–50% zaliczki na start, reszta po etapach. Wszystko na papierze.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="sec cta-band" id="wycena">
+  <div class="wrap">
+    <div class="cta-inner">
+      <h2>Policzmy Twój projekt — w 2 minuty.</h2>
+      <p>Odpowiedz na 5 pytań i od razu zobacz orientacyjną wycenę i termin. Bez zobowiązań, bez dzwonienia.</p>
+      <a href="#" class="btn btn-primary btn-lg">Rozpocznij bezpłatną wycenę →</a>
+      <div class="msgs" id="kontakt">
+        <a class="msg" data-ct="mail" href="#" rel="noopener">✉ E-mail</a>
+        <a class="msg" data-ct="tg" href="#" target="_blank" rel="noopener">✈ Telegram</a>
+        <a class="msg" data-ct="wa" href="#" target="_blank" rel="noopener">◍ WhatsApp</a>
+        <a class="msg" data-ct="in" href="#" target="_blank" rel="noopener">in LinkedIn</a>
+      </div>
+      <p style="font-size:13px;margin-top:16px;opacity:.8">Odpowiadam do 24 godzin.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand" href="#top"><span class="g" aria-hidden="true"></span>Illume</a>
+      <p class="footer-tag">Studio full-cycle web. Projekt, kod i wdrożenie w jednych rękach — od pomysłu do żywego produktu.</p>
+      <span class="concept-badge">Prace to concept buildy — projekty własne</span>
+    </div>
+    <div class="footer-col">
+      <h3>Nawigacja</h3>
+      <a href="#uslugi">Usługi</a><a href="#prace">Prace</a><a href="#proces">Proces</a><a href="#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h3>Usługi</h3>
+      <a href="#uslugi">Strony pod klucz</a><a href="#uslugi">Złożone serwisy</a><a href="#uslugi">MVP i aplikacje</a><a href="#uslugi">Opieka i rozwój</a>
+    </div>
+    <div class="footer-col">
+      <h3>Kontakt</h3>
+      <a data-ct="mail" href="#">E-mail</a><a data-ct="tg" href="#" target="_blank" rel="noopener">Telegram</a><a data-ct="wa" href="#" target="_blank" rel="noopener">WhatsApp</a><a data-ct="in" href="#" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <span>© 2026 Illume · Illia Barych</span>
+    <span>Prace prezentowane jako projekty koncepcyjne. Dane w wycenie orientacyjne.</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
