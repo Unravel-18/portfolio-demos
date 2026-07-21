@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Illume — makieta C «Nightshift Indigo»</title>
+<meta name="description" content="Illume — projekt, kod, wdrożenie w jednych rękach. Makieta koncepcyjna C (Nightshift Indigo)." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Familjen+Grotesk:wght@400;500;600&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --indigo:#1C1B3A; --indigo-2:#232248; --sand:#EFE5D3; --sand-2:#B8B2C4;
+    --peri:#8B93FF; --peri-dn:#A9AFFF; --ember:#E0764F; --line:#38375E;
+    --ff-d:"Syne",system-ui,sans-serif; --ff:"Familjen Grotesk",system-ui,sans-serif; --ff-m:"Martian Mono",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--ff);background:var(--indigo);color:var(--sand);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 32px;position:relative;z-index:2}
+  a{color:inherit;text-decoration:none}
+  #bg{position:fixed;inset:0;z-index:0;display:block}
+
+  .top{display:flex;align-items:center;gap:26px;height:82px;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--ff-d);font-weight:800;font-size:22px;letter-spacing:-.02em}
+  .brand .glyph{width:32px;height:32px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--peri),var(--indigo) 72%);
+    box-shadow:0 0 20px rgba(139,147,255,.55)}
+  .nav{display:flex;gap:26px;margin-left:12px}
+  .nav a{font-size:15px;color:var(--sand-2)}
+  .nav a:hover{color:var(--sand)}
+  .top-right{margin-left:auto;display:flex;align-items:center;gap:18px}
+  .lang{font-family:var(--ff-m);font-size:12px;color:var(--sand-2)}
+  .lang b{color:var(--peri-dn)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;padding:12px 20px;border-radius:10px;
+    background:var(--peri);color:var(--indigo);border:1px solid var(--peri);transition:.18s}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px -8px rgba(139,147,255,.7)}
+  .btn-ghost{background:transparent;color:var(--sand);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--peri);box-shadow:none}
+
+  .hero{padding:82px 0 44px}
+  .eyebrow{font-family:var(--ff-m);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--peri-dn);
+    display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--ember)}
+  h1{font-family:var(--ff-d);font-weight:800;font-size:clamp(44px,7.6vw,96px);line-height:1;letter-spacing:-.03em;margin:24px 0 0}
+  .grad{background:linear-gradient(100deg,var(--peri),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .kin{color:var(--ember)}
+  .lead{font-size:clamp(17px,2vw,21px);color:var(--sand-2);max-width:52ch;margin-top:28px}
+  .lead b{color:var(--sand);font-weight:600}
+  .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .metrics{display:flex;flex-wrap:wrap;gap:30px;margin-top:44px;padding-top:26px;border-top:1px solid var(--line)}
+  .metric{font-family:var(--ff-m);font-size:13px;color:var(--sand-2)}
+  .metric b{display:block;font-family:var(--ff-d);font-weight:700;font-size:30px;color:var(--sand);letter-spacing:-.02em;line-height:1.1}
+
+  .sec{padding:56px 0 90px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:28px}
+  .sec-num{font-family:var(--ff-m);font-size:14px;color:var(--ember)}
+  .sec-title{font-family:var(--ff-d);font-weight:700;font-size:clamp(24px,3vw,34px);letter-spacing:-.02em}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .card{background:var(--indigo-2);border:1px solid var(--line);border-radius:14px;padding:22px;transition:.22s;position:relative;overflow:hidden}
+  .card::after{content:"";position:absolute;inset:0;border-radius:14px;box-shadow:inset 0 0 0 1px transparent;transition:.22s}
+  .card:hover{transform:translateY(-5px);border-color:transparent}
+  .card:hover::after{box-shadow:inset 0 0 0 1px var(--peri)}
+  .card .c-n{font-family:var(--ff-m);font-size:12px;color:var(--peri-dn)}
+  .card h3{font-family:var(--ff-d);font-weight:700;font-size:18px;margin:12px 0 8px}
+  .card p{font-size:13.5px;color:var(--sand-2)}
+  .card .price{font-family:var(--ff-m);font-size:12.5px;color:var(--ember);margin-top:14px}
+  .flag{position:fixed;left:0;bottom:0;right:0;background:#0F0E22;color:var(--sand-2);font-family:var(--ff-m);
+    font-size:12px;text-align:center;padding:8px;letter-spacing:.04em;z-index:50;border-top:1px solid var(--line)}
+  @media(max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.nav,.lang{display:none}.cards{grid-template-columns:1fr}#bg{display:none}body{background:radial-gradient(1000px 500px at 70% -10%,#262551,var(--indigo))}}
+  @media(prefers-reduced-motion:reduce){#bg{display:none}body{background:radial-gradient(1000px 500px at 70% -10%,#262551,var(--indigo))}*{transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#"><span class="glyph"></span>Illume</a>
+    <nav class="nav"><a href="#">Usługi</a><a href="#">Prace</a><a href="#">Proces</a><a href="#">O mnie</a></nav>
+    <div class="top-right"><span class="lang"><b>PL</b> / EN</span><a href="#" class="btn">Bezpłatna wycena</a></div>
+  </header>
+
+  <section class="hero">
+    <span class="eyebrow">Studio · full-cycle web · pracuję, gdy Twój biznes śpi</span>
+    <h1>Od pomysłu do<br><span class="grad">żywego produktu.</span></h1>
+    <p class="lead">Projekt, kod i wdrożenie — <b>jedna osoba, pełny cykl</b>. Strony, aplikacje i integracje
+      budowane od zera, z metrykami zamiast obietnic.</p>
+    <div class="cta">
+      <a href="#" class="btn">Bezpłatna wycena w 2 minuty →</a>
+      <a href="#" class="btn btn-ghost">Zobacz prace</a>
+    </div>
+    <div class="metrics">
+      <div class="metric"><b>96</b> średni Lighthouse</div>
+      <div class="metric"><b>4</b> concept buildy na żywo</div>
+      <div class="metric"><b>&lt;24h</b> odpowiadam</div>
+      <div class="metric"><b>0</b> zależności</div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">01 —</span><h2 class="sec-title">Co robię</h2></div>
+    <div class="cards">
+      <a class="card" href="#"><span class="c-n">/ strony</span><h3>Strony pod klucz</h3><p>Projekt + kod + wdrożenie. Landing lub strona firmowa, która sprzedaje.</p><span class="price">od 3 500 zł</span></a>
+      <a class="card" href="#"><span class="c-n">/ integracje</span><h3>Złożone serwisy</h3><p>Wielofunkcyjne strony z płatnościami, CMS i integracjami API.</p><span class="price">od 8 000 zł</span></a>
+      <a class="card" href="#"><span class="c-n">/ mvp</span><h3>MVP i aplikacje</h3><p>Produkt webowy od zera — dashboard, SaaS, panel.</p><span class="price">indywidualnie</span></a>
+      <a class="card" href="#"><span class="c-n">/ opieka</span><h3>Opieka i rozwój</h3><p>Miesięczne utrzymanie, hosting, poprawki, nowe funkcje.</p><span class="price">od 400 zł/mies.</span></a>
+    </div>
+  </section>
+</div>
+
+<div class="flag">MAKIETA C · «Nightshift Indigo» — głęboki granat · Syne + Familjen Grotesk + Martian Mono</div>
+
+<script>
+(function(){
+  var reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var small=matchMedia('(max-width:640px)').matches;
+  if(reduced||small)return;
+  var cv=document.getElementById('bg'),ctx=cv.getContext('2d'),W,H,pts=[],mx=-999,my=-999;
+  function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;}
+  size();addEventListener('resize',size);
+  var N=Math.min(80,Math.floor(innerWidth/20));
+  for(var i=0;i<N;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25});
+  addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;});
+  function loop(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i];p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+      var dm=Math.hypot(p.x-mx,p.y-my);
+      if(dm<130){var f=(130-dm)/130*.5;p.x+=(p.x-mx)/dm*f;p.y+=(p.y-my)/dm*f;}
+      ctx.beginPath();ctx.arc(p.x,p.y,1.4,0,7);ctx.fillStyle='rgba(139,147,255,.55)';ctx.fill();
+      for(var j=i+1;j<pts.length;j++){
+        var q=pts[j],d=Math.hypot(p.x-q.x,p.y-q.y);
+        if(d<120){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);
+          ctx.strokeStyle='rgba(139,147,255,'+(0.14*(1-d/120))+')';ctx.lineWidth=1;ctx.stroke();}
+      }
+    }
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+</script>
+</body>
+</html>

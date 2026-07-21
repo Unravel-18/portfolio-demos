@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Illume — makieta B «Afisz»</title>
+<meta name="description" content="Illume — projekt, kod, wdrożenie w jednych rękach. Makieta koncepcyjna B (Afisz)." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=Schibsted+Grotesk:wght@400;500;700&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#F1EAD9; --paper-2:#E9E0CB; --ink:#1A1512; --ink-2:#5C5346;
+    --carmine:#A81E22; --carmine-dn:#8A171B; --mustard:#D89A1E;
+    --ff-d:"Unbounded",system-ui,sans-serif; --ff:"Schibsted Grotesk",system-ui,sans-serif; --ff-m:"Azeret Mono",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--ff);background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(rgba(26,21,18,.05) 1px,transparent 1px);background-size:5px 5px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 30px}
+  a{color:inherit;text-decoration:none}
+
+  .top{display:flex;align-items:center;gap:24px;height:78px;border-bottom:3px solid var(--ink)}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--ff-d);font-weight:800;font-size:23px;letter-spacing:-.03em;text-transform:lowercase}
+  .brand .glyph{width:30px;height:30px;background:var(--carmine);border-radius:50%;position:relative;display:grid;place-items:center}
+  .brand .glyph::after{content:"";width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:11px solid var(--mustard)}
+  .nav{display:flex;gap:24px;margin-left:12px}
+  .nav a{font-size:15px;font-weight:500}
+  .nav a:hover{color:var(--carmine)}
+  .top-right{margin-left:auto;display:flex;align-items:center;gap:16px}
+  .lang{font-family:var(--ff-m);font-size:12px}
+  .lang b{color:var(--carmine)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--ff);font-weight:700;font-size:15px;padding:12px 22px;
+    background:var(--carmine);color:var(--paper);border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:.12s}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+  .btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+  .btn-ghost{background:var(--paper);color:var(--ink)}
+
+  /* hero poster */
+  .hero{padding:56px 0 30px;position:relative}
+  .poster{position:relative;border:3px solid var(--ink);background:var(--paper-2);padding:48px 44px;overflow:hidden}
+  .poster::before{content:"";position:absolute;top:-70px;right:-70px;width:260px;height:260px;border-radius:50%;background:var(--mustard);opacity:.9}
+  .poster::after{content:"";position:absolute;bottom:-120px;left:40%;width:200px;height:200px;background:var(--carmine);
+    clip-path:polygon(50% 0,100% 100%,0 100%);opacity:.85}
+  .eyebrow{position:relative;font-family:var(--ff-m);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--carmine-dn);z-index:2}
+  h1{position:relative;z-index:2;font-family:var(--ff-d);font-weight:800;font-size:clamp(44px,8.5vw,112px);line-height:.9;
+    letter-spacing:-.045em;text-transform:uppercase;margin:18px 0 0}
+  h1 .out{color:transparent;-webkit-text-stroke:2px var(--ink)}
+  h1 .fill{color:var(--carmine)}
+  .kin{display:inline-block;color:var(--carmine)}
+  .lead{position:relative;z-index:2;font-size:clamp(16px,1.9vw,20px);max-width:46ch;margin-top:26px;font-weight:500}
+  .cta{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+  .strip{display:flex;flex-wrap:wrap;margin-top:0;border:3px solid var(--ink);border-top:0}
+  .strip div{flex:1;min-width:150px;padding:16px 20px;font-family:var(--ff-m);font-size:12.5px;color:var(--ink-2);border-right:3px solid var(--ink)}
+  .strip div:last-child{border-right:0}
+  .strip b{display:block;font-family:var(--ff-d);font-weight:700;font-size:26px;color:var(--ink);letter-spacing:-.03em}
+
+  .sec{padding:52px 0 90px}
+  .sec-title{font-family:var(--ff-d);font-weight:700;font-size:clamp(22px,3vw,32px);text-transform:uppercase;letter-spacing:-.03em;margin-bottom:26px}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:3px solid var(--ink)}
+  .card{padding:24px;border-right:3px solid var(--ink);background:var(--paper);transition:background .15s}
+  .card:last-child{border-right:0}
+  .card:hover{background:var(--mustard)}
+  .card .c-n{font-family:var(--ff-m);font-size:20px;font-weight:500;color:var(--carmine)}
+  .card h3{font-family:var(--ff-d);font-weight:700;font-size:16px;text-transform:uppercase;margin:14px 0 8px;letter-spacing:-.02em;line-height:1.1}
+  .card p{font-size:13.5px;color:var(--ink-2)}
+  .card:hover p{color:var(--ink)}
+  .card .price{font-family:var(--ff-m);font-size:12px;margin-top:12px;color:var(--ink)}
+  .flag{position:fixed;left:0;bottom:0;right:0;background:var(--ink);color:var(--paper);font-family:var(--ff-m);
+    font-size:12px;text-align:center;padding:8px;letter-spacing:.04em;z-index:50}
+  @media(max-width:900px){.cards{grid-template-columns:1fr 1fr}.card:nth-child(2){border-right:0}.card:nth-child(1),.card:nth-child(2){border-bottom:3px solid var(--ink)}}
+  @media(max-width:640px){.nav,.lang{display:none}.cards{grid-template-columns:1fr}.card{border-right:0;border-bottom:3px solid var(--ink)}.card:last-child{border-bottom:0}.strip div{border-right:0;border-bottom:3px solid var(--ink)}.strip div:last-child{border-bottom:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#"><span class="glyph"></span>illume</a>
+    <nav class="nav"><a href="#">Usługi</a><a href="#">Prace</a><a href="#">Proces</a><a href="#">O mnie</a></nav>
+    <div class="top-right"><span class="lang"><b>PL</b> / EN</span><a href="#" class="btn">Wycena</a></div>
+  </header>
+
+  <section class="hero">
+    <div class="poster">
+      <span class="eyebrow">Studio · full-cycle web</span>
+      <h1><span class="out">Od pomysłu</span><br>do <span class="fill">żywego</span><br>produktu.</h1>
+      <p class="lead">Projekt, kod i wdrożenie — w jednych rękach. Strony, aplikacje i integracje dla firm, które chcą działać, nie czekać.</p>
+      <div class="cta">
+        <a href="#" class="btn">Bezpłatna wycena →</a>
+        <a href="#" class="btn btn-ghost">Zobacz prace</a>
+      </div>
+    </div>
+    <div class="strip">
+      <div><b>96</b> śr. Lighthouse</div>
+      <div><b>4</b> buildy na żywo</div>
+      <div><b>&lt;24h</b> odpowiedź</div>
+      <div><b>1</b> osoba, pełny cykl</div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-title">Co robię</h2>
+    <div class="cards">
+      <div class="card"><span class="c-n">01</span><h3>Strony pod klucz</h3><p>Projekt + kod + wdrożenie. Landing lub strona firmowa, która sprzedaje.</p><span class="price">od 3 500 zł</span></div>
+      <div class="card"><span class="c-n">02</span><h3>Złożone serwisy</h3><p>Wielofunkcyjne strony z płatnościami, CMS i integracjami API.</p><span class="price">od 8 000 zł</span></div>
+      <div class="card"><span class="c-n">03</span><h3>MVP i aplikacje</h3><p>Produkt webowy od zera — dashboard, SaaS, panel.</p><span class="price">indywidualnie</span></div>
+      <div class="card"><span class="c-n">04</span><h3>Opieka i rozwój</h3><p>Miesięczne utrzymanie, hosting, poprawki, nowe funkcje.</p><span class="price">od 400 zł/mies.</span></div>
+    </div>
+  </section>
+</div>
+
+<div class="flag">MAKIETA B · «Afisz» — polska szkoła plakatu · Unbounded + Schibsted Grotesk + Azeret Mono</div>
+</body>
+</html>
