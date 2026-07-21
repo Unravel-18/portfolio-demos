@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kontakt — Brevary</title>
+<meta name="description" content="Napisz w sprawie strony, aplikacji lub opieki nad produktem. Odpowiadam do 24 godzin. Formularz, e-mail i komunikatory." />
+<meta name="color-scheme" content="light" />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+<link rel="preload" as="style" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" />
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" /></noscript>
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366F1'/%3E%3Cstop offset='1' stop-color='%23A855F7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3C/svg%3E" />
+<style>
+  .k-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:start}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-weight:600;font-size:14px;margin-bottom:7px}
+  .field input,.field select,.field textarea{width:100%;font-family:var(--ff);font-size:15px;padding:13px 15px;
+    border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--ink)}
+  .field textarea{min-height:120px;resize:vertical}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+  .field .err{color:#C1121F;font-size:13px;margin-top:6px;display:none}
+  .field.invalid .err{display:block}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .rodo{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);margin:6px 0 14px}
+  .rodo input{margin-top:3px;width:auto}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .k-side .card{margin-bottom:14px}
+  .k-msg{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;
+    font-weight:600;font-size:15px;transition:.16s;background:var(--panel)}
+  .k-msg:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .k-msg .i{width:34px;height:34px;border-radius:9px;background:var(--accent-soft);color:var(--accent-tx);display:grid;place-items:center;font-size:16px;flex:0 0 auto}
+  .k-msg small{display:block;color:var(--muted);font-weight:500;font-size:12.5px}
+  .k-note{font-size:13px;color:var(--muted);margin-top:8px}
+  .form-status{display:none;padding:14px 16px;border-radius:12px;font-weight:600;font-size:14px;margin-top:8px}
+  .form-status.ok{display:block;background:#E7F7EF;color:var(--ok);border:1px solid #B7E4CD}
+  .form-status.bad{display:block;background:#FDECEC;color:#C1121F;border:1px solid #F3C2C2}
+  @media(max-width:760px){.k-grid{grid-template-columns:1fr;gap:28px}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="wrap header-in">
+    <a class="brand" href="../" aria-label="Brevary — strona główna"><span class="g" aria-hidden="true"></span>Brevary</a>
+    <nav class="nav" id="nav" aria-label="Główna">
+      <a href="../#uslugi">Usługi</a><a href="../prace/">Prace</a><a href="../#proces">Proces</a><a href="../kontakt/" aria-current="page">Kontakt</a>
+    </nav>
+    <div class="header-cta">
+      <span class="lang"><b>PL</b> / EN</span>
+      <a href="../wycena/" class="btn btn-primary">Bezpłatna wycena</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Kontakt</span>
+      <h1 style="font-size:clamp(34px,5vw,52px);margin-top:12px">Napisz — <span class="gt">odpowiadam do 24h.</span></h1>
+      <p class="sec-sub">Masz projekt, pomysł albo starą stronę do odświeżenia? Opisz w dwóch zdaniach — odezwę się z konkretami. Jeśli chcesz od razu orientacyjną cenę, wypełnij <a href="../wycena/" style="color:var(--accent-tx);font-weight:600">bezpłatną wycenę</a>.</p>
+    </div>
+
+    <div class="k-grid">
+      <!-- form -->
+      <form id="contactForm" novalidate>
+        <div class="two">
+          <div class="field"><label for="cName">Imię</label><input type="text" id="cName" name="name" autocomplete="name" placeholder="Jak się zwracać?" /></div>
+          <div class="field" id="cfEmail"><label for="cEmail">E-mail *</label><input type="email" id="cEmail" name="email" inputmode="email" autocomplete="email" placeholder="ty@firma.pl" required /><span class="err">Podaj poprawny e-mail.</span></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="cType">Rodzaj projektu</label>
+            <select id="cType" name="type">
+              <option value="">— wybierz —</option>
+              <option>Strona pod klucz</option><option>Złożony serwis</option><option>MVP / aplikacja</option><option>Opieka i rozwój</option><option>Jeszcze nie wiem</option>
+            </select>
+          </div>
+          <div class="field"><label for="cBudget">Budżet (orientacyjnie)</label>
+            <select id="cBudget" name="budget">
+              <option value="">— wybierz —</option>
+              <option>do 5 000 zł</option><option>5 000 – 12 000 zł</option><option>12 000 – 30 000 zł</option><option>powyżej 30 000 zł</option><option>Nie wiem</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="cMsg">Wiadomość</label><textarea id="cMsg" name="message" placeholder="Kilka zdań o projekcie, terminie, linki do inspiracji…"></textarea></div>
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <label class="rodo"><input type="checkbox" id="cRodo" required /><span>Zgadzam się na kontakt w tej sprawie. Dane wykorzystam tylko do odpowiedzi (RODO).</span></label>
+        <div class="field" id="cfRodo" style="margin:-8px 0 8px"><span class="err">Zaznacz zgodę, żeby wysłać.</span></div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="cSend">Wyślij wiadomość →</button>
+        <p class="form-status" id="cStatus" role="status"></p>
+        <p class="k-note">Wolisz od razu? Napisz na komunikatorze obok. Odpowiadam do 24 godzin.</p>
+      </form>
+
+      <!-- side contacts -->
+      <div class="k-side">
+        <a class="k-msg" data-ct="mail" href="#"><span class="i">✉</span><span>E-mail<small id="mailLabel">napisz bezpośrednio</small></span></a>
+        <a class="k-msg" data-ct="tg" href="#" target="_blank" rel="noopener"><span class="i">✈</span><span>Telegram<small>szybka odpowiedź</small></span></a>
+        <a class="k-msg" data-ct="wa" href="#" target="_blank" rel="noopener"><span class="i">◍</span><span>WhatsApp<small>napisz lub zadzwoń</small></span></a>
+        <a class="k-msg" data-ct="in" href="#" target="_blank" rel="noopener"><span class="i">in</span><span>LinkedIn<small>zobacz profil</small></span></a>
+        <div class="card" style="margin-top:14px;background:var(--bg-2)">
+          <p style="font-size:14px;color:var(--ink-2)"><b>Jak pracuję:</b> najpierw krótki brief i prototyp do akceptacji, dopiero potem kod. Płacisz etapami. Kod po zakończeniu jest Twój.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-legal" style="border-top:0">
+    <span>© 2026 Brevary · Illia Barych</span>
+    <span>Dane z formularza wykorzystuję wyłącznie do odpowiedzi na zapytanie.</span>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
