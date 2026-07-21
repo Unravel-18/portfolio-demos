@@ -1,4 +1,4 @@
-/* Illume — main.js (vanilla, 0 dependencies) */
+/* Brevary — main.js (vanilla, 0 dependencies) */
 (function () {
   "use strict";
 
@@ -21,7 +21,7 @@
   /* ---- contacts (assembled in JS so the address isn't in raw HTML) ---- */
   // TODO: uzupełnić realne uchwyty (Telegram / WhatsApp / LinkedIn)
   var CONTACT = {
-    mail: "mailto:" + ["barich2002", "gmail.com"].join("@") + "?subject=" + encodeURIComponent("Zapytanie ze strony Illume"),
+    mail: "mailto:" + ["barich2002", "gmail.com"].join("@") + "?subject=" + encodeURIComponent("Zapytanie ze strony Brevary"),
     tg: null,   // np. "https://t.me/nick"
     wa: null,   // np. "https://wa.me/48XXXXXXXXX"
     in: null    // np. "https://www.linkedin.com/in/..."

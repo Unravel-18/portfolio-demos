@@ -1,4 +1,4 @@
-/* Illume — quiz-brief «Wycena w 2 minuty» (vanilla, 0 deps) */
+/* Brevary — quiz-brief «Wycena w 2 minuty» (vanilla, 0 deps) */
 (function () {
   "use strict";
   var form = document.getElementById("quiz");
@@ -22,7 +22,7 @@
   form.querySelector(".q-nav").before(stepErr);
 
   /* ---- persistence ---- */
-  var KEY = "illume_quiz_v1";
+  var KEY = "brevary_quiz_v1";
   function save() {
     try {
       var d = { cur: cur, data: serialize() };
@@ -149,7 +149,7 @@
     // brief -> mailto (or Web3Forms when key set)
     var brief = buildBrief(o, r);
     var send = document.getElementById("resSend");
-    send.setAttribute("href", "mailto:" + MAIL + "?subject=" + encodeURIComponent("Brief z wyceny — Illume") + "&body=" + encodeURIComponent(brief));
+    send.setAttribute("href", "mailto:" + MAIL + "?subject=" + encodeURIComponent("Brief z wyceny — Brevary") + "&body=" + encodeURIComponent(brief));
     if (WEB3_KEY) {
       send.addEventListener("click", function (e) {
         e.preventDefault();
@@ -167,7 +167,7 @@
     var STATEN = { projekt: "mam projekt graficzny", tresci: "mam treści", zera: "od zera", redesign: "redesign" };
     var TERMN = { asap: "jak najszybciej", "1m": "w miesiąc", "3m": "1–3 mies.", flex: "elastycznie" };
     var lines = [
-      "Nowy brief z wyceny Illume", "",
+      "Nowy brief z wyceny Brevary", "",
       "Typ: " + (TYPE[o.type] || "-"),
       "Podstrony: " + (o.pages || "-"),
       "Funkcje: " + ((o.feat && o.feat.length) ? o.feat.join(", ") : "brak"),
@@ -185,7 +185,7 @@
     btn.textContent = "Wysyłam…";
     fetch("https://api.web3forms.com/submit", {
       method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ access_key: WEB3_KEY, subject: "Brief z wyceny — Illume", from_name: "Illume wycena", email: o.email, message: brief, _template: "table" })
+      body: JSON.stringify({ access_key: WEB3_KEY, subject: "Brief z wyceny — Brevary", from_name: "Brevary wycena", email: o.email, message: brief, _template: "table" })
     }).then(function (x) { return x.json(); }).then(function (j) {
       if (j.success) { sent.style.display = "block"; sent.textContent = "Dzięki! Brief wysłany — odpowiadam do 24h."; btn.style.display = "none"; }
       else fallback();
