@@ -10,7 +10,7 @@
 
   /* ---------------- i18n ---------------- */
   const I18N = {
-    concept:   ["Concept · projekt własny", "Concept · self-initiated"],
+    concept:   ["Projekt: Klarmint", "By Klarmint"],
     nav_main:  ["Nawigacja", "Menu"],
     nav_dashboard:["Pulpit","Dashboard"], nav_invoices:["Faktury","Invoices"],
     nav_clients:["Klienci","Clients"], nav_expenses:["Koszty","Expenses"],
@@ -36,7 +36,7 @@
     th_no:["Numer","Number"], th_client:["Klient","Client"], th_amount:["Kwota brutto","Gross amount"],
     th_due:["Termin","Due"], th_status:["Status","Status"],
     empty:["Brak faktur w tym filtrze","No invoices in this filter"],
-    foot:["Rachuba · demo koncepcyjne · dane fikcyjne","Rachuba · concept demo · fictional data"],
+    foot:["© 2026 Klarmint · IT-Tech — Illia Barych","© 2026 Klarmint · IT-Tech — Illia Barych"],
     foot_about:["O projekcie","About"],
     st_paid:["Opłacona","Paid"], st_pending:["Oczekuje","Pending"], st_overdue:["Po terminie","Overdue"],
     d_new_title:["Nowa faktura","New invoice"], d_client:["Klient","Client"],
@@ -887,7 +887,7 @@
     };
     $("#upgradeBtn").onclick = () => toast("info", LANG==="pl"?"Plan Pro":"Pro plan", LANG==="pl"?"Nielimitowane faktury · 39 zł/mies":"Unlimited invoices · 39 zł/mo");
     $("#userCard").onclick = () => toast("info", "Michał Kowalczyk", "JDG · NIP 894-XXX-XX-XX");
-    $("#aboutLink").onclick = (e) => { e.preventDefault(); toast("info", t("t_soon_t"), t("t_soon_d")); };
+    /* #aboutLink now links to klarmint.com — no handler */
 
     // nav
     $$(".nav-item").forEach((n) => n.addEventListener("click", (e) => { e.preventDefault(); go(n.dataset.view); }));

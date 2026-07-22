@@ -73,7 +73,7 @@
     footer_nav:["Nawigacja","Navigation"], footer_contact:["Kontakt","Contact"], footer_legal:["Informacje","Legal"],
     footer_privacy:["Polityka prywatności","Privacy policy"], footer_rodo:["RODO","GDPR"],
     footer_rights:["Wszelkie prawa zastrzeżone.","All rights reserved."],
-    footer_credit:["Concept & build — portfolio project","Concept & build — portfolio project"],
+    footer_credit:["Projekt i realizacja: Klarmint","Design & build: Klarmint"],
     mbb_sub:["online · 24/7","online · 24/7"],
     step1:["Usługa","Service"], step2:["Lekarz","Dentist"], step3:["Termin","Date"], step4:["Dane","Details"],
     b_step1_h:["Jaką usługę wybierasz?","What are you booking?"],
