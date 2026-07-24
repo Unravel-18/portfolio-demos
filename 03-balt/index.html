@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bałt Palarnia — kawa, która przypływa nocą · Gdańsk</title>
+<meta name="description" content="Rzemieślnicza palarnia kawy w porcie Gdańsk. Każde ziarno ma swój rejs i swoją historię. Palimy nocą, wysyłamy świeżo." />
+<meta name="color-scheme" content="dark" />
+<meta property="og:title" content="Bałt Palarnia — kawa, która przypływa nocą" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Karla:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Karla:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Karla:wght@400;500;600;700&display=swap" /></noscript>
+<link rel="stylesheet" href="szlak.css?v=4" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2312100A'/%3E%3Cpolygon points='16,9 4,14 4,18' fill='%23F0C078' opacity='.45'/%3E%3Cpolygon points='16,9 28,14 28,18' fill='%23F0C078' opacity='.45'/%3E%3Crect x='13.4' y='12' width='5.2' height='14' fill='%23EFE3CE'/%3E%3Ccircle cx='16' cy='9' r='3' fill='%23F0C078'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<div class="torch" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true">
+  <svg><filter id="grainf"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0.87 0 0 0 0 0.64 0 0 0 0 0.33 0 0 0 0.05 0"/></filter><rect width="100%" height="100%" filter="url(#grainf)"/></svg>
+</div>
+<div class="progress" aria-hidden="true"><i id="prog"></i></div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="wrap header-in">
+    <a class="logo" href="index.html"><b>Bałt Palarnia</b><small data-pl="palarnia kawy · port Gdańsk" data-en="coffee roastery · port of Gdańsk">palarnia kawy · port Gdańsk</small></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="sklep.html" data-i18n="nav.sklep">Sklep</a>
+      <a href="pochodzenia.html" data-pl="Rejsy" data-en="Voyages">Rejsy</a>
+      <a href="subskrypcja.html" data-i18n="nav.sub">Subskrypcja</a>
+      <a href="o-nas.html" data-i18n="nav.about">O nas</a>
+    </nav>
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="Language"><button data-lang="pl">PL</button><span>/</span><button data-lang="en">EN</button></div>
+      <button class="cart-btn" aria-label="Koszyk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16l-1.4 12a2 2 0 0 1-2 1.8H7.4a2 2 0 0 1-2-1.8L4 7Z"/><path d="M8.5 7V5.5a3.5 3.5 0 0 1 7 0V7"/></svg>
+        <span class="cart-badge" data-n="0">0</span>
+      </button>
+      <button class="burger" aria-label="Menu"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mmenu" aria-hidden="true">
+  <div class="wrap mmenu-top"><a class="logo" href="index.html"><b>Bałt Palarnia</b></a><button class="mmenu-close" aria-label="Close">×</button></div>
+  <nav class="wrap mmenu-nav">
+    <a href="sklep.html" data-i18n="nav.sklep">Sklep</a>
+    <a href="pochodzenia.html" data-pl="Rejsy" data-en="Voyages">Rejsy</a>
+    <a href="subskrypcja.html" data-i18n="nav.sub">Subskrypcja</a>
+    <a href="o-nas.html" data-i18n="nav.about">O nas</a>
+    <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
+  </nav>
+  <div class="wrap mmenu-foot">ul. Świętojańska 12, Gdańsk<br>kontakt@baltpalarnia.pl</div>
+</div>
+
+<main>
+
+<!-- HERO — NOC W PORCIE -->
+<section class="hero in" id="top">
+  <p class="ch-mark center" data-pl="Rozdział I · Noc w porcie" data-en="Chapter I · Night in the port">Rozdział I · Noc w porcie</p>
+  <h1 data-pl='<span class="line-reveal"><span>Kawa, która</span></span><span class="line-reveal"><span class="it">przypływa nocą.</span></span>' data-en='<span class="line-reveal"><span>Coffee that</span></span><span class="line-reveal"><span class="it">arrives by night.</span></span>'>
+    <span class="line-reveal"><span>Kawa, która</span></span>
+    <span class="line-reveal"><span class="it">przypływa nocą.</span></span>
+  </h1>
+  <p class="lede" data-pl="Zanim trafi do Twojej filiżanki, każde ziarno przepływa pół świata i mija naszą latarnię. Palimy je w Gdańsku, nocą — gdy port cichnie, a zapach niesie się aż po falochron." data-en="Before it reaches your cup, every bean sails half the world and passes our lighthouse. We roast it in Gdańsk, at night — when the port goes quiet and the aroma drifts all the way to the breakwater.">Zanim trafi do Twojej filiżanki, każde ziarno przepływa pół świata i mija naszą latarnię. Palimy je w Gdańsku, nocą — gdy port cichnie, a zapach niesie się aż po falochron.</p>
+  <div class="hero-cta">
+    <a class="btn btn-ghost" href="#rejs" data-pl="Wypłyń w rejs ↓" data-en="Set sail ↓">Wypłyń w rejs ↓</a>
+    <a class="btn btn-primary" href="sklep.html" data-pl="Do sklepu" data-en="To the shop">Do sklepu</a>
+  </div>
+
+  <div class="beam-wrap" aria-hidden="true" id="beamWrap">
+    <svg viewBox="-3000 -3000 6000 6000">
+      <defs>
+        <linearGradient id="beamfar" x1="1" y1="0" x2="0" y2="0">
+          <stop offset="0" stop-color="#F0C078" stop-opacity=".4"/>
+          <stop offset=".16" stop-color="#F0C078" stop-opacity=".13"/>
+          <stop offset=".55" stop-color="#F0C078" stop-opacity=".04"/>
+          <stop offset="1" stop-color="#F0C078" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <g>
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0" dur="22s" repeatCount="indefinite"/>
+        <polygon points="0,-4 -2800,-240 -2800,240 0,4" fill="url(#beamfar)"/>
+        <g transform="scale(-1 1)"><polygon points="0,-4 -2800,-240 -2800,240 0,4" fill="url(#beamfar)"/></g>
+      </g>
+    </svg>
+  </div>
+  <div class="harbor" aria-hidden="true">
+    <svg viewBox="-1200 0 2640 420" width="2640" height="420">
+      <defs>
+        <linearGradient id="seag" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0D1318"/>
+          <stop offset="1" stop-color="#07090C"/>
+        </linearGradient>
+        <linearGradient id="beamg" x1="1" y1="0" x2="0" y2="0">
+          <stop offset="0" stop-color="#F0C078" stop-opacity=".42"/>
+          <stop offset=".22" stop-color="#F0C078" stop-opacity=".16"/>
+          <stop offset="1" stop-color="#F0C078" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="reflg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#F0C078" stop-opacity=".8"/>
+          <stop offset="1" stop-color="#F0C078" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="moonglow">
+          <stop offset="0" stop-color="#EFE3CE" stop-opacity=".10"/>
+          <stop offset=".55" stop-color="#EFE3CE" stop-opacity=".04"/>
+          <stop offset="1" stop-color="#EFE3CE" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <g fill="#EFE3CE">
+        <circle class="star" cx="120" cy="40" r="1.4"/><circle class="star" cx="300" cy="86" r="1.1"/>
+        <circle class="star" cx="470" cy="30" r="1.3"/><circle class="star" cx="640" cy="70" r="1"/>
+        <circle class="star" cx="810" cy="34" r="1.4"/><circle class="star" cx="980" cy="90" r="1.1"/>
+        <circle class="star" cx="1130" cy="46" r="1.2"/><circle class="star" cx="1330" cy="80" r="1.4"/>
+        <circle class="star" cx="210" cy="120" r="1"/><circle class="star" cx="890" cy="128" r="1.2"/>
+        <circle class="star" cx="-260" cy="64" r="1.3"/><circle class="star" cx="-520" cy="102" r="1"/>
+        <circle class="star" cx="-760" cy="44" r="1.2"/><circle class="star" cx="-1020" cy="88" r="1.4"/>
+        <circle class="star" cx="-380" cy="140" r="1"/><circle class="star" cx="-900" cy="132" r="1.1"/>
+      </g>
+      <circle cx="954" cy="84" r="64" fill="url(#moonglow)"/>
+      <path d="M927,84 a27,27 0 1 0 54,0 a27,27 0 1 0 -54,0 M943,79 a18,18 0 1 0 36,0 a18,18 0 1 0 -36,0" fill="#EFE3CE" fill-rule="evenodd" opacity=".92"/>
+      <g stroke="rgba(239,227,206,.13)" stroke-width="2" fill="none">
+        <path d="M96,268 L96,184 M158,268 L158,184 M78,184 L214,184 M120,184 L120,154 L232,168 M120,154 L104,184"/>
+        <path d="M268,268 L268,206 M312,268 L312,206 M254,206 L352,206 M330,206 L330,182 L396,192"/>
+      </g>
+      <rect x="-1200" y="268" width="2640" height="152" fill="url(#seag)"/>
+      <g class="glint" stroke="#EFE3CE" stroke-linecap="round">
+        <line x1="930" y1="278" x2="976" y2="278" stroke-opacity=".12" stroke-width="2"/>
+        <line x1="942" y1="288" x2="980" y2="288" stroke-opacity=".08" stroke-width="2"/>
+        <line x1="934" y1="299" x2="966" y2="299" stroke-opacity=".05" stroke-width="2"/>
+      </g>
+      <g>
+        <path d="M470,268 L475,254 L636,254 L662,238 L663,254 L672,254 L667,268 Z" fill="#060504"/>
+        <line x1="476" y1="254" x2="671" y2="254" stroke="rgba(239,227,206,.1)" stroke-width="1"/>
+        <rect x="486" y="224" width="40" height="30" fill="#060504"/>
+        <rect x="482" y="218" width="48" height="7" fill="#060504"/>
+        <path d="M502,206 L514,206 L512,218 L504,218 Z" fill="#060504"/>
+        <line x1="492" y1="224" x2="492" y2="192" stroke="#060504" stroke-width="2"/>
+        <circle cx="492" cy="190" r="1.8" fill="#F0C078" opacity=".9"/>
+        <circle cx="496" cy="232" r="1.3" fill="#F0C078" opacity=".8"/>
+        <circle cx="504" cy="232" r="1.3" fill="#F0C078" opacity=".8"/>
+        <circle cx="512" cy="232" r="1.3" fill="#F0C078" opacity=".8"/>
+        <rect x="540" y="240" width="24" height="14" fill="#070605"/>
+        <rect x="568" y="234" width="30" height="20" fill="#070605"/>
+        <rect x="602" y="240" width="26" height="14" fill="#070605"/>
+        <line x1="646" y1="254" x2="646" y2="226" stroke="#060504" stroke-width="2"/>
+        <circle cx="646" cy="224" r="1.8" fill="#F0C078" opacity=".9"/>
+        <line x1="488" y1="276" x2="522" y2="276" stroke="#F0C078" stroke-opacity=".06" stroke-width="2"/>
+      </g>
+      <path class="wave" d="M-1340,272 q35,-8 70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0" fill="none" stroke="rgba(239,227,206,.16)" stroke-width="1.5"/>
+      <path class="wave w2" d="M-1340,296 q35,-9 70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0 t70,0" fill="none" stroke="rgba(239,227,206,.09)" stroke-width="1.5"/>
+      <path d="M1128,278 Q1150,268 1176,268 L1440,268 L1440,300 L1128,300 Z" fill="#060504"/>
+      <path d="M1128,300 L1136,284 L1150,292 L1158,278 L1172,294 L1180,300 Z" fill="#070605"/>
+      <line x1="1176" y1="268" x2="1440" y2="268" stroke="rgba(239,227,206,.07)" stroke-width="1"/>
+      <polygon class="refl" points="1240,302 1260,302 1286,420 1214,420" fill="url(#reflg)"/>
+      <circle cx="1250" cy="92" r="40" fill="#F0C078" opacity=".08"/>
+      <circle cx="1250" cy="92" r="20" fill="#F0C078" opacity=".25"/>
+      <path d="M1233,120 L1218,274 L1282,274 L1267,120 Z" fill="#0A0807"/>
+      <path d="M1232,124 L1219,272" stroke="#DEA454" stroke-opacity=".3" stroke-width="1.5" fill="none"/>
+      <rect x="1227" y="180" width="46" height="9" fill="rgba(239,227,206,.05)"/>
+      <rect x="1223" y="228" width="54" height="9" fill="rgba(239,227,206,.05)"/>
+      <path d="M1243,274 L1243,256 Q1250,249 1257,256 L1257,274 Z" fill="#F0C078" opacity=".1"/>
+      <rect x="1228" y="76" width="4" height="38" fill="#080605"/>
+      <rect x="1268" y="76" width="4" height="38" fill="#080605"/>
+      <rect x="1232" y="76" width="36" height="38" fill="#F0C078" opacity=".95"/>
+      <line x1="1244" y1="76" x2="1244" y2="114" stroke="#080605" stroke-width="2"/>
+      <line x1="1256" y1="76" x2="1256" y2="114" stroke="#080605" stroke-width="2"/>
+      <line x1="1232" y1="95" x2="1268" y2="95" stroke="#080605" stroke-width="2"/>
+      <g stroke="#080605" stroke-width="2">
+        <line x1="1222" y1="100" x2="1222" y2="114"/><line x1="1230" y1="100" x2="1230" y2="114"/>
+        <line x1="1238" y1="100" x2="1238" y2="114"/><line x1="1246" y1="100" x2="1246" y2="114"/>
+        <line x1="1254" y1="100" x2="1254" y2="114"/><line x1="1262" y1="100" x2="1262" y2="114"/>
+        <line x1="1270" y1="100" x2="1270" y2="114"/><line x1="1278" y1="100" x2="1278" y2="114"/>
+      </g>
+      <line x1="1216" y1="100" x2="1284" y2="100" stroke="rgba(239,227,206,.3)" stroke-width="1.2"/>
+      <rect x="1214" y="114" width="72" height="7" rx="2" fill="#080605"/>
+      <path d="M1224,128 L1230,121 L1230,128 Z M1247,128 L1253,121 L1253,128 Z M1270,128 L1276,121 L1276,128 Z" fill="#080605"/>
+      <path d="M1222,76 Q1250,46 1278,76 Z" fill="#080605"/>
+      <line x1="1219" y1="76" x2="1281" y2="76" stroke="#080605" stroke-width="5" stroke-linecap="round"/>
+      <line x1="1250" y1="50" x2="1250" y2="36" stroke="#080605" stroke-width="2"/>
+      <circle cx="1250" cy="34" r="3.5" fill="#080605"/>
+      <circle class="lamp-glow" cx="1250" cy="92" r="7" fill="#FFF3DC"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ROAST COUNTDOWN -->
+<div class="roast-strip"><div class="wrap" id="roastStrip"></div></div>
+
+<!-- VOYAGE — REJS ZIARNA -->
+<section class="voyage" id="rejs">
+    <div class="voyage-head">
+      <p class="ch-mark center" data-pl="Rozdział II · Rejs ziarna" data-en="Chapter II · The bean's voyage">Rozdział II · Rejs ziarna</p>
+      <h2 data-pl='Trzy tygodnie <em>na morzu.</em>' data-en='Three weeks <em>at sea.</em>'>Trzy tygodnie <em>na morzu.</em></h2>
+      <p class="sub" data-pl="Statek płynie sam — patrz, jak mija kolejne przystanki" data-en="The ship sails on its own — watch it pass each stop">Statek płynie sam — patrz, jak mija kolejne przystanki</p>
+    </div>
+    <div class="voyage-stage">
+      <svg viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid meet">
+        <g fill="#EFE3CE" opacity=".5">
+          <circle class="star" cx="150" cy="60" r="1.2"/><circle class="star" cx="420" cy="40" r="1"/>
+          <circle class="star" cx="700" cy="66" r="1.3"/><circle class="star" cx="1000" cy="44" r="1.1"/>
+          <circle class="star" cx="870" cy="100" r="1"/><circle class="star" cx="260" cy="110" r="1.1"/>
+        </g>
+        <path id="szlak" d="M1110,430 C980,470 840,430 740,380 C640,330 600,250 480,240 C380,232 330,300 240,270 C160,244 130,180 96,128"
+          fill="none" stroke="#DEA454" stroke-width="2" stroke-dasharray="7 7" opacity=".9"/>
+        <g font-family="Karla,sans-serif" font-size="10" letter-spacing="2">
+          <circle cx="1110" cy="430" r="5" fill="none" stroke="#DEA454" stroke-width="1.5"/>
+          <text x="1042" y="462" fill="#EFE3CE" opacity=".8" data-pl="FARMA · ETIOPIA" data-en="FARM · ETHIOPIA">FARMA · ETIOPIA</text>
+          <circle cx="740" cy="380" r="4" fill="none" stroke="#DEA454" stroke-width="1.4"/>
+          <text x="700" y="412" fill="#EFE3CE" opacity=".6" data-pl="PORT DŻIBUTI" data-en="PORT OF DJIBOUTI">PORT DŻIBUTI</text>
+          <circle cx="480" cy="240" r="4" fill="none" stroke="#DEA454" stroke-width="1.4"/>
+          <text x="430" y="215" fill="#EFE3CE" opacity=".6" data-pl="OTWARTE MORZE" data-en="OPEN SEA">OTWARTE MORZE</text>
+          <text x="120" y="96" fill="#EFE3CE" opacity=".85">GDAŃSK</text>
+        </g>
+        <g id="vLight" opacity=".25">
+          <path d="M91,88 L86,130 L106,130 L101,88 Z" fill="#0E0C0A"/>
+          <rect x="83" y="84" width="26" height="4" rx="1.5" fill="#0E0C0A"/>
+          <rect x="89" y="70" width="14" height="14" fill="#0E0C0A"/>
+          <path d="M86,70 Q96,59 106,70 Z" fill="#0E0C0A"/>
+          <line x1="96" y1="63" x2="96" y2="57" stroke="#0E0C0A" stroke-width="1.5"/>
+          <circle id="vLamp" cx="96" cy="77" r="4.5" fill="#5A5346"/>
+          <circle id="vHalo" cx="96" cy="77" r="14" fill="#F0C078" opacity="0"/>
+        </g>
+        <g id="vShip" opacity="0">
+          <line x1="21" y1="-1" x2="34" y2="-1" stroke="#EFE3CE" stroke-opacity=".35" stroke-width="1.4" stroke-linecap="round"/>
+          <line x1="23" y1="-4.5" x2="40" y2="-4.5" stroke="#EFE3CE" stroke-opacity=".16" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M-24,0 q-5,-1 -8,-4" stroke="#EFE3CE" stroke-opacity=".3" stroke-width="1.2" fill="none"/>
+          <path d="M-24,-10 L20,-10 L17,0 L-15,0 Z" fill="#EFE3CE"/>
+          <rect x="-8" y="-14" width="11" height="4" fill="#EFE3CE" opacity=".92"/>
+          <rect x="5" y="-17" width="11" height="7" fill="#EFE3CE"/>
+          <rect x="3" y="-19" width="15" height="2.5" fill="#EFE3CE"/>
+          <path d="M8,-23 L12.5,-23 L12,-19 L8.5,-19 Z" fill="#EFE3CE"/>
+          <line x1="-17" y1="-10" x2="-17" y2="-21" stroke="#EFE3CE" stroke-width="1.4"/>
+          <circle cx="-17" cy="-22.5" r="1.6" fill="#F0C078"/>
+          <circle cx="10.3" cy="-24.5" r="1.3" fill="#F0C078"/>
+        </g>
+      </svg>
+    </div>
+    <div class="story-row">
+      <div class="story-card" id="st0">
+        <p class="tyg" data-pl="Tydzień 0 · Zbiory" data-en="Week 0 · Harvest">Tydzień 0 · Zbiory</p>
+        <h3 data-pl="Wszystko zaczyna się ręcznie." data-en="Everything starts by hand.">Wszystko zaczyna się ręcznie.</h3>
+        <p data-pl="Na farmie rodziny Bekele w Etiopii każdą wiśnię kawy zrywa się osobno — tylko te w pełni dojrzałe. Dwa tysiące metrów nad morzem, o świcie." data-en="On the Bekele family farm in Ethiopia every coffee cherry is picked one by one — only the fully ripe ones. Two thousand metres above the sea, at dawn.">Na farmie rodziny Bekele w Etiopii każdą wiśnię kawy zrywa się osobno — tylko te w pełni dojrzałe. Dwa tysiące metrów nad morzem, o świcie.</p>
+      </div>
+      <div class="story-card" id="st1">
+        <p class="tyg" data-pl="Tydzień 1 · Załadunek" data-en="Week 1 · Loading">Tydzień 1 · Załadunek</p>
+        <h3 data-pl="Worki idą na pokład." data-en="The sacks go aboard.">Worki idą na pokład.</h3>
+        <p data-pl="Sześćdziesiąt kilogramów w każdym worku z juty. Ziarno jeszcze zielone — smak obudzi dopiero ogień w Gdańsku." data-en="Sixty kilograms in every jute sack. The beans are still green — only the fire in Gdańsk will wake their flavour.">Sześćdziesiąt kilogramów w każdym worku z juty. Ziarno jeszcze zielone — smak obudzi dopiero ogień w Gdańsku.</p>
+      </div>
+      <div class="story-card" id="st2">
+        <p class="tyg" data-pl="Tydzień 2–3 · Morze" data-en="Week 2–3 · The sea">Tydzień 2–3 · Morze</p>
+        <h3 data-pl="Cisza, sól i kołysanie." data-en="Silence, salt and sway.">Cisza, sól i kołysanie.</h3>
+        <p data-pl="Przez Suez, obok Gibraltaru, przez Kanał. Kapitan mówi, że ładunek kawy pachnie już na redzie — my wiemy, że to dopiero obietnica." data-en="Through Suez, past Gibraltar, up the Channel. The captain says a coffee cargo smells already at anchor — we know it's only a promise.">Przez Suez, obok Gibraltaru, przez Kanał. Kapitan mówi, że ładunek kawy pachnie już na redzie — my wiemy, że to dopiero obietnica.</p>
+      </div>
+      <div class="story-card" id="st3">
+        <p class="tyg" data-pl="Tydzień 4 · Dom" data-en="Week 4 · Home">Tydzień 4 · Dom</p>
+        <h3 data-pl="Latarnia wita, piec czeka." data-en="The lighthouse greets, the roaster waits.">Latarnia wita, piec czeka.</h3>
+        <p data-pl="Rozładunek o świcie, wypał w 48 godzin. Z portu do Twojej filiżanki — najkrótszy odcinek całej podróży." data-en="Unloaded at dawn, roasted within 48 hours. From the port to your cup — the shortest leg of the whole journey.">Rozładunek o świcie, wypał w 48 godzin. Z portu do Twojej filiżanki — najkrótszy odcinek całej podróży.</p>
+      </div>
+    </div>
+    <p class="voyage-foot" id="voyFoot">POZYCJA: U WYBRZEŻY ETIOPII</p>
+</section>
+
+<!-- PORA DNIA -->
+<section class="pora" id="pora">
+  <p class="ch-mark center" data-pl="Rozdział III · Pora dnia" data-en="Chapter III · Time of day">Rozdział III · Pora dnia</p>
+  <h2 data-pl='Która godzina <em>u Ciebie?</em>' data-en='What time is it <em>where you are?</em>'>Która godzina <em>u Ciebie?</em></h2>
+  <p class="sub" data-pl="Kawa smakuje inaczej o świcie, inaczej po zmroku.&lt;br&gt;Powiedz, kiedy pijesz — dobierzemy ziarno." data-en="Coffee tastes different at dawn and after dark.&lt;br&gt;Tell us when you drink — we'll match the bean.">Kawa smakuje inaczej o świcie, inaczej po zmroku.<br>Powiedz, kiedy pijesz — dobierzemy ziarno.</p>
+  <div class="time-dial" id="timeDial">
+    <button class="on" data-t="rano" data-pl="☼ Rano" data-en="☼ Morning">☼ Rano</button>
+    <button data-t="dzien" data-pl="◐ Popołudnie" data-en="◐ Afternoon">◐ Popołudnie</button>
+    <button data-t="wieczor" data-pl="☾ Wieczór" data-en="☾ Evening">☾ Wieczór</button>
+  </div>
+
+  <div class="pora-panel reveal">
+    <div class="scene" aria-hidden="true">
+      <svg viewBox="0 0 440 340" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="reflg2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F0C078" stop-opacity=".7"/>
+            <stop offset="1" stop-color="#F0C078" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect id="sky" class="sky" width="440" height="340" fill="#3A2E27"/>
+        <circle id="orbglow" class="glowor" cx="330" cy="120" r="54" fill="#F0C078" opacity=".18"/>
+        <circle id="orb" class="orb" cx="330" cy="120" r="26" fill="#F0C078"/>
+        <rect id="seafill" class="seafill" y="240" width="440" height="100" fill="#141A1E"/>
+        <path d="M0,240 q30,-7 60,0 t60,0 t60,0 t60,0 t60,0 t60,0 t60,0 t60,0" fill="none" stroke="rgba(239,227,206,.2)" stroke-width="1.3"/>
+        <polygon class="refl" points="62,244 78,244 86,340 54,340" fill="url(#reflg2)"/>
+        <g>
+          <path d="M59,158 L48,244 L92,244 L81,158 Z" fill="#080706"/>
+          <path d="M58,161 L49,242" stroke="#DEA454" stroke-opacity=".3" stroke-width="1.2" fill="none"/>
+          <rect x="53" y="196" width="34" height="6" fill="rgba(239,227,206,.05)"/>
+          <rect x="56" y="126" width="3" height="26" fill="#080605"/>
+          <rect x="81" y="126" width="3" height="26" fill="#080605"/>
+          <rect x="59" y="126" width="22" height="26" fill="#F0C078" opacity=".95"/>
+          <line x1="66" y1="126" x2="66" y2="152" stroke="#080605" stroke-width="1.6"/>
+          <line x1="74" y1="126" x2="74" y2="152" stroke="#080605" stroke-width="1.6"/>
+          <line x1="59" y1="139" x2="81" y2="139" stroke="#080605" stroke-width="1.6"/>
+          <g stroke="#080605" stroke-width="1.6">
+            <line x1="52" y1="143" x2="52" y2="152"/><line x1="60" y1="143" x2="60" y2="152"/>
+            <line x1="68" y1="143" x2="68" y2="152"/><line x1="76" y1="143" x2="76" y2="152"/>
+            <line x1="84" y1="143" x2="84" y2="152"/>
+          </g>
+          <line x1="49" y1="143" x2="91" y2="143" stroke="rgba(239,227,206,.3)" stroke-width="1"/>
+          <rect x="46" y="152" width="48" height="6" rx="2" fill="#080605"/>
+          <path d="M52,126 Q70,104 88,126 Z" fill="#080605"/>
+          <line x1="50" y1="126" x2="90" y2="126" stroke="#080605" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="70" y1="109" x2="70" y2="99" stroke="#080605" stroke-width="1.8"/>
+          <circle cx="70" cy="97" r="2.6" fill="#080605"/>
+          <circle cx="70" cy="139" r="15" fill="#F0C078" opacity=".18"/>
+          <circle class="lamp-glow" cx="70" cy="139" r="5" fill="#FFF3DC"/>
+        </g>
+        <g>
+          <path d="M244,240 L247,230 L330,230 L346,220 L347,230 L353,230 L350,240 Z" fill="#080706"/>
+          <line x1="248" y1="230" x2="352" y2="230" stroke="rgba(239,227,206,.1)" stroke-width=".8"/>
+          <rect x="254" y="212" width="26" height="18" fill="#080706"/>
+          <rect x="251" y="208" width="32" height="5" fill="#080706"/>
+          <path d="M264,200 L272,200 L271,208 L265,208 Z" fill="#080706"/>
+          <circle cx="259" cy="217" r="1.1" fill="#F0C078" opacity=".85"/>
+          <circle cx="265" cy="217" r="1.1" fill="#F0C078" opacity=".85"/>
+          <rect x="288" y="222" width="16" height="8" fill="#090807"/>
+          <rect x="308" y="219" width="18" height="11" fill="#090807"/>
+          <line x1="338" y1="230" x2="338" y2="214" stroke="#080706" stroke-width="1.6"/>
+          <circle cx="338" cy="212" r="1.3" fill="#F0C078" opacity=".9"/>
+        </g>
+      </svg>
+      <span class="scene-cap" id="sceneCap">GDAŃSK · 6:14 · PIERWSZY PROM</span>
+    </div>
+    <div class="reco reco-fade" id="reco"></div>
+  </div>
+</section>
+
+<!-- SHELF -->
+<section class="shelf-sec" id="polka">
+  <div class="shelf-head reveal">
+    <p class="ch-mark center" data-pl="Rozdział IV · Półka" data-en="Chapter IV · The shelf">Rozdział IV · Półka</p>
+    <h2 data-pl='Każde ziarno <em>ma historię.</em>' data-en='Every bean <em>has a story.</em>'>Każde ziarno <em>ma historię.</em></h2>
+    <p data-pl="Chwyć półkę i przeciągnij w lewo" data-en="Grab the shelf and drag it left">Chwyć półkę i przeciągnij w lewo</p>
+  </div>
+  <div class="shelf" id="shelf"></div>
+  <p class="shelf-hint">— <span data-pl="przeciągnij" data-en="drag">przeciągnij</span> —</p>
+  <p style="text-align:center;margin-top:34px"><a class="link-arrow" href="sklep.html" data-pl="Cała półka w sklepie →" data-en="The whole shelf in the shop →">Cała półka w sklepie →</a></p>
+</section>
+
+<!-- SUBSCRIPTION BAND -->
+<section class="band" id="prenumerata">
+  <p class="ch-mark center" data-pl="Rozdział V · Prenumerata" data-en="Chapter V · Subscription">Rozdział V · Prenumerata</p>
+  <h2 data-pl='Kawa jak dobre czasopismo — <em>co miesiąc nowe wydanie.</em>' data-en='Coffee like a good magazine — <em>a new issue every month.</em>'>Kawa jak dobre czasopismo — <em>co miesiąc nowe wydanie.</em></h2>
+  <p class="band-sub" data-pl="Ułóż swój box raz, a świeżo palona kawa będzie przypływać sama — zanim skończy się poprzednia. Pauza albo anulowanie w jednym kliknięciu." data-en="Build your box once and freshly roasted coffee will keep arriving on its own — before the last bag runs out. Pause or cancel in one click.">Ułóż swój box raz, a świeżo palona kawa będzie przypływać sama — zanim skończy się poprzednia. Pauza albo anulowanie w jednym kliknięciu.</p>
+  <div class="band-facts">
+    <div><strong>−15%</strong><span data-pl="rabat na każdą dostawę" data-en="off every delivery">rabat na każdą dostawę</span></div>
+    <div><strong>0 zł</strong><span data-pl="dostawa w każdym boxie" data-en="shipping in every box">dostawa w każdym boxie</span></div>
+    <div><strong>1 klik</strong><span data-pl="pauza albo anulowanie" data-en="to pause or cancel">pauza albo anulowanie</span></div>
+  </div>
+  <a href="subskrypcja.html" class="btn btn-primary" data-pl="Ułóż swój box" data-en="Build your box">Ułóż swój box</a>
+</section>
+
+<!-- REVIEWS — DZIENNIK -->
+<section class="band">
+  <p class="ch-mark center" data-pl="Rozdział VI · Wpisy z dziennika" data-en="Chapter VI · Log entries">Rozdział VI · Wpisy z dziennika</p>
+  <h2 data-pl='Co zapisali <em>nasi klienci.</em>' data-en='What our customers <em>wrote down.</em>'>Co zapisali <em>nasi klienci.</em></h2>
+  <div class="journal">
+    <div class="entry">
+      <p class="date" data-pl="Gdańsk · wtorek" data-en="Gdańsk · Tuesday">Gdańsk · wtorek</p>
+      <p data-pl="„Pierwsza kawa, przy której czuję różnicę między wtorkiem a miesiącem temu. Etiopia to poezja.”" data-en="&ldquo;The first coffee where I actually taste the difference between Tuesday and a month ago. The Ethiopia is poetry.&rdquo;">„Pierwsza kawa, przy której czuję różnicę między wtorkiem a miesiącem temu. Etiopia to poezja.”</p>
+      <p class="who">— Marta K.</p>
+    </div>
+    <div class="entry">
+      <p class="date" data-pl="Sopot · piątek" data-en="Sopot · Friday">Sopot · piątek</p>
+      <p data-pl="„Subskrypcja to był strzał. Kawa jest, zanim skończy się poprzednia, i zawsze świeża.”" data-en="&ldquo;The subscription nailed it. Coffee shows up before the last bag runs out, always fresh.&rdquo;">„Subskrypcja to był strzał. Kawa jest, zanim skończy się poprzednia, i zawsze świeża.”</p>
+      <p class="who">— Paweł S.</p>
+    </div>
+    <div class="entry">
+      <p class="date" data-pl="Warszawa · środa" data-en="Warsaw · Wednesday">Warszawa · środa</p>
+      <p data-pl="„Zamawiam do biura. Drip packi rozeszły się szybciej niż ciastka na spotkaniu.”" data-en="&ldquo;I order for the office. The drip packs vanished faster than the meeting cookies.&rdquo;">„Zamawiam do biura. Drip packi rozeszły się szybciej niż ciastka na spotkaniu.”</p>
+      <p class="who">— Anna W.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRE-FOOTER CTA -->
+<section class="band">
+  <h2 data-pl='Nie wiesz, od czego zacząć <em>swoją historię?</em>' data-en='Not sure where to start <em>your story?</em>'>Nie wiesz, od czego zacząć <em>swoją historię?</em></h2>
+  <p class="band-sub" data-pl="Odpowiedz na trzy pytania — dobierzemy kawę do tego, jak ją parzysz i kiedy ją pijesz." data-en="Answer three questions — we'll match a coffee to how you brew and when you drink.">Odpowiedz na trzy pytania — dobierzemy kawę do tego, jak ją parzysz i kiedy ją pijesz.</p>
+  <a href="subskrypcja.html" class="btn btn-ghost" data-pl="Dobierz kawę" data-en="Match my coffee">Dobierz kawę</a>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="brandcol">
+      <b>Bałt Palarnia</b>
+      <p data-pl="Palimy kawę nad Motławą, nocą, naprzeciwko latarni. Małe partie, duża obsesja." data-en="We roast coffee by the Motława, at night, across from the lighthouse. Small batches, big obsession.">Palimy kawę nad Motławą, nocą, naprzeciwko latarni. Małe partie, duża obsesja.</p>
+    </div>
+    <div><h4 data-pl="Sklep" data-en="Shop">Sklep</h4><a href="sklep.html?format=ziarna" data-pl="Kawa ziarnista" data-en="Whole bean">Kawa ziarnista</a><a href="sklep.html?format=drip" data-pl="Drip packi" data-en="Drip packs">Drip packi</a><a href="subskrypcja.html" data-i18n="nav.sub">Subskrypcja</a></div>
+    <div><h4 data-pl="Informacje" data-en="Info">Informacje</h4><a href="o-nas.html" data-i18n="nav.about">O nas</a><a href="kontakt.html" data-i18n="nav.contact">Kontakt</a><a href="regulamin.html" data-pl="Regulamin" data-en="Terms">Regulamin</a></div>
+    <div>
+      <h4 data-pl="Newsletter" data-en="Newsletter">Newsletter</h4>
+      <p style="color:var(--cream-40);font-size:13px" data-pl="Data wypału i nowe rozdziały raz w tygodniu." data-en="Roast dates and new chapters, once a week.">Data wypału i nowe rozdziały raz w tygodniu.</p>
+      <form class="news"><input type="email" placeholder="twoj@email.pl" required aria-label="email"><button class="btn btn-primary btn-sm" type="submit" data-pl="Zapisz" data-en="Sign up">Zapisz</button></form>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Bałt Palarnia</span>
+    <span data-pl='Projekt i realizacja: <a href="https://klarmint.com">studio Klarmint</a>' data-en='Designed &amp; built by <a href="https://klarmint.com">Klarmint studio</a>'>Projekt i realizacja: <a href="https://klarmint.com">studio Klarmint</a></span>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="scrim"></div>
+<aside class="drawer" aria-label="Koszyk">
+  <div class="drawer-head"><b data-i18n="cart.title">MANIFEST ŁADUNKOWY</b><div class="sub" data-i18n="cart.sub">port Gdańsk · demo</div><button class="drawer-close" aria-label="Zamknij">×</button></div>
+  <div class="drawer-body"></div>
+  <div class="drawer-foot"></div>
+</aside>
+
+<script src="js/products.js?v=2"></script>
+<script src="js/store.js?v=2"></script>
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- ambient: torch + progress ---------- */
+  var root = document.documentElement;
+  addEventListener("mousemove", function (e) {
+    root.style.setProperty("--mx", e.clientX + "px");
+    root.style.setProperty("--my", e.clientY + "px");
+  });
+  var prog = document.getElementById("prog");
+
+  /* ---------- beam anchored to the lantern ---------- */
+  function placeBeam() {
+    var wrap = document.getElementById("beamWrap");
+    var hsvg = document.querySelector(".harbor svg");
+    var hero = document.querySelector(".hero");
+    if (!wrap || !hsvg || !hero) return;
+    var r = hsvg.getBoundingClientRect();
+    var hr = hero.getBoundingClientRect();
+    var u = r.height / 420;
+    wrap.style.left = (r.right - (1440 - 1250) * u - hr.left) + "px";
+    wrap.style.top = (r.top + 92 * u - hr.top) + "px";
+  }
+  addEventListener("resize", placeBeam);
+
+  /* ---------- roast strip ---------- */
+  function renderRoastStrip() {
+    var el = document.querySelector("#roastStrip"); if (!el) return;
+    var ri = Store.roastInfo(), pl = Store.lang === "pl";
+    var wd = Store.fmtWeekday(ri.next), dt = Store.fmtDate(ri.next, true);
+    el.innerHTML = '<svg class="rs-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 1.5M12 2h0M9 2h6"/></svg>'
+      + '<span>' + (pl ? "Palimy we wtorki i piątki. Najbliższy wypał" : "We roast Tuesdays and Fridays. Next roast")
+      + ' <b>' + wd + ', ' + dt + '</b></span>'
+      + '<span class="rs-count">' + (ri.daysToNext === 0 ? (pl ? "dziś!" : "today!") : (pl ? "za " + ri.daysToNext + (ri.daysToNext === 1 ? " dzień" : " dni") : "in " + ri.daysToNext + "d")) + '</span>';
+  }
+
+  /* ---------- voyage (autoplay) ---------- */
+  var szlak = document.getElementById("szlak");
+  var ship = document.getElementById("vShip");
+  var vLight = document.getElementById("vLight");
+  var vLamp = document.getElementById("vLamp");
+  var vHalo = document.getElementById("vHalo");
+  var foot = document.getElementById("voyFoot");
+  var cards = [document.getElementById("st0"), document.getElementById("st1"),
+               document.getElementById("st2"), document.getElementById("st3")];
+  var POS = {
+    pl: ["POZYCJA: U WYBRZEŻY ETIOPII", "POZYCJA: NA MORZU CZERWONYM", "POZYCJA: NA ATLANTYKU", "POZYCJA: NA REDZIE GDAŃSKA"],
+    en: ["POSITION: OFF THE COAST OF ETHIOPIA", "POSITION: ON THE RED SEA", "POSITION: ON THE ATLANTIC", "POSITION: GDAŃSK ROADSTEAD"]
+  };
+  var L = szlak.getTotalLength();
+  var drawn = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  drawn.setAttribute("d", szlak.getAttribute("d"));
+  drawn.setAttribute("fill", "none");
+  drawn.setAttribute("stroke", "#F0C078");
+  drawn.setAttribute("stroke-width", "2.4");
+  drawn.style.strokeDasharray = L;
+  drawn.style.strokeDashoffset = L;
+  szlak.parentNode.insertBefore(drawn, szlak.nextSibling);
+  var stopShown = 0;
+
+  function onScroll() {
+    var d = document.documentElement;
+    prog.style.width = (d.scrollTop / (d.scrollHeight - d.clientHeight) * 100) + "%";
+  }
+  addEventListener("scroll", onScroll, { passive: true });
+
+  function applyF(f) {
+    drawn.style.strokeDashoffset = L * (1 - f);
+    if (f > 0.005) {
+      ship.setAttribute("opacity", "1");
+      var pt = szlak.getPointAtLength(L * f);
+      var pt2 = szlak.getPointAtLength(Math.max(0, L * f - 3));
+      var ang = Math.atan2(pt.y - pt2.y, pt.x - pt2.x) * 180 / Math.PI - 180;
+      if (ang < -180) ang += 360;
+      ang = Math.max(-26, Math.min(26, ang * 0.7));
+      ship.setAttribute("transform", "translate(" + pt.x + "," + pt.y + ") rotate(" + ang.toFixed(1) + ")");
+    } else ship.setAttribute("opacity", "0");
+  }
+  function setStop(i) {
+    stopShown = i;
+    cards.forEach(function (c, j) { c.classList.toggle("lit", j === i); });
+    foot.textContent = POS[Store.lang][i];
+  }
+  function lampOn(on) {
+    vLight.setAttribute("opacity", on ? "1" : ".25");
+    vLamp.setAttribute("fill", on ? "#F0C078" : "#5A5346");
+    vHalo.setAttribute("opacity", on ? "0.35" : "0");
+  }
+
+  var SEGS = [
+    { to: 0.02, pause: 1500 },
+    { to: 0.28, pause: 1700 },
+    { to: 0.55, pause: 1700 },
+    { to: 0.86, pause: 1700 },
+    { to: 1.0,  pause: 3200 }
+  ];
+  var MOVE_MS = 13000;
+  var segI = 0, mode = "move", segStart = 0, fFrom = 0, rafId = null, running = false;
+  function tick(ts) {
+    if (!running) return;
+    if (!segStart) segStart = ts;
+    var seg = SEGS[segI];
+    if (mode === "move") {
+      var dur = Math.max(400, (seg.to - fFrom) * MOVE_MS);
+      var k = Math.min(1, (ts - segStart) / dur);
+      var e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      applyF(fFrom + (seg.to - fFrom) * e);
+      if (k >= 1) {
+        mode = "pause"; segStart = ts;
+        if (segI < 4) setStop(segI); else lampOn(true);
+      }
+    } else if (ts - segStart >= seg.pause) {
+      fFrom = seg.to; segI++; mode = "move"; segStart = 0;
+      if (segI >= SEGS.length) {
+        segI = 0; fFrom = 0;
+        lampOn(false);
+        cards.forEach(function (c) { c.classList.remove("lit"); });
+      }
+    }
+    rafId = requestAnimationFrame(tick);
+  }
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    applyF(1); lampOn(true);
+    cards.forEach(function (c) { c.classList.add("lit"); });
+    stopShown = 3;
+  } else {
+    var stageIO = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) {
+          if (!running) { running = true; segStart = 0; rafId = requestAnimationFrame(tick); }
+        } else {
+          running = false;
+          if (rafId) cancelAnimationFrame(rafId);
+        }
+      });
+    }, { threshold: .25 });
+    stageIO.observe(document.querySelector(".voyage-stage"));
+  }
+
+  /* ---------- pora dnia ---------- */
+  var TIMES = {
+    rano: {
+      sky: "#3A2E27", orbY: 120, orbR: 26, orbC: "#F0C078", glow: .18, sea: "#141A1E",
+      cap: { pl: "GDAŃSK · 6:14 · PIERWSZY PROM", en: "GDAŃSK · 6:14 · THE FIRST FERRY" },
+      tag: { pl: "Na dobry początek", en: "For a good start" },
+      pid: "baltyk-espresso",
+      story: {
+        pl: "Budzi jak pierwszy prom o 6:14. Słodycz karmelu, trochę orzecha i tyle mocy, żeby port ruszył do pracy. Nasza kawa na dzień dobry — z mlekiem albo bez, zawsze do rzeczy.",
+        en: "Wakes you like the first ferry at 6:14. Caramel sweetness, a touch of hazelnut and enough punch to get the port moving. Our good-morning coffee — with milk or without, always to the point."
+      }
+    },
+    dzien: {
+      sky: "#4A3B2C", orbY: 64, orbR: 30, orbC: "#F6D9A0", glow: .24, sea: "#182025",
+      cap: { pl: "GDAŃSK · 14:30 · PRZERWA W STOCZNI", en: "GDAŃSK · 14:30 · SHIPYARD BREAK" },
+      tag: { pl: "Na drugi oddech", en: "For a second wind" },
+      pid: "etiopia-yirgacheffe",
+      story: {
+        pl: "Kiedy dzień siada w połowie, nie trzeba młota — wystarczy filiżanka czegoś jasnego i pachnącego. Parzona przelewowo stawia na nogi łagodnie, bez nerwów.",
+        en: "When the day sags in the middle you don't need a hammer — just a cup of something bright and fragrant. Brewed as a pour-over it lifts you gently, no jitters."
+      }
+    },
+    wieczor: {
+      sky: "#171310", orbY: 70, orbR: 22, orbC: "#EFE3CE", glow: .12, sea: "#0C1014",
+      cap: { pl: "GDAŃSK · 21:40 · ŚWIATŁO LATARNI", en: "GDAŃSK · 21:40 · LIGHTHOUSE LIGHT" },
+      tag: { pl: "Na koniec dnia", en: "For the end of the day" },
+      pid: "peru-decaf",
+      story: {
+        pl: "Cały smak, zero kofeiny. Do książki, do rozmowy, do ostatniego rozdziału dnia. Zaśniesz jak w kołysce — sprawdziliśmy osobiście, wielokrotnie.",
+        en: "All the flavour, zero caffeine. For a book, a talk, the last chapter of the day. You'll sleep like a baby — we've checked, repeatedly."
+      }
+    }
+  };
+  var curTime = "rano";
+  var reco = document.getElementById("reco");
+
+  function recoHTML(t) {
+    var p = Store.byId(t.pid);
+    if (!p) return "";
+    var price = p.promo ? Math.round(p.price250 * (1 - p.promo)) : p.price250;
+    return '<span class="tag">' + t.tag[Store.lang] + '</span>'
+      + '<h3>' + p.name + '</h3>'
+      + '<p class="notes">' + p.notes[Store.lang] + '</p>'
+      + '<p class="story">' + t.story[Store.lang] + '</p>'
+      + '<div class="row"><span class="price">' + Store.money(price) + ' <small>/ 250 G</small></span>'
+      + '<button class="btn btn-ghost btn-sm" data-add="' + p.id + '">' + Store.t("add.do") + '</button></div>';
+  }
+  function setScene(t) {
+    document.getElementById("sky").setAttribute("fill", t.sky);
+    var orb = document.getElementById("orb");
+    orb.setAttribute("cy", t.orbY); orb.setAttribute("r", t.orbR); orb.setAttribute("fill", t.orbC);
+    var og = document.getElementById("orbglow");
+    og.setAttribute("cy", t.orbY); og.setAttribute("opacity", t.glow);
+    document.getElementById("seafill").setAttribute("fill", t.sea);
+    document.getElementById("sceneCap").textContent = t.cap[Store.lang];
+  }
+  var dial = document.getElementById("timeDial");
+  dial.addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    dial.querySelectorAll("button").forEach(function (x) { x.classList.remove("on"); });
+    b.classList.add("on");
+    curTime = b.dataset.t;
+    var t = TIMES[curTime];
+    setScene(t);
+    reco.classList.add("out");
+    setTimeout(function () { reco.innerHTML = recoHTML(t); reco.classList.remove("out"); }, 450);
+  });
+
+  /* ---------- shelf ---------- */
+  var SHELF_IDS = ["baltyk-espresso", "etiopia-yirgacheffe", "stocznia-dark", "kenia-nyeri", "kolumbia-geisha"];
+  var STORIES = {
+    "baltyk-espresso": {
+      pl: "Nasz pierwszy blend, palony od 2019 roku. Klasyka portowego poranka — pewna, słodka, bez kaprysów.",
+      en: "Our first blend, roasted since 2019. A port-morning classic — steady, sweet, no tantrums."
+    },
+    "etiopia-yirgacheffe": {
+      pl: "To jej rejs oglądasz wyżej. Lekka jak papier biblijny, pachnie jak ogród nocą. Bohaterka tego wydania.",
+      en: "It's her voyage you watched above. Light as bible paper, fragrant as a garden at night. The heroine of this issue."
+    },
+    "stocznia-dark": {
+      pl: "Palona najciemniej, jak pozwala sumienie. Powstała dla spawaczy z nocnej zmiany — dziś budzi całe miasto.",
+      en: "Roasted as dark as conscience allows. Made for night-shift welders — today it wakes the whole city."
+    },
+    "kenia-nyeri": {
+      pl: "Kwasowość, która stawia kropkę nad i. Ulubiona kawa naszych baristów — i najczęściej wyrywana strona katalogu.",
+      en: "Acidity that dots the i. Our baristas' favourite — and the most torn-out page of the catalogue."
+    },
+    "kolumbia-geisha": {
+      pl: "Czterdzieści worków na cały świat, dwa przypłynęły do Gdańska. Ten rozdział czyta się powoli, najlepiej w niedzielę.",
+      en: "Forty sacks for the whole world, two sailed to Gdańsk. A chapter to read slowly, best on a Sunday."
+    }
+  };
+  function renderShelf() {
+    var el = document.getElementById("shelf"); if (!el) return;
+    el.innerHTML = SHELF_IDS.map(function (id, i) {
+      var p = Store.byId(id); if (!p) return "";
+      var num = ("0" + (i + 1)).slice(-2);
+      var price;
+      if (p.promo) {
+        price = "<s>" + Store.money(p.price250) + "</s>" + Store.money(Math.round(p.price250 * (1 - p.promo)));
+      } else {
+        price = Store.money(p.price250);
+      }
+      var unit = p.id === "kolumbia-geisha" ? "/ 100 G" : "/ 250 G";
+      return '<article class="plate">'
+        + '<p class="num">' + num + '</p>'
+        + '<h3><a href="produkt.html?id=' + p.id + '">' + p.name + '</a></h3>'
+        + '<p class="notes">' + p.notes[Store.lang] + '</p>'
+        + '<p class="story">' + STORIES[id][Store.lang] + '</p>'
+        + '<div class="row"><span class="price">' + price + ' <small>' + unit + '</small></span>'
+        + '<button class="btn btn-ghost btn-sm" data-add="' + p.id + '">' + Store.t("add.do") + '</button></div>'
+        + '</article>';
+    }).join("");
+  }
+  var shelf = document.getElementById("shelf");
+  var down = false, startX = 0, startL = 0, vel = 0, lastX = 0, lastT = 0, raf;
+  shelf.addEventListener("pointerdown", function (e) {
+    down = true; shelf.classList.add("dragging");
+    startX = e.clientX; startL = shelf.scrollLeft; lastX = e.clientX; lastT = performance.now();
+    cancelAnimationFrame(raf);
+  });
+  addEventListener("pointermove", function (e) {
+    if (!down) return;
+    shelf.scrollLeft = startL - (e.clientX - startX);
+    var t = performance.now();
+    vel = (lastX - e.clientX) / Math.max(1, t - lastT) * 16;
+    lastX = e.clientX; lastT = t;
+  });
+  addEventListener("pointerup", function () {
+    if (!down) return; down = false; shelf.classList.remove("dragging");
+    (function glide() {
+      if (Math.abs(vel) < .4) return;
+      shelf.scrollLeft += vel; vel *= .94;
+      raf = requestAnimationFrame(glide);
+    })();
+  });
+  // suppress accidental add-clicks right after a drag
+  shelf.addEventListener("click", function (e) {
+    if (Math.abs(vel) > 2) { e.preventDefault(); e.stopPropagation(); }
+  }, true);
+
+  /* ---------- render all (initial + lang change) ---------- */
+  function renderAll() {
+    renderRoastStrip();
+    renderShelf();
+    var t = TIMES[curTime];
+    reco.innerHTML = recoHTML(t);
+    setScene(t);
+    foot.textContent = POS[Store.lang][stopShown];
+  }
+  window.onLangChange = renderAll;
+
+  document.addEventListener("DOMContentLoaded", function () {
+    renderAll();
+    placeBeam();
+    onScroll();
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in-v"); io.unobserve(e.target); } });
+    }, { threshold: .15 });
+    document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+  });
+})();
+</script>
+</body>
+</html>

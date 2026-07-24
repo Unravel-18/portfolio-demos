@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Subskrypcja — Bałt Palarnia</title>
+<meta name="description" content="Ułóż swoją prenumeratę kawy: 3 pytania, dobierzemy kawę do tego, jak ją parzysz." />
+<meta name="color-scheme" content="dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Karla:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Karla:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Karla:wght@400;500;600;700&display=swap" /></noscript>
+<link rel="stylesheet" href="szlak.css?v=9" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2312100A'/%3E%3Cpolygon points='16,9 4,14 4,18' fill='%23F0C078' opacity='.45'/%3E%3Cpolygon points='16,9 28,14 28,18' fill='%23F0C078' opacity='.45'/%3E%3Crect x='13.4' y='12' width='5.2' height='14' fill='%23EFE3CE'/%3E%3Ccircle cx='16' cy='9' r='3' fill='%23F0C078'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<div class="torch" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true">
+  <svg><filter id="grainf"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0.87 0 0 0 0 0.64 0 0 0 0 0.33 0 0 0 0.05 0"/></filter><rect width="100%" height="100%" filter="url(#grainf)"/></svg>
+</div>
+
+<header class="header">
+  <div class="wrap header-in">
+    <a class="logo" href="index.html"><b>Bałt Palarnia</b><small data-pl="palarnia kawy · port Gdańsk" data-en="coffee roastery · port of Gdańsk">palarnia kawy · port Gdańsk</small></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="sklep.html" data-i18n="nav.sklep">Sklep</a>
+      <a href="pochodzenia.html" data-pl="Rejsy" data-en="Voyages">Rejsy</a>
+      <a href="subskrypcja.html" aria-current="page" data-i18n="nav.sub">Subskrypcja</a>
+      <a href="o-nas.html" data-i18n="nav.about">O nas</a>
+    </nav>
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="Language"><button data-lang="pl">PL</button><span>/</span><button data-lang="en">EN</button></div>
+      <button class="cart-btn" aria-label="Koszyk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16l-1.4 12a2 2 0 0 1-2 1.8H7.4a2 2 0 0 1-2-1.8L4 7Z"/><path d="M8.5 7V5.5a3.5 3.5 0 0 1 7 0V7"/></svg><span class="cart-badge" data-n="0">0</span></button>
+      <button class="burger" aria-label="Menu"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mmenu" aria-hidden="true">
+  <div class="wrap mmenu-top"><a class="logo" href="index.html"><b>Bałt Palarnia</b></a><button class="mmenu-close" aria-label="Close">×</button></div>
+  <nav class="wrap mmenu-nav"><a href="sklep.html" data-i18n="nav.sklep">Sklep</a><a href="pochodzenia.html" data-pl="Rejsy" data-en="Voyages">Rejsy</a><a href="subskrypcja.html" data-i18n="nav.sub">Subskrypcja</a><a href="o-nas.html" data-i18n="nav.about">O nas</a><a href="kontakt.html" data-i18n="nav.contact">Kontakt</a></nav>
+  <div class="wrap mmenu-foot">ul. Świętojańska 12, Gdańsk<br>kontakt@baltpalarnia.pl</div>
+</div>
+
+<main>
+
+<section class="sec-tight">
+  <div class="wrap quiz-intro">
+    <p class="ch-mark center" data-pl="Rozdział V · Prenumerata" data-en="Chapter V · Subscription">Rozdział V · Prenumerata</p>
+    <h1 data-pl='Ułóż swoją <em>prenumeratę.</em>' data-en='Build your <em>subscription.</em>'>Ułóż swoją <em>prenumeratę.</em></h1>
+    <p data-pl="3 pytania, 60 sekund — dobierzemy kawę i przypilnujemy, żeby nigdy ci jej nie zabrakło. Jak dobre czasopismo: co miesiąc nowe wydanie." data-en="3 questions, 60 seconds — we'll match the coffee and make sure you never run out. Like a good magazine: a new issue every month.">3 pytania, 60 sekund — dobierzemy kawę i przypilnujemy, żeby nigdy ci jej nie zabrakło. Jak dobre czasopismo: co miesiąc nowe wydanie.</p>
+    <div class="quiz-perks">
+      <span data-pl="Rabat do 15%" data-en="Up to 15% off">Rabat do 15%</span>
+      <span data-pl="Darmowa dostawa" data-en="Free shipping">Darmowa dostawa</span>
+      <span data-pl="Pauza w 1 klik" data-en="Pause in 1 click">Pauza w 1 klik</span>
+    </div>
+    <button class="btn btn-primary" id="startQuiz" data-pl="Zaczynamy" data-en="Let's start">Zaczynamy</button>
+  </div>
+</section>
+
+<div class="wrap" style="padding-bottom:20px">
+  <!-- QUIZ FLOW -->
+  <div class="quiz-card" id="quizFlow">
+    <div class="form-h"><span data-pl="Formularz prenumeraty" data-en="Subscription form">Formularz prenumeraty</span>
+      <span class="q-progress"><span data-pl="Pytanie" data-en="Question">Pytanie</span> <span id="qCurrent">1</span>/3 &nbsp; <i></i><i></i><i></i></span>
+    </div>
+
+    <div class="q-step on" data-q="1">
+      <h2 data-pl="Jak parzysz kawę?" data-en="How do you brew?">Jak parzysz kawę?</h2>
+      <div class="qopts">
+        <button class="qopt" data-v="espresso"><span class="qbox"></span><span><span class="qt" data-pl="Ekspres ciśnieniowy" data-en="Espresso machine">Ekspres ciśnieniowy</span></span></button>
+        <button class="qopt" data-v="przelew"><span class="qbox"></span><span><span class="qt" data-pl="Przelew (drip, Chemex)" data-en="Pour-over (drip, Chemex)">Przelew (drip, Chemex)</span></span></button>
+        <button class="qopt" data-v="kawiarka"><span class="qbox"></span><span><span class="qt" data-pl="Kawiarka (moka)" data-en="Moka pot">Kawiarka (moka)</span></span></button>
+        <button class="qopt" data-v="french"><span class="qbox"></span><span><span class="qt">French press</span></span></button>
+        <button class="qopt" data-v="rozne"><span class="qbox"></span><span><span class="qt" data-pl="Różnie / nie wiem" data-en="Varies / not sure">Różnie / nie wiem</span></span></button>
+      </div>
+    </div>
+
+    <div class="q-step" data-q="2">
+      <h2 data-pl="Jakie smaki lubisz?" data-en="Which flavours do you like?">Jakie smaki lubisz?</h2>
+      <p style="font-size:13px;color:var(--cream-40);margin:-8px 0 16px;letter-spacing:.06em" data-pl="Wybierz 1–2" data-en="Pick 1–2">Wybierz 1–2</p>
+      <div class="qopts">
+        <button class="qopt" data-v="owocowe"><span class="qbox"></span><span><span class="qt" data-pl="Owocowe i kwiatowe" data-en="Fruity and floral">Owocowe i kwiatowe</span></span></button>
+        <button class="qopt" data-v="czekoladowe"><span class="qbox"></span><span><span class="qt" data-pl="Czekoladowe i orzechowe" data-en="Chocolatey and nutty">Czekoladowe i orzechowe</span></span></button>
+        <button class="qopt" data-v="karmelowe"><span class="qbox"></span><span><span class="qt" data-pl="Karmelowe, słodkie" data-en="Caramel, sweet">Karmelowe, słodkie</span></span></button>
+        <button class="qopt" data-v="mocne"><span class="qbox"></span><span><span class="qt" data-pl="Mocne i intensywne" data-en="Strong and intense">Mocne i intensywne</span></span></button>
+      </div>
+      <div class="q-nav"><button class="co-back" id="back1q" data-pl="← Wstecz" data-en="← Back">← Wstecz</button><button class="btn btn-primary" id="to2q" disabled data-pl="Dalej →" data-en="Next →">Dalej →</button></div>
+    </div>
+
+    <div class="q-step" data-q="3">
+      <h2 data-pl="Ile kawy pijesz miesięcznie?" data-en="How much coffee per month?">Ile kawy pijesz miesięcznie?</h2>
+      <div class="qopts">
+        <button class="qopt" data-v="500"><span class="qbox"></span><span><span class="qt" data-pl="1–2 filiżanki dziennie" data-en="1–2 cups a day">1–2 filiżanki dziennie</span><span class="qs">→ 500 g</span></span></button>
+        <button class="qopt" data-v="1000"><span class="qbox"></span><span><span class="qt" data-pl="Dzbanek dziennie" data-en="A pot a day">Dzbanek dziennie</span><span class="qs">→ 1 kg</span></span></button>
+        <button class="qopt" data-v="2000"><span class="qbox"></span><span><span class="qt" data-pl="Cała rodzina / biuro" data-en="Family / office">Cała rodzina / biuro</span><span class="qs">→ 2 kg</span></span></button>
+      </div>
+      <div class="q-nav"><button class="co-back" id="back2q" data-pl="← Wstecz" data-en="← Back">← Wstecz</button><span></span></div>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="blend-result" id="result" style="display:none"></div>
+</div>
+
+<!-- FAQ -->
+<section class="sec faq-band">
+  <div class="wrap" style="max-width:760px">
+    <div class="sec-head"><div><span class="eyebrow" data-pl="Pytania" data-en="Questions">Pytania</span><h2 data-pl="Zanim się zapiszesz" data-en="Before you subscribe">Zanim się zapiszesz</h2></div></div>
+    <details class="faq-item"><summary data-pl="Czy mogę pauzować prenumeratę?" data-en="Can I pause the subscription?">Czy mogę pauzować prenumeratę?</summary><p data-pl="Tak, w jednym kliknięciu — wyjeżdżasz, pauzujesz, wracasz i wznawiasz." data-en="Yes, in one click — going away, pause; back, resume.">Tak, w jednym kliknięciu — wyjeżdżasz, pauzujesz, wracasz i wznawiasz.</p></details>
+    <details class="faq-item"><summary data-pl="Kiedy przychodzi paczka?" data-en="When does the parcel arrive?">Kiedy przychodzi paczka?</summary><p data-pl="Palimy we wtorek, wysyłamy w środę — świeży wypał co cykl." data-en="We roast on Tuesday, ship on Wednesday — a fresh roast every cycle.">Palimy we wtorek, wysyłamy w środę — świeży wypał co cykl.</p></details>
+    <details class="faq-item"><summary data-pl="Czy mogę zmienić kawy?" data-en="Can I change the coffees?">Czy mogę zmienić kawy?</summary><p data-pl="Jasne — przed każdą wysyłką możesz wymienić kawy albo profil smaku." data-en="Sure — before each shipment you can swap coffees or the flavour profile.">Jasne — przed każdą wysyłką możesz wymienić kawy albo profil smaku.</p></details>
+    <details class="faq-item"><summary data-pl="Jak duży jest rabat?" data-en="How big is the discount?">Jak duży jest rabat?</summary><p data-pl="Od 10% przy 500 g do 15% przy 2 kg, plus zawsze darmowa dostawa." data-en="From 10% at 500 g to 15% at 2 kg, plus free shipping always.">Od 10% przy 500 g do 15% przy 2 kg, plus zawsze darmowa dostawa.</p></details>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="brandcol"><b>Bałt Palarnia</b><p data-pl="Palimy kawę nad Motławą, nocą, naprzeciwko latarni. Małe partie, duża obsesja." data-en="We roast coffee by the Motława, at night, across from the lighthouse. Small batches, big obsession.">Palimy kawę nad Motławą, nocą, naprzeciwko latarni. Małe partie, duża obsesja.</p></div>
+    <div><h4 data-pl="Sklep" data-en="Shop">Sklep</h4><a href="sklep.html?format=ziarna" data-pl="Kawa ziarnista" data-en="Whole bean">Kawa ziarnista</a><a href="sklep.html?format=drip" data-pl="Drip packi" data-en="Drip packs">Drip packi</a><a href="subskrypcja.html" data-i18n="nav.sub">Subskrypcja</a></div>
+    <div><h4 data-pl="Informacje" data-en="Info">Informacje</h4><a href="o-nas.html" data-i18n="nav.about">O nas</a><a href="kontakt.html" data-i18n="nav.contact">Kontakt</a><a href="regulamin.html" data-pl="Regulamin" data-en="Terms">Regulamin</a></div>
+    <div><h4 data-pl="Newsletter" data-en="Newsletter">Newsletter</h4><p style="color:var(--cream-40);font-size:13px" data-pl="Data wypału i nowe rozdziały raz w tygodniu." data-en="Roast dates and new chapters, once a week.">Data wypału i nowe rozdziały raz w tygodniu.</p><form class="news"><input type="email" placeholder="twoj@email.pl" required aria-label="email"><button class="btn btn-primary btn-sm" type="submit" data-pl="Zapisz" data-en="Sign up">Zapisz</button></form></div>
+  </div>
+  <div class="wrap footer-bottom"><span>© 2026 Bałt Palarnia</span><span data-pl='Projekt i realizacja: <a href="https://klarmint.com">studio Klarmint</a>' data-en='Designed &amp; built by <a href="https://klarmint.com">Klarmint studio</a>'>Projekt i realizacja: <a href="https://klarmint.com">studio Klarmint</a></span></div>
+</footer>
+
+<div class="scrim"></div>
+<aside class="drawer" aria-label="Koszyk">
+  <div class="drawer-head"><b data-i18n="cart.title">MANIFEST ŁADUNKOWY</b><div class="sub" data-i18n="cart.sub">port Gdańsk · demo</div><button class="drawer-close" aria-label="Zamknij">×</button></div>
+  <div class="drawer-body"></div><div class="drawer-foot"></div>
+</aside>
+
+<script src="js/products.js?v=2"></script>
+<script src="js/store.js?v=2"></script>
+<script src="js/quiz.js?v=2"></script>
+<script>
+addEventListener("mousemove", function (e) {
+  document.documentElement.style.setProperty("--mx", e.clientX + "px");
+  document.documentElement.style.setProperty("--my", e.clientY + "px");
+});
+</script>
+</body>
+</html>
