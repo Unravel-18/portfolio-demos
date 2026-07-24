@@ -51,38 +51,56 @@
     sort: { key: "id", dir: 1 } };
 
   /* ===================== elevation ===================== */
-  const APTX = [87, 148, 209, 271, 332, 393];      // 6 bay centres
-  const FLOORY = { 4: 98, 3: 170, 2: 242, 1: 314 }; // window top-Y per piętro
+  const APTX = [102, 157, 212, 268, 323, 378];     // 6 bay centres (inset within the quoins)
+  const FLOORY = { 4: 100, 3: 171, 2: 242, 1: 313 }; // window top-Y per piętro
   const PARTER_BAYS = [0, 1, 4, 5];                 // which bays the 4 parter flats use
 
   function winChildren(g, rail) {
     const add = (n, a) => g.appendChild(mk(n, a));
-    add("rect", { x: -4, y: -7, width: 44, height: 6, rx: 1.5, fill: "#E4D2B7" });
-    add("path", { d: "M14 -7 L22 -7 L24.5 -1 L11.5 -1 Z", fill: "#F1E2CC" });
+    // recessed reveal so the window reads as set into the wall
+    add("rect", { x: -1, y: -1, width: 38, height: 52, rx: 2, fill: "#3A1C12", "fill-opacity": .28 });
+    // stone lintel + keystone above
+    add("rect", { x: -5, y: -8, width: 46, height: 7, rx: 1.5, fill: "#EAD9C0" });
+    add("rect", { x: -5, y: -1.8, width: 46, height: 1.8, fill: "#B0824F", "fill-opacity": .45 });
+    add("path", { d: "M14 -8 L22 -8 L24.6 -1.5 L11.4 -1.5 Z", fill: "#F1E2CC" });
+    // oak frame + inner reveal
     add("rect", { x: 0, y: -1, width: 36, height: 52, rx: 2, fill: "#7E5030" });
     add("rect", { x: 2.4, y: 1.4, width: 31.2, height: 47, rx: 1.5, fill: "#EEDBC1" });
+    // glass (status colour) + sheen
     add("rect", { class: "glass", x: 5, y: 4, width: 26, height: 42, rx: 1.2 });
     add("rect", { x: 5, y: 4, width: 26, height: 42, rx: 1.2, fill: "url(#glassSheen)" });
+    // muntins (two-over-two)
     add("line", { x1: 18, y1: 4, x2: 18, y2: 46, stroke: "#EEDBC1", "stroke-width": 2.2 });
     add("line", { x1: 5, y1: 25, x2: 31, y2: 25, stroke: "#EEDBC1", "stroke-width": 2.2 });
-    add("rect", { x: -4, y: 49, width: 44, height: 5, rx: 1.4, fill: "#E4D2B7" });
-    add("rect", { x: -4, y: 54, width: 44, height: 2.2, fill: "#B0824F", opacity: .55 });
+    // sill + drop shadow
+    add("rect", { x: -5, y: 49, width: 46, height: 5, rx: 1.4, fill: "#E4D2B7" });
+    add("rect", { x: -5, y: 54, width: 46, height: 2.4, fill: "#6E3B22", "fill-opacity": .5 });
     if (rail) {
-      add("rect", { x: -6, y: 30, width: 48, height: 2.4, rx: 1, fill: "#6E3B22" });
-      add("rect", { x: -6, y: 47, width: 48, height: 2.4, rx: 1, fill: "#6E3B22" });
-      [-2, 6, 14, 22, 30, 38].forEach((bx) => add("line", { x1: bx, y1: 32, x2: bx, y2: 47, stroke: "#7A3B24", "stroke-width": 1.5 }));
+      // wrought-iron balconet
+      add("rect", { x: -6, y: 30, width: 48, height: 2.4, rx: 1, fill: "#5A2F1B" });
+      add("rect", { x: -6, y: 47, width: 48, height: 2.4, rx: 1, fill: "#5A2F1B" });
+      for (let bx = -3; bx <= 39; bx += 6) add("line", { x1: bx, y1: 32, x2: bx, y2: 47, stroke: "#6E3B22", "stroke-width": 1.4 });
     }
   }
   function archChildren(g) {
     const add = (n, a) => g.appendChild(mk(n, a));
-    add("path", { d: "M0 66 V22 A22 22 0 0 1 44 22 V66 Z", fill: "#7E5030" });
-    add("path", { d: "M3 66 V22 A19 19 0 0 1 41 22 V66 Z", fill: "#EEDBC1" });
-    add("path", { class: "glass", d: "M6 66 V23 A16 16 0 0 1 38 23 V66 Z" });
-    add("path", { d: "M6 66 V23 A16 16 0 0 1 38 23 V66 Z", fill: "url(#glassSheen)" });
-    add("path", { d: "M18 2 L26 2 L28 10 L16 10 Z", fill: "#F1E2CC" });
-    add("line", { x1: 22, y1: 24, x2: 22, y2: 66, stroke: "#EEDBC1", "stroke-width": 2 });
-    add("rect", { x: -3, y: 63, width: 50, height: 5, rx: 1.4, fill: "#E4D2B7" });
-    add("rect", { x: -2, y: 60, width: 48, height: 5, rx: 2, fill: "#8AA06A" });
+    // recessed reveal
+    add("path", { d: "M-1 62 V21 A23 23 0 0 1 45 21 V62 Z", fill: "#3A1C12", "fill-opacity": .32 });
+    // stone archivolt + keystone
+    add("path", { d: "M-2 62 V22 A24 24 0 0 1 46 22 V62 Z", fill: "#EAD9C0" });
+    add("path", { d: "M22 -3 L27 4 L22 6 L17 4 Z", fill: "#F1E2CC" });
+    // oak arch frame
+    add("path", { d: "M1 62 V22 A21 21 0 0 1 43 22 V62 Z", fill: "#7E5030" });
+    add("path", { d: "M4 62 V22 A18 18 0 0 1 40 22 V62 Z", fill: "#EEDBC1" });
+    // glass (status) + sheen
+    add("path", { class: "glass", d: "M7 62 V23 A15 15 0 0 1 37 23 V62 Z" });
+    add("path", { d: "M7 62 V23 A15 15 0 0 1 37 23 V62 Z", fill: "url(#glassSheen)" });
+    // muntins
+    add("line", { x1: 22, y1: 24, x2: 22, y2: 62, stroke: "#EEDBC1", "stroke-width": 2 });
+    add("line", { x1: 7, y1: 40, x2: 37, y2: 40, stroke: "#EEDBC1", "stroke-width": 1.6 });
+    // stone sill on the base course
+    add("rect", { x: -2, y: 60, width: 48, height: 6, rx: 1.4, fill: "#E4D2B7" });
+    add("rect", { x: -2, y: 65.4, width: 48, height: 2, fill: "#B0824F", "fill-opacity": .5 });
   }
 
   function makeApt(a) {
@@ -96,12 +114,15 @@
       winChildren(g, a.pietro === 2 || a.pietro === 3);
       rx = x - 6; ry = y - 8; rw = 46; rh = 60;
     } else {
-      x = APTX[PARTER_BAYS[a.col]] - 22; y = 404;
+      x = APTX[PARTER_BAYS[a.col]] - 22; y = 394;
       outer.setAttribute("transform", "translate(" + x + " " + y + ")");
       archChildren(g);
-      rx = x - 4; ry = y - 6; rw = 52; rh = 76;
+      rx = x - 3; ry = y - 5; rw = 50; rh = 74;
     }
     g.dataset.rx = rx; g.dataset.ry = ry; g.dataset.rw = rw; g.dataset.rh = rh;
+    // full-window transparent hit target so the whole tile is clickable (not just the painted strokes)
+    g.insertBefore(mk("rect", { x: rx - x, y: ry - y, width: rw, height: rh, rx: 4,
+      fill: "#000", "fill-opacity": "0", "pointer-events": "all" }), g.firstChild);
     const sel = () => select(a.id);
     g.addEventListener("click", sel);
     g.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); sel(); } });
@@ -328,16 +349,26 @@
   function buildLoc() { $("#locList").innerHTML = LOC.map((l) => '<div class="loc-item"><span class="ic"><svg viewBox="0 0 24 24">' + LOC_IC[l.ic] + '</svg></span><div><div class="t">' + l.t[lang] + '</div><div class="d">' + l.d[lang] + '</div></div><span class="dist">' + l.dist + "</span></div>").join(""); }
 
   const GAL = [
-    '<svg viewBox="0 0 200 200"><rect width="200" height="200" fill="#D08B5E"/><path d="M40 170v-70a60 60 0 0 1 120 0v70z" fill="#B4552E"/><path d="M70 170v-40a30 30 0 0 1 60 0v40z" fill="#57271A"/><rect x="92" y="140" width="4" height="30" fill="#D08B5E"/></svg>',
-    '<svg viewBox="0 0 200 200"><rect width="200" height="200" fill="#C87F4E"/><g fill="#57271A" opacity=".85"><rect x="26" y="30" width="44" height="54" rx="4"/><rect x="82" y="30" width="44" height="54" rx="4"/><rect x="138" y="30" width="36" height="54" rx="4"/><rect x="26" y="100" width="44" height="54" rx="4"/><rect x="82" y="100" width="44" height="54" rx="4"/><rect x="138" y="100" width="36" height="54" rx="4"/></g></svg>',
-    '<svg viewBox="0 0 200 200"><rect width="200" height="200" fill="#E9CDB6"/><circle cx="100" cy="120" r="58" fill="#8AA06A"/><path d="M100 120c0-30 18-52 0-78-18 26 0 48 0 78z" fill="#6E8551"/><rect x="40" y="160" width="120" height="16" rx="6" fill="#B4552E"/></svg>',
-    '<svg viewBox="0 0 200 200"><rect width="200" height="200" fill="#B4552E"/><g stroke="#8f3f1c" stroke-width="3"><line x1="0" y1="50" x2="200" y2="50"/><line x1="0" y1="100" x2="200" y2="100"/><line x1="0" y1="150" x2="200" y2="150"/><line x1="50" y1="0" x2="50" y2="200"/><line x1="100" y1="0" x2="100" y2="200"/><line x1="150" y1="0" x2="150" y2="200"/></g></svg>',
-    '<svg viewBox="0 0 200 200"><rect width="200" height="200" fill="#D08B5E"/><rect x="30" y="30" width="140" height="140" rx="70 70 8 8" fill="#57271A"/><rect x="46" y="60" width="108" height="110" rx="54 54 4 4" fill="#EFD9C2"/></svg>',
-    '<svg viewBox="0 0 200 200"><rect width="200" height="200" fill="#C1774A"/><rect x="0" y="0" width="200" height="200" fill="#57271A" opacity=".08"/><g fill="none" stroke="#57271A" stroke-width="3" opacity=".5"><path d="M40 160V80l60-40 60 40v80"/><path d="M80 160v-40a20 20 0 0 1 40 0v40"/></g></svg>'
+    { src: "img/01-brama.webp", pl: "Łukowa brama", en: "Arched gateway", cap: ["Wejście przez ceglany łuk na wewnętrzny dziedziniec.", "The face-brick arch leading into the inner courtyard."] },
+    { src: "img/02-cegla.webp", pl: "Cegła licowa", en: "Face brick", cap: ["Ręcznie formowana cegła z wapienną spoiną.", "Handmade face brick with lime mortar joints."] },
+    { src: "img/05-dziedziniec.webp", pl: "Zielony dziedziniec", en: "Green courtyard", cap: ["Wspólny dziedziniec z zielenią zamiast asfaltu.", "A shared courtyard — greenery instead of asphalt."] },
+    { src: "img/04-stolarka.webp", pl: "Dębowa stolarka", en: "Oak joinery", cap: ["Dębowe okna z ciepłym montażem, mosiężne okucia.", "Warm-fitted oak windows with brass hardware."] },
+    { src: "img/03-glina.webp", pl: "Tynk gliniany", en: "Clay plaster", cap: ["Gładzony ręcznie tynk gliniany, oddychające wnętrze.", "Hand-troweled clay plaster — a breathing interior."] },
+    { src: "img/06-detal.webp", pl: "Detal elewacji", en: "Facade detail", cap: ["Gzyms i kostkowanie w jasnej glinie nad licem cegły.", "Cornice and dentils in pale clay above the brick face."] }
   ];
   function buildGallery() {
-    $("#gallery").innerHTML = GAL.map((s, i) => '<button class="gtile" data-lb="' + i + '" aria-label="Zdjęcie ' + (i + 1) + '">' + s + "</button>").join("");
-    $$("#gallery .gtile").forEach((b) => b.addEventListener("click", () => { $("#lbBody").innerHTML = GAL[+b.dataset.lb].replace('viewBox="0 0 200 200"', 'viewBox="0 0 200 200" style="width:min(80vw,560px);height:auto"'); $("#lightbox").classList.add("open"); }));
+    $("#gallery").innerHTML = GAL.map((g, i) =>
+      '<button class="gtile" data-lb="' + i + '" aria-label="' + g[lang] + '">' +
+        '<img src="' + g.src + '" alt="' + g[lang] + '" loading="lazy" decoding="async" width="600" height="600" />' +
+        '<span class="gtag">' + g[lang] + "</span>" +
+      "</button>").join("");
+    $$("#gallery .gtile").forEach((b) => b.addEventListener("click", () => {
+      const g = GAL[+b.dataset.lb];
+      $("#lbBody").innerHTML =
+        '<figure class="lb-fig"><img src="' + g.src + '" alt="' + g[lang] + '" />' +
+        '<figcaption><b>' + g[lang] + "</b><span>" + g.cap[lang === "pl" ? 0 : 1] + "</span></figcaption></figure>";
+      $("#lightbox").classList.add("open");
+    }));
   }
 
   const STD = {
@@ -364,16 +395,19 @@
     { pl: ["Czy mogę połączyć dwa mieszkania?", "Na etapie stanu surowego wybrane sąsiadujące lokale można połączyć. Zapytaj przez formularz."], en: ["Can I combine two flats?", "At the shell stage selected adjacent units can be merged. Ask via the form."] },
     { pl: ["Kiedy odbiór kluczy?", "Planowane zakończenie to III kwartał 2027. Aktualny etap widać w harmonogramie."], en: ["When are keys handed over?", "Completion is planned for Q3 2027. The current stage is in the timeline."] } ];
   function buildFaq() {
-    $("#faqList").innerHTML = FAQ.map((f) => '<div class="faq-item"><button class="faq-q">' + f[lang][0] + '<span class="pm">+</span></button><div class="faq-a"><p>' + f[lang][1] + "</p></div></div>").join("");
+    $("#faqList").innerHTML = FAQ.map((f) => '<div class="faq-item"><button class="faq-q"><span>' + f[lang][0] + '</span><span class="pm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></span></button><div class="faq-a"><p>' + f[lang][1] + "</p></div></div>").join("");
     $$("#faqList .faq-item").forEach((it) => $(".faq-q", it).addEventListener("click", () => { const open = it.classList.contains("open");
       $$("#faqList .faq-item").forEach((x) => { x.classList.remove("open"); $(".faq-a", x).style.maxHeight = null; });
       if (!open) { it.classList.add("open"); $(".faq-a", it).style.maxHeight = $(".faq-a", it).scrollHeight + "px"; } }));
   }
 
+  function sliderFill(el) { const min = +el.min || 0, max = +el.max || 100, v = +el.value;
+    el.style.setProperty("--fill", ((v - min) / (max - min) * 100).toFixed(2) + "%"); }
   function calc() { const price = +$("#calcPrice").value, rent = +$("#calcRent").value;
     $("#calcPriceL").textContent = money(price); $("#calcRentL").textContent = money(rent);
     $("#calcYield").textContent = ((rent * 12) / price * 100).toFixed(1).replace(".", ",") + "%";
-    $("#calcNote").textContent = t("calc.note").replace("{price}", money(price)).replace("{rent}", money(rent)); }
+    $("#calcNote").textContent = t("calc.note").replace("{price}", money(price)).replace("{rent}", money(rent));
+    sliderFill($("#calcPrice")); sliderFill($("#calcRent")); }
 
   function askAbout(id) { $("#kFlat").value = id; localStorage.setItem("letnica_enquiry", id);
     $("#c-kontakt").scrollIntoView({ behavior: "smooth", block: "start" }); toast(t("toast.askSet").replace("{id}", id)); }
@@ -412,7 +446,7 @@
     applyI18n();
     $$(".apt").forEach((el) => { const a = byId(el.dataset.id); el.setAttribute("aria-label", a.id + " · " + t("st." + a.status)); });
     renderCard(); if (state.view === "lista") buildLista();
-    buildLoc(); buildStd($(".tabs button.on").dataset.tab); buildTimeline(); buildFaq(); renderCmpBar(); calc();
+    buildLoc(); buildGallery(); buildStd($(".tabs button.on").dataset.tab); buildTimeline(); buildFaq(); renderCmpBar(); calc();
     const c = { intro: 1 }; const z = document.body.dataset.zone; // refresh caption
     const capMap = { intro: ["Elewacja · zawsze na ekranie", "Elevation · always on screen"], lokalizacja: ["Budynek w kontekście okolicy", "The building in context"], kamienica: ["Zbliżenie · detale i materiały", "Close-up · details & materials"], mieszkania: ["Kliknij okno →", "Click a window →"], inwestorzy: ["Wynajęte okna świecą", "Rented windows glow"], kontakt: ["Światło na górze", "Light up top"] };
     if (capMap[z]) $("#paneCap").textContent = capMap[z][lang === "pl" ? 0 : 1];
